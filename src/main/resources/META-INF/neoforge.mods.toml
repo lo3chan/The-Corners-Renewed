@@ -1,0 +1,28 @@
+modLoader="java"
+loaderVersion="[21,)"
+license="LGPL-3.0-or-later"
+
+[[mods]]
+modId="corners"
+version="${file.jarVersion}"
+displayName="The Corners: Renewed"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-corners"
+logoFile="assets/corners/icon.png"
+authors="LudoCrypt, Shai, KraCactus, Racoon Syndrome, Basement Spider, ImXR24, Waterpicker"
+description='''
+Explore the corners of the universe, where no man was meant to.
+'''
+
+[[dependencies.corners]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.65,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.corners]]
+modId="limlib"
+type="required"
+versionRange="*"
+ordering="NONE"
+side="BOTH"
