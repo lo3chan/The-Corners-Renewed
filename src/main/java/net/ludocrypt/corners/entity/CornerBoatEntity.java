@@ -52,7 +52,7 @@ public class CornerBoatEntity extends Boat {
 	public enum CornerBoat implements StringRepresentable {
 
 		GAIA("gaia", () -> CornerBlocks.GAIA_PLANKS, () -> CornerBlocks.GAIA_BOAT, () -> CornerBlocks.GAIA_CHEST_BOAT,
-				() -> CornerEntities.GAIA_BOAT, () -> CornerEntities.GAIA_CHEST_BOAT);
+				() -> CornerEntities.GAIA_BOAT.get(), () -> CornerEntities.GAIA_CHEST_BOAT.get());
 
 		private final String name;
 		private final Supplier<ItemLike> planks;

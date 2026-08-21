@@ -1,6 +1,10 @@
 package net.ludocrypt.corners.init;
 
 import net.ludocrypt.corners.TheCorners;
+
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.bus.api.IEventBus;
+import java.util.function.Supplier;
 import net.ludocrypt.corners.entity.DimensionalPaintingEntity;
 import net.ludocrypt.corners.util.DimensionalPaintingTeleportLogic;
 import net.minecraft.core.BlockPos;
@@ -56,12 +60,12 @@ public class CornerPaintings {
 	public static final ResourceKey<PaintingVariant> COMMUNAL_CORRIDORS = get("communal_corridors");
 	public static final ResourceKey<PaintingVariant> HOARY_CROSSROADS = get("hoary_crossroads");
 
-    public static final Supplier<PaintingVariant> OVERWORLD_VARIANT = PAINTING_VARIANTS.register("overworld", () -> new PaintingVariant(16, 16));
-    public static final Supplier<PaintingVariant> OVERWORLD_THIN_VARIANT = PAINTING_VARIANTS.register("overworld_thin", () -> new PaintingVariant(16, 32));
-    public static final Supplier<PaintingVariant> OVERWORLD_WIDE_VARIANT = PAINTING_VARIANTS.register("overworld_wide", () -> new PaintingVariant(32, 16));
-    public static final Supplier<PaintingVariant> YEARNING_CANAL_VARIANT = PAINTING_VARIANTS.register("yearning_canal", () -> new PaintingVariant(16, 16));
-    public static final Supplier<PaintingVariant> COMMUNAL_CORRIDORS_VARIANT = PAINTING_VARIANTS.register("communal_corridors", () -> new PaintingVariant(16, 16));
-    public static final Supplier<PaintingVariant> HOARY_CROSSROADS_VARIANT = PAINTING_VARIANTS.register("hoary_crossroads", () -> new PaintingVariant(32, 16));
+    public static final Supplier<PaintingVariant> OVERWORLD_VARIANT = PAINTING_VARIANTS.register("overworld", () -> new PaintingVariant(16, 16, TheCorners.id("overworld")));
+    public static final Supplier<PaintingVariant> OVERWORLD_THIN_VARIANT = PAINTING_VARIANTS.register("overworld_thin", () -> new PaintingVariant(16, 32, TheCorners.id("overworld_thin")));
+    public static final Supplier<PaintingVariant> OVERWORLD_WIDE_VARIANT = PAINTING_VARIANTS.register("overworld_wide", () -> new PaintingVariant(32, 16, TheCorners.id("overworld_wide")));
+    public static final Supplier<PaintingVariant> YEARNING_CANAL_VARIANT = PAINTING_VARIANTS.register("yearning_canal", () -> new PaintingVariant(16, 16, TheCorners.id("yearning_canal")));
+    public static final Supplier<PaintingVariant> COMMUNAL_CORRIDORS_VARIANT = PAINTING_VARIANTS.register("communal_corridors", () -> new PaintingVariant(16, 16, TheCorners.id("communal_corridors")));
+    public static final Supplier<PaintingVariant> HOARY_CROSSROADS_VARIANT = PAINTING_VARIANTS.register("hoary_crossroads", () -> new PaintingVariant(32, 16, TheCorners.id("hoary_crossroads")));
 
 	public static void init() {
         LOGICS.put(OVERWORLD, new DimensionalPaintingTeleportLogic(Level.OVERWORLD, overworldPaintingTarget));

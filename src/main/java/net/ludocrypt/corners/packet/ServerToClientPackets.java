@@ -1,6 +1,10 @@
 package net.ludocrypt.corners.packet;
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.ludocrypt.corners.access.MusicTrackerAccess;
 import net.ludocrypt.corners.client.sound.LoopingPositionedSoundInstance;
 import net.ludocrypt.corners.init.CornerBlocks;
@@ -9,7 +13,7 @@ import net.ludocrypt.corners.init.CornerRadioRegistry;
 import net.ludocrypt.corners.mixin.SoundManagerAccessor;
 import net.ludocrypt.corners.util.DimensionalPaintingTeleportLogic;
 import net.ludocrypt.corners.util.RadioSoundTable;
-import net.ludocrypt.limlib.impl.access.SoundSystemAccess;
+import org.dimdev.limlib.impl.access.SoundSystemAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
@@ -22,14 +26,17 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Comparator;
 import java.util.Optional;
 
+@EventBusSubscriber(modid = "corners", bus = EventBusSubscriber.Bus.MOD, value = net.neoforged.api.distmarker.Dist.CLIENT)
 public class ServerToClientPackets {
 
-	public static void manageServerToClientPackets() {
-		ClientPlayNetworking.registerGlobalReceiver(PlayRadio.TYPE, (buf, handler) -> {
-            BlockPos pos = buf.pos();
-            boolean start = buf.active();
-            var client = handler.client();
-            client.execute(() -> {
+    @SubscribeEvent
+    public static void register(RegisterPayloadHandlersEvent event) {
+        PayloadRegistrar registrar = event.registrar("corners").versioned("1.0");
+        registrar.playToClient(PlayRadio.TYPE, PlayRadio.STREAM_CODEC, (payload, context) -> {
+            BlockPos pos = payload.pos();
+            boolean start = payload.active();
+            context.enqueueWork(() -> {
+                var client = net.minecraft.client.Minecraft.getInstance();
                 RadioSoundTable id = client.level.getEntitiesOfClass(Painting.class, AABB.unitCubeFromLowerCorner(Vec3.atLowerCornerOf(pos)).inflate(16.0D),
                                 (entity) -> entity.getVariant().unwrap().left().map(CornerPaintings.LOGICS::containsKey).orElse(false))
                         .stream().min(Comparator.comparing((entity) -> entity.distanceToSqr(Vec3.atLowerCornerOf(pos))))
@@ -42,7 +49,7 @@ public class ServerToClientPackets {
                         .map(CornerPaintings.LOGICS::get)
                         .map(DimensionalPaintingTeleportLogic::radioRedirect)
                         .map(CornerRadioRegistry::getCurrent)
-                        .orElseGet(() -> CornerRadioRegistry.getCurrent(client));
+                        .orElseGet(() -> CornerRadioRegistry.getCurrent(client.level.dimension()));
 
                 SoundSystemAccess
                         .get(((SoundManagerAccessor) client.getSoundManager()).getSoundEngine())
@@ -54,9 +61,9 @@ public class ServerToClientPackets {
                     ((MusicTrackerAccess) (client.getMusicManager())).getRadioPositions().add(pos);
                     SoundEvent soundEvent = id.getStaticSound().value();
 
-                    if (client.level.getBlockState(pos).is(CornerBlocks.WOODEN_RADIO)) {
+                    if (client.level.getBlockState(pos).is(CornerBlocks.WOODEN_RADIO.get())) {
                         soundEvent = id.getRadioSound().value();
-                    } else if (client.level.getBlockState(pos).is(CornerBlocks.TUNED_RADIO)) {
+                    } else if (client.level.getBlockState(pos).is(CornerBlocks.TUNED_RADIO.get())) {
                         soundEvent = id.getMusicSound().value();
                     }
 
@@ -64,9 +71,7 @@ public class ServerToClientPackets {
                             .play(client.level, pos, soundEvent, SoundSource.RECORDS, 1.0F, 1.0F,
                                     RandomSource.create(), pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5);
                 }
-
             });
         });
-	}
-
+    }
 }

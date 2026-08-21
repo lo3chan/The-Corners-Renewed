@@ -2,8 +2,6 @@ package net.ludocrypt.corners.client.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.ludocrypt.corners.TheCorners;
 import net.ludocrypt.corners.init.CornerBlocks;
 import net.ludocrypt.corners.mixin.GameRendererAccessor;
@@ -26,7 +24,7 @@ public class DeepBookshelfRenderer implements ShaderCallback {
 	public static final ResourceLocation DEEP_BOOKSHELF_SIDE_TEXTURE = TheCorners.id("textures/block/deep_bookshelf_interior_side.png");
 
 	@Override
-	@Environment(EnvType.CLIENT)
+	@net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
 	public void setup(ShaderInstance shader) {
 		RenderSystem.enablePolygonOffset();
 		RenderSystem.polygonOffset(-3.0F, -3.0F);
@@ -71,7 +69,7 @@ public class DeepBookshelfRenderer implements ShaderCallback {
 	}
 
 	@Override
-	@Environment(EnvType.CLIENT)
+	@net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
 	public int appendOverlayState(BlockAndTintGetter level, BlockPos pos, BlockState state, BakedModel model,
 			long modelSeed) {
 

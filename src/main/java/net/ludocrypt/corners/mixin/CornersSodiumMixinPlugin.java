@@ -1,6 +1,5 @@
 package net.ludocrypt.corners.mixin;
 
-import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -14,7 +13,7 @@ public final class CornersSodiumMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        sodiumLoaded = FabricLoader.getInstance().isModLoaded("sodium");
+        sodiumLoaded = net.neoforged.fml.ModList.get().isLoaded("sodium");
     }
 
     @Override

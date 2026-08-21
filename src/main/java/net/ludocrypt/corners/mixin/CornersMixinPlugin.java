@@ -1,6 +1,5 @@
 package net.ludocrypt.corners.mixin;
 
-import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -14,7 +13,7 @@ public final class CornersMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        irisLoaded = FabricLoader.getInstance().isModLoaded("iris");
+        irisLoaded = net.neoforged.fml.ModList.get().isLoaded("iris");
     }
 
     @Override
@@ -22,9 +21,13 @@ public final class CornersMixinPlugin implements IMixinConfigPlugin {
         return null;
     }
 
-    @Override
+
+@Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return irisLoaded;
+        if (mixinClassName.contains("client.") || mixinClassName.contains("MinecraftClientMixin") || mixinClassName.contains("LevelRendererMixin") || mixinClassName.contains("SectionCompilerMixin") || mixinClassName.contains("RenderTypeMixin") || mixinClassName.contains("SoundManagerAccessor") || mixinClassName.contains("MusicTrackerMixin") || mixinClassName.contains("BlockModelDeserializerMixin") || mixinClassName.contains("BlockModelMixin") || mixinClassName.contains("FrustumAccessor") || mixinClassName.contains("GameRendererAccessor") || mixinClassName.contains("MultiPartBakedModelAccessor") || mixinClassName.contains("ShaderInstanceMixin") || mixinClassName.contains("SimpleBakedModelMixin") || mixinClassName.contains("WeightedBakedModelAccessor") || mixinClassName.contains("WorldRendererAccessor") || mixinClassName.contains("BackgroundRendererMixin")) {
+            return net.neoforged.fml.loading.FMLEnvironment.dist.isClient();
+        }
+        return true;
     }
 
     @Override

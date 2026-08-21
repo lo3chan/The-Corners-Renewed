@@ -31,8 +31,8 @@ public class GaiaTreeFeature extends Feature<NoneFeatureConfiguration> {
 		RandomSource random = context.random();
 		WorldGenLevel world = context.level();
 		BlockPos pos = context.origin().immutable();
-		BlockState stump = CornerBlocks.STRIPPED_GAIA_LOG.defaultBlockState();
-		BlockState leaf = CornerBlocks.GAIA_LEAVES.defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
+		BlockState stump = CornerBlocks.STRIPPED_GAIA_LOG.get().defaultBlockState();
+		BlockState leaf = CornerBlocks.GAIA_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 		trySetState(world, pos.above(), stump);
 		trySetState(world, pos.below(), stump);
 		trySetState(world, pos.above().above(), leaf);

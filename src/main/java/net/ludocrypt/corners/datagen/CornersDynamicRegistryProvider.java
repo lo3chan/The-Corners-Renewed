@@ -1,7 +1,5 @@
 package net.ludocrypt.corners.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.ludocrypt.corners.TheCorners;
 import net.ludocrypt.corners.client.render.StrongPostEffect;
 import net.ludocrypt.corners.init.CornerBiomes;
@@ -15,16 +13,16 @@ import net.ludocrypt.corners.world.chunk.CommunalCorridorsChunkGenerator;
 import net.ludocrypt.corners.world.chunk.HoaryCrossroadsChunkGenerator;
 import net.ludocrypt.corners.world.chunk.YearningCanalChunkGenerator;
 import net.ludocrypt.corners.world.feature.GaiaTreeFeature;
-import net.ludocrypt.limlib.api.LimLibRegistries;
-import net.ludocrypt.limlib.api.effects.post.PostEffect;
-import net.ludocrypt.limlib.api.effects.post.StaticPostEffect;
-import net.ludocrypt.limlib.api.effects.sky.DimensionEffects;
-import net.ludocrypt.limlib.api.effects.sky.StaticDimensionEffects;
-import net.ludocrypt.limlib.api.effects.sound.SoundEffects;
-import net.ludocrypt.limlib.api.effects.sound.reverb.StaticReverbEffect;
-import net.ludocrypt.limlib.api.skybox.Skybox;
-import net.ludocrypt.limlib.api.skybox.TexturedSkybox;
-import net.ludocrypt.limlib.impl.Limlib;
+import org.dimdev.limlib.api.LimLibRegistryKeys;
+import org.dimdev.limlib.post.PostEffect;
+import org.dimdev.limlib.post.StaticPostEffect;
+import org.dimdev.limlib.api.effects.sky.DimensionEffects;
+import org.dimdev.limlib.api.effects.sky.StaticDimensionEffects;
+import org.dimdev.limlib.api.effects.sound.SoundEffects;
+import org.dimdev.limlib.api.effects.sound.reverb.StaticReverbEffect;
+import org.dimdev.limlib.api.skybox.Skybox;
+import org.dimdev.limlib.api.skybox.TexturedSkybox;
+import org.dimdev.limlib.impl.Limlib;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
@@ -63,27 +61,27 @@ import static net.ludocrypt.corners.init.CornerWorlds.*;
 public class CornersDynamicRegistryProvider {
 
     public static void soundEffects(BootstrapContext<SoundEffects> context) {
-        context.register(ResourceKey.create(SoundEffects.SOUND_EFFECTS_KEY, TheCorners.id(YEARNING_CANAL)), new SoundEffects(Optional.of(new StaticReverbEffect.Builder().setDecayTime(20.0F).build()), Optional.empty(), Optional.of(new Music(CornerSoundEvents.MUSIC_YEARNING_CANAL, 3000, 8000, true))));
+        context.register(ResourceKey.create(SoundEffects.SOUND_EFFECTS_KEY, TheCorners.id(YEARNING_CANAL)), new SoundEffects(Optional.of(new StaticReverbEffect.Builder().setDecayTime(20.0F).build()), Optional.empty(), Optional.of(new Music(net.minecraft.core.Holder.direct(CornerSoundEvents.MUSIC_YEARNING_CANAL.get()), 3000, 8000, true))));
         context.register(ResourceKey.create(SoundEffects.SOUND_EFFECTS_KEY, TheCorners.id(COMMUNAL_CORRIDORS)), new SoundEffects(Optional.of(new StaticReverbEffect.Builder().setDecayTime(2.15F).setDensity(0.0725F).build()), Optional.empty(), Optional.empty()));
-        context.register(ResourceKey.create(SoundEffects.SOUND_EFFECTS_KEY, TheCorners.id(HOARY_CROSSROADS)), new SoundEffects(Optional.of(new StaticReverbEffect.Builder().setDecayTime(15.0F).setDensity(1.0F).build()), Optional.empty(), Optional.of(new Music(CornerSoundEvents.MUSIC_HOARY_CROSSROADS, 3000, 8000, true))));
+        context.register(ResourceKey.create(SoundEffects.SOUND_EFFECTS_KEY, TheCorners.id(HOARY_CROSSROADS)), new SoundEffects(Optional.of(new StaticReverbEffect.Builder().setDecayTime(15.0F).setDensity(1.0F).build()), Optional.empty(), Optional.of(new Music(net.minecraft.core.Holder.direct(CornerSoundEvents.MUSIC_HOARY_CROSSROADS.get()), 3000, 8000, true))));
     }
 
     public static void skyboxes(BootstrapContext<Skybox> context) {
-        context.register(ResourceKey.create(LimLibRegistries.SKYBOX, TheCorners.id(YEARNING_CANAL)), new TexturedSkybox(TheCorners.id("textures/sky/yearning_canal")));
-        context.register(ResourceKey.create(LimLibRegistries.SKYBOX, TheCorners.id(COMMUNAL_CORRIDORS)), new TexturedSkybox(TheCorners.id("textures/sky/snow")));
-        context.register(ResourceKey.create(LimLibRegistries.SKYBOX, TheCorners.id(HOARY_CROSSROADS)), new TexturedSkybox(TheCorners.id("textures/sky/hoary_crossroads")));
+        context.register(ResourceKey.create(LimLibRegistryKeys.SKYBOX, TheCorners.id(YEARNING_CANAL)), new TexturedSkybox(TheCorners.id("textures/sky/yearning_canal")));
+        context.register(ResourceKey.create(LimLibRegistryKeys.SKYBOX, TheCorners.id(COMMUNAL_CORRIDORS)), new TexturedSkybox(TheCorners.id("textures/sky/snow")));
+        context.register(ResourceKey.create(LimLibRegistryKeys.SKYBOX, TheCorners.id(HOARY_CROSSROADS)), new TexturedSkybox(TheCorners.id("textures/sky/hoary_crossroads")));
     }
 
     public static void dimensionEffects(BootstrapContext<DimensionEffects> context) {
-        context.register(ResourceKey.create(LimLibRegistries.DIMENSION_EFFECTS, TheCorners.id(YEARNING_CANAL)), new StaticDimensionEffects(Optional.empty(), false, "NONE", true, false, false, 1.0F));
-        context.register(ResourceKey.create(LimLibRegistries.DIMENSION_EFFECTS, TheCorners.id(COMMUNAL_CORRIDORS)), new StaticDimensionEffects(Optional.empty(), false, "NONE", true, false, false, 1.0F));
-        context.register(ResourceKey.create(LimLibRegistries.DIMENSION_EFFECTS, TheCorners.id(HOARY_CROSSROADS)), new StaticDimensionEffects(Optional.empty(), false, "NONE", true, false, true, 1.0F));
+        context.register(ResourceKey.create(LimLibRegistryKeys.DIMENSION_EFFECTS, TheCorners.id(YEARNING_CANAL)), new StaticDimensionEffects(Float.NaN, false, "NONE", true, false, false, 1.0F));
+        context.register(ResourceKey.create(LimLibRegistryKeys.DIMENSION_EFFECTS, TheCorners.id(COMMUNAL_CORRIDORS)), new StaticDimensionEffects(Float.NaN, false, "NONE", true, false, false, 1.0F));
+        context.register(ResourceKey.create(LimLibRegistryKeys.DIMENSION_EFFECTS, TheCorners.id(HOARY_CROSSROADS)), new StaticDimensionEffects(Float.NaN, false, "NONE", true, false, true, 1.0F));
     }
 
     public static void postEffects(BootstrapContext<PostEffect> context) {
-        context.register(ResourceKey.create(LimLibRegistries.POST_EFFECT, TheCorners.id(YEARNING_CANAL)), new StaticPostEffect(TheCorners.id(YEARNING_CANAL)));
-        context.register(ResourceKey.create(LimLibRegistries.POST_EFFECT, TheCorners.id(COMMUNAL_CORRIDORS)), new StrongPostEffect(TheCorners.id(COMMUNAL_CORRIDORS), TheCorners.id(COMMUNAL_CORRIDORS + "_fallback")));
-        context.register(ResourceKey.create(LimLibRegistries.POST_EFFECT, TheCorners.id(HOARY_CROSSROADS)), new StaticPostEffect(TheCorners.id(HOARY_CROSSROADS)));
+        context.register(ResourceKey.create(LimLibRegistryKeys.POST_EFFECT, TheCorners.id(YEARNING_CANAL)), new StaticPostEffect(TheCorners.id(YEARNING_CANAL)));
+        context.register(ResourceKey.create(LimLibRegistryKeys.POST_EFFECT, TheCorners.id(COMMUNAL_CORRIDORS)), new StrongPostEffect(TheCorners.id(COMMUNAL_CORRIDORS), TheCorners.id(COMMUNAL_CORRIDORS + "_fallback")));
+        context.register(ResourceKey.create(LimLibRegistryKeys.POST_EFFECT, TheCorners.id(HOARY_CROSSROADS)), new StaticPostEffect(TheCorners.id(HOARY_CROSSROADS)));
     }
 
 //    public static void features(BootstrapContext<Feature<?>> context) {
@@ -94,8 +92,8 @@ public class CornersDynamicRegistryProvider {
         GaiaTreeFeature gaia_tree_feature = (GaiaTreeFeature) BuiltInRegistries.FEATURE.get(CornerBiomes.GAIA_TREE_FEATURE);
         context.register(CornerBiomes.CONFIGURED_GAIA_TREE_FEATURE, new ConfiguredFeature<>(gaia_tree_feature, NoneFeatureConfiguration.INSTANCE));
         context.register(CornerBiomes.CONFIGURED_SAPLING_GAIA_TREE_FEATURE, new ConfiguredFeature<>(Feature.TREE,
-                new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(CornerBlocks.GAIA_LOG),
-                        new GiantTrunkPlacer(10, 5, 5), BlockStateProvider.simple(CornerBlocks.GAIA_LEAVES),
+                new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(CornerBlocks.GAIA_LOG.get()),
+                        new GiantTrunkPlacer(10, 5, 5), BlockStateProvider.simple(CornerBlocks.GAIA_LEAVES.get()),
                         new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(8, 10)),
                         new TwoLayersFeatureSize(1, 1, 2)).build()));
     }

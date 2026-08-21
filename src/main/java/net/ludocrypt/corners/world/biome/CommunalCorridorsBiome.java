@@ -23,7 +23,7 @@ public class CommunalCorridorsBiome {
 		biomeEffects.waterFogColor(13548960);
 		biomeEffects.fogColor(13548960);
 		biomeEffects.grassColorOverride(13818488);
-		biomeEffects.ambientLoopSound(CornerSoundEvents.BIOME_LOOP_COMMUNAL_CORRIDORS);
+		biomeEffects.ambientLoopSound(net.minecraft.core.Holder.direct(CornerSoundEvents.BIOME_LOOP_COMMUNAL_CORRIDORS.get()));
 
 		BiomeSpecialEffects effects = biomeEffects.build();
 

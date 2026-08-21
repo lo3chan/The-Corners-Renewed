@@ -1,11 +1,14 @@
 package net.ludocrypt.corners.client;
 
-import net.fabricmc.api.ClientModInitializer;
 
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.impl.client.rendering.EntityRendererRegistryImpl;
+
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+
 import net.ludocrypt.corners.client.render.CornerBoatEntityRenderer;
 import net.ludocrypt.corners.entity.CornerBoatEntity.CornerBoat;
 import net.ludocrypt.corners.init.CornerBlocks;
@@ -17,34 +20,36 @@ import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.PaintingRenderer;
 
-public class TheCornersClient implements ClientModInitializer {
+@EventBusSubscriber(modid = "corners", bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class TheCornersClient {
 
-	@Override
-	public void onInitializeClient() {
-		ServerToClientPackets.manageServerToClientPackets();
-		BlockRenderLayerMap.INSTANCE.putBlocks(
-			RenderType.cutout(), CornerBlocks.SNOWY_GLASS_PANE, CornerBlocks.SNOWY_GLASS,
-				CornerBlocks.SNOWY_GLASS_SLAB, CornerBlocks.GAIA_DOOR, CornerBlocks.GAIA_TRAPDOOR, CornerBlocks.GAIA_SAPLING,
-				CornerBlocks.POTTED_GAIA_SAPLING);
-		EntityRendererRegistryImpl.register(CornerEntities.DIMENSIONAL_PAINTING_ENTITY, PaintingRenderer::new);
-//		EntityRendererRegistryImpl.register(CornerEntities.CORVUS_ENTITY, CorvusEntityRenderer::new);
-//		EntityModelLayerRegistry.registerModelLayer(CorvusEntityModel.LAYER_LOCATION, () -> CorvusEntityModel.createBodyLayer());
-		EntityRendererRegistry
-			.register(CornerBoat.GAIA.entityType(false),
-				context -> new CornerBoatEntityRenderer(context, false, CornerBoat.GAIA));
-		EntityModelLayerRegistry
-			.registerModelLayer(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, false),
-				() -> BoatModel.createBodyModel());
-		EntityRendererRegistry
-			.register(CornerBoat.GAIA.entityType(true),
-				context -> new CornerBoatEntityRenderer(context, true, CornerBoat.GAIA));
-		EntityModelLayerRegistry
-			.registerModelLayer(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, true),
-				() -> ChestBoatModel.createBodyModel());
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.SNOWY_GLASS_PANE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.SNOWY_GLASS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.SNOWY_GLASS_SLAB.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.GAIA_DOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.GAIA_TRAPDOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.GAIA_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.POTTED_GAIA_SAPLING.get(), RenderType.cutout());
+        });
 
         TheCornersModelPlugin.init();
         CornerModelRenderers.init();
         TheCornersShaders.init();
-	}
+    }
 
+    @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(CornerEntities.DIMENSIONAL_PAINTING_ENTITY.get(), PaintingRenderer::new);
+        event.registerEntityRenderer(CornerEntities.GAIA_BOAT.get(), context -> new CornerBoatEntityRenderer(context, false, CornerBoat.GAIA));
+        event.registerEntityRenderer(CornerEntities.GAIA_CHEST_BOAT.get(), context -> new CornerBoatEntityRenderer(context, true, CornerBoat.GAIA));
+    }
+
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, false), BoatModel::createBodyModel);
+        event.registerLayerDefinition(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, true), ChestBoatModel::createBodyModel);
+    }
 }

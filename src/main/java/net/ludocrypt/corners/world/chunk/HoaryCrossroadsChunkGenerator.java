@@ -8,13 +8,13 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.ludocrypt.corners.TheCorners;
 import net.ludocrypt.corners.init.CornerWorlds;
 import net.ludocrypt.corners.world.maze.GrandMazeGenerator;
-import net.ludocrypt.limlib.api.world.LimlibHelper;
-import net.ludocrypt.limlib.api.world.Manipulation;
-import net.ludocrypt.limlib.api.world.NbtGroup;
-import net.ludocrypt.limlib.api.world.chunk.AbstractNbtChunkGenerator;
-import net.ludocrypt.limlib.api.world.maze.*;
-import net.ludocrypt.limlib.api.world.maze.MazeComponent.CellState;
-import net.ludocrypt.limlib.api.world.maze.MazeComponent.Vec2i;
+import org.dimdev.limlib.api.world.LimlibHelper;
+import org.dimdev.limlib.api.world.Manipulation;
+import org.dimdev.limlib.api.world.NbtGroup;
+import org.dimdev.limlib.api.world.chunk.AbstractNbtChunkGenerator;
+import org.dimdev.limlib.api.world.maze.*;
+import org.dimdev.limlib.api.world.maze.MazeComponent.CellState;
+import org.dimdev.limlib.api.world.maze.MazeComponent.Vec2i;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -40,7 +40,7 @@ public class HoaryCrossroadsChunkGenerator extends AbstractNbtChunkGenerator {
 
 	public static final MapCodec<HoaryCrossroadsChunkGenerator> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
 		return instance.group(BiomeSource.CODEC.fieldOf("biome_source").stable().forGetter((chunkGenerator) -> {
-			return chunkGenerator.biomeSource;
+			return chunkGenerator.getBiomeSource();
 		}), NbtGroup.CODEC.fieldOf("group").stable().forGetter((chunkGenerator) -> {
 			return chunkGenerator.nbtGroup;
 		}), Codec.INT.fieldOf("maze_width").stable().forGetter((chunkGenerator) -> {
@@ -97,12 +97,12 @@ public class HoaryCrossroadsChunkGenerator extends AbstractNbtChunkGenerator {
 			.build();
 	}
 
-	@Override
+
 	protected MapCodec<? extends ChunkGenerator> codec() {
 		return CODEC;
 	}
 
-    @Override
+
     public CompletableFuture<ChunkAccess> populateNoise(WorldGenRegion region, ServerLevel serverLevel, ChunkGenerator generator, ChunkAccess chunk, Blender blender, RandomState randomState, StructureManager structureManager) {
         BlockPos startPos = chunk.getPos().getWorldPosition();
 		this.mazeGenerator
@@ -327,32 +327,32 @@ public class HoaryCrossroadsChunkGenerator extends AbstractNbtChunkGenerator {
 
 	}
 
-	@Override
+
 	public int getPlacementRadius() {
 		return 1;
 	}
 
-	@Override
+
 	protected ResourceKey<LootTable> getContainerLootTable(RandomizableContainerBlockEntity container) {
 		return BuiltInLootTables.SHIPWRECK_SUPPLY;
 	}
 
-	@Override
+
 	public int getGenDepth() {
 		return 512;
 	}
 
-	@Override
+
 	public int getSeaLevel() {
 		return 0;
 	}
 
-	@Override
+
 	public int getMinY() {
 		return 0;
 	}
 
-	@Override
+
 	public void addDebugScreenInfo(List<String> list, RandomState randomState, BlockPos pos) {
 	}
 

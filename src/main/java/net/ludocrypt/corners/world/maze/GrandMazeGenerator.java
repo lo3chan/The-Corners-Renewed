@@ -2,8 +2,8 @@ package net.ludocrypt.corners.world.maze;
 
 import java.util.HashMap;
 
-import net.ludocrypt.limlib.api.world.maze.MazeComponent;
-import net.ludocrypt.limlib.api.world.maze.MazeGenerator;
+import org.dimdev.limlib.api.world.maze.MazeComponent;
+import org.dimdev.limlib.api.world.maze.MazeGenerator;
 import net.minecraft.core.BlockPos;
 
 public class GrandMazeGenerator extends MazeGenerator<MazeComponent> {

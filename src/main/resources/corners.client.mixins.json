@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.ludocrypt.corners.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BackgroundRendererMixin",
+    "BlockModelDeserializerMixin",
+    "BlockModelMixin",
+    "FrustumAccessor",
+    "GameRendererAccessor",
+    "LevelRendererMixin",
+    "MinecraftClientAccessor",
+    "MinecraftClientMixin",
+    "MultiPartBakedModelAccessor",
+    "MusicTrackerMixin",
+    "RenderTypeMixin",
+    "SectionBufferBuilderPackMixin",
+    "ShaderInstanceMixin",
+    "SoundManagerAccessor",
+    "WeightedBakedModelAccessor",
+    "WorldRendererAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "plugin": "net.ludocrypt.corners.mixin.CornersMixinPlugin"
+}

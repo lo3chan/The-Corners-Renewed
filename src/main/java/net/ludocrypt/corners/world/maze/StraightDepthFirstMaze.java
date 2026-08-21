@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
-import net.ludocrypt.limlib.api.world.maze.DepthLikeMaze;
+import org.dimdev.limlib.api.world.maze.DepthLikeMaze;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
 

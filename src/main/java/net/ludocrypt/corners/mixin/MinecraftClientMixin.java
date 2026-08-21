@@ -11,7 +11,7 @@ import net.ludocrypt.corners.config.CornerConfig;
 import net.ludocrypt.corners.init.CornerSoundEvents;
 import net.ludocrypt.corners.init.CornerWorlds;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.world.level.Level;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.sounds.Music;
 
@@ -21,7 +21,7 @@ public class MinecraftClientMixin {
 	@Shadow
 	public LocalPlayer player;
 	@Shadow
-	public ClientLevel level;
+	public Level level;
 	@Final
 	@Shadow
 	private Window window;
@@ -36,9 +36,9 @@ public class MinecraftClientMixin {
 				if (CornerConfig.get().christmas.isChristmas()) {
 					ci
 						.setReturnValue(
-							new Music(CornerSoundEvents.MUSIC_COMMUNAL_CORRIDORS_CHRISTMAS, 3000, 8000, true));
+							new Music(net.minecraft.core.Holder.direct(CornerSoundEvents.MUSIC_COMMUNAL_CORRIDORS_CHRISTMAS.get()), 3000, 8000, true));
 				} else {
-					ci.setReturnValue(new Music(CornerSoundEvents.MUSIC_COMMUNAL_CORRIDORS, 3000, 8000, true));
+					ci.setReturnValue(new Music(net.minecraft.core.Holder.direct(CornerSoundEvents.MUSIC_COMMUNAL_CORRIDORS.get()), 3000, 8000, true));
 				}
 
 			}

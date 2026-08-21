@@ -3,8 +3,6 @@ package net.ludocrypt.corners.client.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.ludocrypt.corners.TheCorners;
 import net.ludocrypt.corners.config.CornerConfig;
 import net.minecraft.client.Camera;
@@ -24,13 +22,13 @@ public class ChristmasRenderer implements ShaderCallback {
 		this.id = id;
 	}
 
-	@Environment(EnvType.CLIENT)
+	@net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
 	private double gazeTimer = 0;
-	@Environment(EnvType.CLIENT)
+	@net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
 	private double gazeWaiting = 0;
 
 	@Override
-	@Environment(EnvType.CLIENT)
+	@net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
 	public void setup(ShaderInstance shader) {
 
 		if (CornerConfig.get().christmas.isChristmas()) {

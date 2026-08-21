@@ -6,7 +6,7 @@ import net.ludocrypt.corners.init.CornerPaintings;
 import net.ludocrypt.corners.init.CornerSoundEvents;
 import net.ludocrypt.corners.mixin.AbstractDecorationEntityAccessor;
 import net.ludocrypt.corners.mixin.PaintingEntityAccessor;
-import net.ludocrypt.limlib.api.LimlibTravelling;
+import org.dimdev.limlib.api.LimlibTravelling;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -27,7 +27,7 @@ public class DimensionalPaintingEntity extends Painting {
 	}
 
 	public static DimensionalPaintingEntity create(Level world, BlockPos pos) {
-		DimensionalPaintingEntity entity = new DimensionalPaintingEntity(CornerEntities.DIMENSIONAL_PAINTING_ENTITY, world);
+		DimensionalPaintingEntity entity = new DimensionalPaintingEntity(CornerEntities.DIMENSIONAL_PAINTING_ENTITY.get(), world);
 		entity.pos = pos;
 		return entity;
 	}
@@ -80,7 +80,7 @@ public class DimensionalPaintingEntity extends Painting {
 						ServerLevel world = player.getServer().getLevel(variant.dimension().apply(spe, this));
                         DimensionTransition teleportTarget = variant.teleportTarget().apply(world, spe, this);
 						LimlibTravelling
-							.travelTo(spe, world, teleportTarget, CornerSoundEvents.PAINTING_PORTAL_TRAVEL.value(), 0.25F,
+							.travelTo(spe, world, teleportTarget, CornerSoundEvents.PAINTING_PORTAL_TRAVEL.get(), 0.25F,
 								world.getRandom().nextFloat() * 0.4F + 0.8F);
 					}
 

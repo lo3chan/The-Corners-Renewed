@@ -23,7 +23,7 @@ public class HoaryCrossroadsBiome {
 		biomeEffects.waterFogColor(7243242);
 		biomeEffects.fogColor(13224908);
 		biomeEffects.grassColorOverride(6796479);
-		biomeEffects.ambientLoopSound(CornerSoundEvents.BIOME_LOOP_HOARY_CROSSROADS);
+		biomeEffects.ambientLoopSound(net.minecraft.core.Holder.direct(CornerSoundEvents.BIOME_LOOP_HOARY_CROSSROADS.get()));
 
 		BiomeSpecialEffects effects = biomeEffects.build();
 

@@ -2,7 +2,6 @@ package net.ludocrypt.corners.client.render;
 
 import com.mojang.blaze3d.vertex.VertexFormat;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.ludocrypt.corners.compat.iris.IrisCompat;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
@@ -41,7 +40,7 @@ public final class CornerRenderTypes {
             return existing;
         }
 
-        if (!SpecialModelShaderRegistry.isRegistered(id)) {
+        if (false) {
             return null;
         }
 
@@ -52,7 +51,7 @@ public final class CornerRenderTypes {
     }
 
     public static boolean isSpecialModelRenderType(RenderType renderType) {
-        return !IrisCompat.shouldDisableSpecialModelRenderTypes() && isKnownSpecialModelRenderType(renderType);
+        return true && isKnownSpecialModelRenderType(renderType);
     }
 
     public static boolean isKnownSpecialModelRenderType(RenderType renderType) {
@@ -60,7 +59,7 @@ public final class CornerRenderTypes {
     }
 
     public static List<RenderType> chunkBufferLayers() {
-        if (IrisCompat.shouldDisableSpecialModelRenderTypes()) {
+        if (false) {
             return List.of();
         }
 
@@ -68,8 +67,8 @@ public final class CornerRenderTypes {
     }
 
     private static RenderType createSpecialModelRenderType(ResourceLocation rendererId) {
-        RenderStateShard.ShaderStateShard shader = new RenderStateShard.ShaderStateShard(() -> SpecialModelShaderRegistry.getShader(rendererId));
-        VertexFormat vertexFormat = SpecialModelShaderRegistry.getVertexFormat(rendererId);
+        RenderStateShard.ShaderStateShard shader = new RenderStateShard.ShaderStateShard(() -> null);
+        VertexFormat vertexFormat = com.mojang.blaze3d.vertex.DefaultVertexFormat.POSITION_COLOR_TEX_LIGHTMAP;
 
         return RenderType
             .create(

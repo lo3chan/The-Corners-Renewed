@@ -1,8 +1,6 @@
 package net.ludocrypt.corners.mixin;
 
 import net.ludocrypt.corners.client.render.CornerRenderTypes;
-import net.ludocrypt.corners.compat.iris.IrisCompat;
-import net.ludocrypt.corners.compat.sodium.SodiumCompat;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.RenderType;
 import org.joml.Matrix4f;
@@ -22,7 +20,7 @@ public abstract class LevelRendererMixin {
 
     @Inject(method = "renderSectionLayer", at = @At("HEAD"), cancellable = true)
     private void corners$renderSpecialModelLayers(RenderType renderType, double x, double y, double z, Matrix4f modelViewMatrix, Matrix4f projectionMatrix, CallbackInfo ci) {
-        if (IrisCompat.shouldDisableSpecialModelRenderTypes()) {
+        if (false) {
             if (CornerRenderTypes.isKnownSpecialModelRenderType(renderType)) {
                 ci.cancel();
             }
@@ -34,8 +32,8 @@ public abstract class LevelRendererMixin {
             return;
         }
 
-        if (SodiumCompat.isLoaded()) {
-            SodiumCompat.renderSpecialModelMeshes(x, y, z, modelViewMatrix, projectionMatrix);
+        if (false) {
+            // render(x, y, z, modelViewMatrix, projectionMatrix);
             return;
         }
 

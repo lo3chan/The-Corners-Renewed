@@ -45,18 +45,15 @@ public class RailingBlock extends FenceBlock {
 		this.shapeByIndex = this.makeShapes(2.0F, 2.0F, 12.0F, 0.0f, 12.0F);
 	}
 
-	@Override
 	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(LAYERS);
 	}
 
-	@Override
 	protected boolean isSameFence(BlockState state) {
 		return state.getBlock() instanceof RailingBlock;
 	}
 
-	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes
 			.or(this.shapeByIndex[this.getAABBIndex(state)],
@@ -65,7 +62,6 @@ public class RailingBlock extends FenceBlock {
 				Block.box(7.0D, 13.0D, 7.0D, 9.0D, 14.0D, 9.0D), LAYERS_TO_OUTLINE[state.getValue(LAYERS)]);
 	}
 
-	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes
 			.or(this.shapeByIndex[this.getAABBIndex(state)],
@@ -73,13 +69,12 @@ public class RailingBlock extends FenceBlock {
 	}
 
 
-    @Override
     protected ItemInteractionResult useItemOn(ItemStack itemStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult hit) {
 
 		if (itemStack.getItem() == Items.SNOW) {
 
-			if (state.getValue(LAYERS) < 8 && Blocks.SNOW.canSurvive(Blocks.SNOW.defaultBlockState(), world, pos)) {
+			if (state.getValue(LAYERS) < 8 && Blocks.SNOW.defaultBlockState().canSurvive(world, pos)) {
 				world.setBlockAndUpdate(pos, state.cycle(LAYERS));
 				world.playSound(null, pos, SoundEvents.SNOW_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
 				return ItemInteractionResult.SUCCESS;
@@ -90,7 +85,6 @@ public class RailingBlock extends FenceBlock {
 		return super.useItemOn(itemStack, state, world, pos, player, hand, hit);
 	}
 
-	@Override
 	public void destroy(LevelAccessor world, BlockPos pos, BlockState state) {
 		super.destroy(world, pos, state);
 
@@ -102,7 +96,6 @@ public class RailingBlock extends FenceBlock {
 
 	}
 
-	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext ctx) {
 		BlockState placementState = super.getStateForPlacement(ctx);
 		BlockState state = ctx.getLevel().getBlockState(ctx.getClickedPos());
@@ -114,13 +107,12 @@ public class RailingBlock extends FenceBlock {
 		return placementState;
 	}
 
-	@Override
 	@SuppressWarnings("deprecation")
 	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
 			LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
 		BlockState defaultState = super.updateShape(state, direction, neighborState, world, pos, neighborPos);
 
-		if (state.getValue(LAYERS) > 0 && !Blocks.SNOW.canSurvive(Blocks.SNOW.defaultBlockState(), world, pos)) {
+		if (state.getValue(LAYERS) > 0 && !Blocks.SNOW.defaultBlockState().canSurvive(world, pos)) {
 			defaultState = defaultState.setValue(LAYERS, 0);
 		}
 

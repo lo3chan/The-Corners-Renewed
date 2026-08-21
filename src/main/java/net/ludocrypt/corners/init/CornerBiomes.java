@@ -17,6 +17,8 @@ import java.util.function.Supplier;
 
 public class CornerBiomes {
 
+    public static final DeferredRegister<MapCodec<? extends ChunkGenerator>> CHUNK_GENERATORS = DeferredRegister.create(Registries.CHUNK_GENERATOR, "corners");
+
     public static final ResourceKey<Biome> YEARNING_CANAL_BIOME = ResourceKey
             .create(Registries.BIOME, TheCorners.id(CornerWorlds.YEARNING_CANAL));
     public static final ResourceKey<Biome> COMMUNAL_CORRIDORS_BIOME = ResourceKey
@@ -30,13 +32,12 @@ public class CornerBiomes {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_SAPLING_GAIA_TREE_FEATURE = ResourceKey
             .create(Registries.CONFIGURED_FEATURE, TheCorners.id("gaia_sapling"));
 
-    public static final DeferredRegister<MapCodec<? extends ChunkGenerator>> CHUNK_GENERATORS = DeferredRegister.create(Registries.CHUNK_GENERATOR, "corners");
-
     public static final Supplier<MapCodec<YearningCanalChunkGenerator>> YEARNING_CANAL_CHUNK_GENERATOR = CHUNK_GENERATORS.register("yearning_canal_chunk_generator", () -> YearningCanalChunkGenerator.CODEC);
     public static final Supplier<MapCodec<CommunalCorridorsChunkGenerator>> COMMUNAL_CORRIDORS_CHUNK_GENERATOR = CHUNK_GENERATORS.register("communal_corridors_chunk_generator", () -> CommunalCorridorsChunkGenerator.CODEC);
     public static final Supplier<MapCodec<HoaryCrossroadsChunkGenerator>> HOARY_CROSSROADS_CHUNK_GENERATOR = CHUNK_GENERATORS.register("hoary_crossroads_chunk_generator", () -> HoaryCrossroadsChunkGenerator.CODEC);
 
-    public static void init(IEventBus modEventBus) {
-        CHUNK_GENERATORS.register(modEventBus);
+    public static void register(IEventBus bus) {
+        CHUNK_GENERATORS.register(bus);
     }
 }
+

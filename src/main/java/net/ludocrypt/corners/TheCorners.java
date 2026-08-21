@@ -11,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import net.ludocrypt.corners.client.render.StrongPostEffect;
 import net.ludocrypt.corners.config.CornerConfig;
 import net.ludocrypt.corners.init.CornerBiomes;
 import net.ludocrypt.corners.init.CornerBlocks;
@@ -19,12 +18,8 @@ import net.ludocrypt.corners.init.CornerEntities;
 import net.ludocrypt.corners.init.CornerPaintings;
 import net.ludocrypt.corners.init.CornerRadioRegistry;
 import net.ludocrypt.corners.init.CornerSoundEvents;
-import net.ludocrypt.corners.packet.ClientToServerPackets;
-import net.ludocrypt.corners.packet.ServerToClientPackets;
-import net.ludocrypt.limlib.api.effects.post.PostEffect;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 
 @Mod("corners")
 public class TheCorners {
@@ -35,7 +30,6 @@ public class TheCorners {
 
     public TheCorners(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::registerPayloads);
 
         CornerBlocks.BLOCKS.register(modEventBus);
         CornerBlocks.ITEMS.register(modEventBus);
@@ -43,11 +37,10 @@ public class TheCorners {
         CornerPaintings.PAINTING_VARIANTS.register(modEventBus);
         CornerSoundEvents.SOUND_EVENTS.register(modEventBus);
         CornerRadioRegistry.RADIOS.register(modEventBus);
+        CornerBiomes.register(modEventBus);
 
         AutoConfig.register(CornerConfig.class, GsonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(CornerConfig.class).getConfig();
-
-        CornerBiomes.init(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -55,18 +48,12 @@ public class TheCorners {
             CornerBlocks.registerDispenserBehaviors();
             CornerBlocks.registerStrippables();
             CornerBlocks.registerFlammables();
-            // Builtin registries that aren't deferred registered natively (or handled by limlib)
-            Registry.register(PostEffect.REGISTRY, id("strong_shader"), StrongPostEffect.CODEC);
             Registry.register(BuiltInRegistries.FEATURE, CornerBiomes.GAIA_TREE_FEATURE, new GaiaTreeFeature(NoneFeatureConfiguration.CODEC));
         });
-    }
-
-    private void registerPayloads(RegisterPayloadHandlersEvent event) {
-        ClientToServerPackets.registerPayloads(event);
-        ServerToClientPackets.registerPayloads(event);
     }
 
     public static ResourceLocation id(String id) {
         return ResourceLocation.fromNamespaceAndPath("corners", id);
     }
 }
+

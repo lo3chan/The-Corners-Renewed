@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.google.common.collect.Maps;
 
-import net.ludocrypt.limlib.api.world.maze.MazeComponent;
+import org.dimdev.limlib.api.world.maze.MazeComponent;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;

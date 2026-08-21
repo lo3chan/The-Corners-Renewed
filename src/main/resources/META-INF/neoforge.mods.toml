@@ -1,5 +1,5 @@
-modLoader="java"
-loaderVersion="[21,)"
+modLoader="javafml"
+loaderVersion="[4,)"
 license="LGPL-3.0-or-later"
 
 [[mods]]
@@ -26,3 +26,9 @@ type="required"
 versionRange="*"
 ordering="NONE"
 side="BOTH"
+
+[[mixins]]
+config = "corners.mixins.json"
+
+[[mixins]]
+config = "corners.client.mixins.json"

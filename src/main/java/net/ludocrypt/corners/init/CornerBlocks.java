@@ -32,74 +32,74 @@ public class CornerBlocks {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "corners");
 
     public static final DeferredBlock<Block> STONE_PILLAR = BLOCKS.register("stone_pillar", () -> new ThinPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)));
-    public static final DeferredItem<Item> STONE_PILLAR_ITEM = ITEMS.registerSimpleBlockItem("stone_pillar", STONE_PILLAR);
+    public static final DeferredItem<BlockItem> STONE_PILLAR_ITEM = ITEMS.registerSimpleBlockItem("stone_pillar", STONE_PILLAR);
 
     public static final DeferredBlock<RadioBlock> GROWN_RADIO = BLOCKS.register("grown_radio", () -> new RadioBlock(null, null, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final DeferredItem<Item> GROWN_RADIO_ITEM = ITEMS.registerSimpleBlockItem("grown_radio", GROWN_RADIO);
+    public static final DeferredItem<BlockItem> GROWN_RADIO_ITEM = ITEMS.registerSimpleBlockItem("grown_radio", GROWN_RADIO);
 
     public static final DeferredBlock<RadioBlock> BROKEN_RADIO = BLOCKS.register("broken_radio", () -> new RadioBlock(null, GROWN_RADIO.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final DeferredItem<Item> BROKEN_RADIO_ITEM = ITEMS.registerSimpleBlockItem("broken_radio", BROKEN_RADIO);
+    public static final DeferredItem<BlockItem> BROKEN_RADIO_ITEM = ITEMS.registerSimpleBlockItem("broken_radio", BROKEN_RADIO);
 
     public static final DeferredBlock<RadioBlock> WOODEN_RADIO = BLOCKS.register("wooden_radio", () -> new RadioBlock(Items.GOLD_INGOT, BROKEN_RADIO.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final DeferredItem<Item> WOODEN_RADIO_ITEM = ITEMS.registerSimpleBlockItem("wooden_radio", WOODEN_RADIO);
+    public static final DeferredItem<BlockItem> WOODEN_RADIO_ITEM = ITEMS.registerSimpleBlockItem("wooden_radio", WOODEN_RADIO);
 
     public static final DeferredBlock<RadioBlock> TUNED_RADIO = BLOCKS.register("tuned_radio", () -> new RadioBlock(Items.AMETHYST_SHARD, BROKEN_RADIO.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final DeferredItem<Item> TUNED_RADIO_ITEM = ITEMS.registerSimpleBlockItem("tuned_radio", TUNED_RADIO);
+    public static final DeferredItem<BlockItem> TUNED_RADIO_ITEM = ITEMS.registerSimpleBlockItem("tuned_radio", TUNED_RADIO);
 
     public static final DeferredBlock<Block> DRYWALL = BLOCKS.register("drywall", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-    public static final DeferredItem<Item> DRYWALL_ITEM = ITEMS.registerSimpleBlockItem("drywall", DRYWALL);
+    public static final DeferredItem<BlockItem> DRYWALL_ITEM = ITEMS.registerSimpleBlockItem("drywall", DRYWALL);
 
     public static final DeferredBlock<Block> NYLON_FIBER_BLOCK = BLOCKS.register("nylon_fiber_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
-    public static final DeferredItem<Item> NYLON_FIBER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("nylon_fiber_block", NYLON_FIBER_BLOCK);
+    public static final DeferredItem<BlockItem> NYLON_FIBER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("nylon_fiber_block", NYLON_FIBER_BLOCK);
 
     public static final DeferredBlock<Block> NYLON_FIBER_STAIRS = BLOCKS.register("nylon_fiber_stairs", () -> new CornerStairsBlock(NYLON_FIBER_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
-    public static final DeferredItem<Item> NYLON_FIBER_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("nylon_fiber_stairs", NYLON_FIBER_STAIRS);
+    public static final DeferredItem<BlockItem> NYLON_FIBER_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("nylon_fiber_stairs", NYLON_FIBER_STAIRS);
 
     public static final DeferredBlock<Block> NYLON_FIBER_SLAB = BLOCKS.register("nylon_fiber_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
-    public static final DeferredItem<Item> NYLON_FIBER_SLAB_ITEM = ITEMS.registerSimpleBlockItem("nylon_fiber_slab", NYLON_FIBER_SLAB);
+    public static final DeferredItem<BlockItem> NYLON_FIBER_SLAB_ITEM = ITEMS.registerSimpleBlockItem("nylon_fiber_slab", NYLON_FIBER_SLAB);
 
     public static final DeferredBlock<Block> SNOWY_GLASS = BLOCKS.register("snowy_glass", () -> new SkyboxGlassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).lightLevel(state -> 3)));
-    public static final DeferredItem<Item> SNOWY_GLASS_ITEM = ITEMS.registerSimpleBlockItem("snowy_glass", SNOWY_GLASS);
+    public static final DeferredItem<BlockItem> SNOWY_GLASS_ITEM = ITEMS.registerSimpleBlockItem("snowy_glass", SNOWY_GLASS);
 
     public static final DeferredBlock<Block> SNOWY_GLASS_PANE = BLOCKS.register("snowy_glass_pane", () -> new SkyboxGlassPaneBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE).lightLevel(state -> 3)));
-    public static final DeferredItem<Item> SNOWY_GLASS_PANE_ITEM = ITEMS.registerSimpleBlockItem("snowy_glass_pane", SNOWY_GLASS_PANE);
+    public static final DeferredItem<BlockItem> SNOWY_GLASS_PANE_ITEM = ITEMS.registerSimpleBlockItem("snowy_glass_pane", SNOWY_GLASS_PANE);
 
     public static final DeferredBlock<Block> SNOWY_GLASS_SLAB = BLOCKS.register("snowy_glass_slab", () -> new SkyboxGlassSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).lightLevel(state -> 3)));
-    public static final DeferredItem<Item> SNOWY_GLASS_SLAB_ITEM = ITEMS.registerSimpleBlockItem("snowy_glass_slab", SNOWY_GLASS_SLAB);
+    public static final DeferredItem<BlockItem> SNOWY_GLASS_SLAB_ITEM = ITEMS.registerSimpleBlockItem("snowy_glass_slab", SNOWY_GLASS_SLAB);
 
     public static final DeferredBlock<Block> DARK_RAILING = BLOCKS.register("dark_railing", () -> new RailingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
-    public static final DeferredItem<Item> DARK_RAILING_ITEM = ITEMS.registerSimpleBlockItem("dark_railing", DARK_RAILING);
+    public static final DeferredItem<BlockItem> DARK_RAILING_ITEM = ITEMS.registerSimpleBlockItem("dark_railing", DARK_RAILING);
 
     public static final DeferredBlock<Block> DEEP_BOOKSHELF = BLOCKS.register("deep_bookshelf", () -> new ChiseledBookShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final DeferredItem<Item> DEEP_BOOKSHELF_ITEM = ITEMS.registerSimpleBlockItem("deep_bookshelf", DEEP_BOOKSHELF);
+    public static final DeferredItem<BlockItem> DEEP_BOOKSHELF_ITEM = ITEMS.registerSimpleBlockItem("deep_bookshelf", DEEP_BOOKSHELF);
 
     // Gaia
     public static final BlockSetType GAIA_SET_TYPE = BlockSetType.register(new BlockSetType("corners:gaia"));
     public static final WoodType GAIA_SIGN_TYPE = WoodType.register(new WoodType("corners:gaia", GAIA_SET_TYPE));
 
     public static final DeferredBlock<Block> GAIA_PLANKS = BLOCKS.register("gaia_planks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)));
-    public static final DeferredItem<Item> GAIA_PLANKS_ITEM = ITEMS.registerSimpleBlockItem("gaia_planks", GAIA_PLANKS);
+    public static final DeferredItem<BlockItem> GAIA_PLANKS_ITEM = ITEMS.registerSimpleBlockItem("gaia_planks", GAIA_PLANKS);
 
     public static final DeferredBlock<Block> CARVED_GAIA = BLOCKS.register("carved_gaia", () -> new OrientableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)));
-    public static final DeferredItem<Item> CARVED_GAIA_ITEM = ITEMS.registerSimpleBlockItem("carved_gaia", CARVED_GAIA);
+    public static final DeferredItem<BlockItem> CARVED_GAIA_ITEM = ITEMS.registerSimpleBlockItem("carved_gaia", CARVED_GAIA);
 
     public static final DeferredBlock<Block> GAIA_SAPLING = BLOCKS.register("gaia_sapling", () -> new SaplingBlock(GaiaSaplingGenerator.GAIA, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SAPLING).mapColor(MapColor.GOLD)));
-    public static final DeferredItem<Item> GAIA_SAPLING_ITEM = ITEMS.registerSimpleBlockItem("gaia_sapling", GAIA_SAPLING);
+    public static final DeferredItem<BlockItem> GAIA_SAPLING_ITEM = ITEMS.registerSimpleBlockItem("gaia_sapling", GAIA_SAPLING);
 
     public static final DeferredBlock<Block> GAIA_LOG = BLOCKS.register("gaia_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LOG).mapColor(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MapColor.PODZOL : MapColor.GOLD)));
-    public static final DeferredItem<Item> GAIA_LOG_ITEM = ITEMS.registerSimpleBlockItem("gaia_log", GAIA_LOG);
+    public static final DeferredItem<BlockItem> GAIA_LOG_ITEM = ITEMS.registerSimpleBlockItem("gaia_log", GAIA_LOG);
 
     public static final DeferredBlock<Block> STRIPPED_GAIA_LOG = BLOCKS.register("stripped_gaia_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_SPRUCE_LOG).mapColor(MapColor.PODZOL)));
-    public static final DeferredItem<Item> STRIPPED_GAIA_LOG_ITEM = ITEMS.registerSimpleBlockItem("stripped_gaia_log", STRIPPED_GAIA_LOG);
+    public static final DeferredItem<BlockItem> STRIPPED_GAIA_LOG_ITEM = ITEMS.registerSimpleBlockItem("stripped_gaia_log", STRIPPED_GAIA_LOG);
 
     public static final DeferredBlock<Block> GAIA_WOOD = BLOCKS.register("gaia_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WOOD).mapColor(MapColor.GOLD)));
-    public static final DeferredItem<Item> GAIA_WOOD_ITEM = ITEMS.registerSimpleBlockItem("gaia_wood", GAIA_WOOD);
+    public static final DeferredItem<BlockItem> GAIA_WOOD_ITEM = ITEMS.registerSimpleBlockItem("gaia_wood", GAIA_WOOD);
 
     public static final DeferredBlock<Block> STRIPPED_GAIA_WOOD = BLOCKS.register("stripped_gaia_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_SPRUCE_WOOD)));
-    public static final DeferredItem<Item> STRIPPED_GAIA_WOOD_ITEM = ITEMS.registerSimpleBlockItem("stripped_gaia_wood", STRIPPED_GAIA_WOOD);
+    public static final DeferredItem<BlockItem> STRIPPED_GAIA_WOOD_ITEM = ITEMS.registerSimpleBlockItem("stripped_gaia_wood", STRIPPED_GAIA_WOOD);
 
     public static final DeferredBlock<Block> GAIA_LEAVES = BLOCKS.register("gaia_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LEAVES)));
-    public static final DeferredItem<Item> GAIA_LEAVES_ITEM = ITEMS.registerSimpleBlockItem("gaia_leaves", GAIA_LEAVES);
+    public static final DeferredItem<BlockItem> GAIA_LEAVES_ITEM = ITEMS.registerSimpleBlockItem("gaia_leaves", GAIA_LEAVES);
 
     public static final DeferredBlock<Block> GAIA_SIGN = BLOCKS.register("gaia_sign", () -> new StandingSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN)));
     public static final DeferredBlock<Block> GAIA_WALL_SIGN = BLOCKS.register("gaia_wall_sign", () -> new WallSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WALL_SIGN).dropsLike(GAIA_SIGN.get())));
@@ -108,27 +108,27 @@ public class CornerBlocks {
     public static final DeferredBlock<Block> GAIA_WALL_HANGING_SIGN = BLOCKS.register("gaia_wall_hanging_sign", () -> new WallHangingSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WALL_HANGING_SIGN).dropsLike(GAIA_HANGING_SIGN.get())));
 
     public static final DeferredBlock<Block> GAIA_PRESSURE_PLATE = BLOCKS.register("gaia_pressure_plate", () -> new PressurePlateBlock(GAIA_SET_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PRESSURE_PLATE)));
-    public static final DeferredItem<Item> GAIA_PRESSURE_PLATE_ITEM = ITEMS.registerSimpleBlockItem("gaia_pressure_plate", GAIA_PRESSURE_PLATE);
+    public static final DeferredItem<BlockItem> GAIA_PRESSURE_PLATE_ITEM = ITEMS.registerSimpleBlockItem("gaia_pressure_plate", GAIA_PRESSURE_PLATE);
 
     public static final DeferredBlock<Block> GAIA_TRAPDOOR = BLOCKS.register("gaia_trapdoor", () -> new TrapDoorBlock(GAIA_SET_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_TRAPDOOR)));
-    public static final DeferredItem<Item> GAIA_TRAPDOOR_ITEM = ITEMS.registerSimpleBlockItem("gaia_trapdoor", GAIA_TRAPDOOR);
+    public static final DeferredItem<BlockItem> GAIA_TRAPDOOR_ITEM = ITEMS.registerSimpleBlockItem("gaia_trapdoor", GAIA_TRAPDOOR);
 
-    public static final DeferredBlock<Block> POTTED_GAIA_SAPLING = BLOCKS.register("potted_gaia_sapling", () -> Blocks.flowerPot(GAIA_SAPLING.get()));
+    public static final DeferredBlock<Block> POTTED_GAIA_SAPLING = BLOCKS.register("potted_gaia_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GAIA_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)));
 
-    public static final DeferredBlock<Block> GAIA_BUTTON = BLOCKS.register("gaia_button", () -> Blocks.woodenButton(GAIA_SET_TYPE));
-    public static final DeferredItem<Item> GAIA_BUTTON_ITEM = ITEMS.registerSimpleBlockItem("gaia_button", GAIA_BUTTON);
+    public static final DeferredBlock<Block> GAIA_BUTTON = BLOCKS.register("gaia_button", () -> new ButtonBlock(GAIA_SET_TYPE, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+    public static final DeferredItem<BlockItem> GAIA_BUTTON_ITEM = ITEMS.registerSimpleBlockItem("gaia_button", GAIA_BUTTON);
 
     public static final DeferredBlock<Block> GAIA_STAIRS = BLOCKS.register("gaia_stairs", () -> new StairBlock(GAIA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(GAIA_PLANKS.get())));
-    public static final DeferredItem<Item> GAIA_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("gaia_stairs", GAIA_STAIRS);
+    public static final DeferredItem<BlockItem> GAIA_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("gaia_stairs", GAIA_STAIRS);
 
     public static final DeferredBlock<Block> GAIA_SLAB = BLOCKS.register("gaia_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SLAB)));
-    public static final DeferredItem<Item> GAIA_SLAB_ITEM = ITEMS.registerSimpleBlockItem("gaia_slab", GAIA_SLAB);
+    public static final DeferredItem<BlockItem> GAIA_SLAB_ITEM = ITEMS.registerSimpleBlockItem("gaia_slab", GAIA_SLAB);
 
     public static final DeferredBlock<Block> GAIA_FENCE_GATE = BLOCKS.register("gaia_fence_gate", () -> new FenceGateBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE)));
-    public static final DeferredItem<Item> GAIA_FENCE_GATE_ITEM = ITEMS.registerSimpleBlockItem("gaia_fence_gate", GAIA_FENCE_GATE);
+    public static final DeferredItem<BlockItem> GAIA_FENCE_GATE_ITEM = ITEMS.registerSimpleBlockItem("gaia_fence_gate", GAIA_FENCE_GATE);
 
     public static final DeferredBlock<Block> GAIA_FENCE = BLOCKS.register("gaia_fence", () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE)));
-    public static final DeferredItem<Item> GAIA_FENCE_ITEM = ITEMS.registerSimpleBlockItem("gaia_fence", GAIA_FENCE);
+    public static final DeferredItem<BlockItem> GAIA_FENCE_ITEM = ITEMS.registerSimpleBlockItem("gaia_fence", GAIA_FENCE);
 
     public static final DeferredBlock<Block> GAIA_DOOR = BLOCKS.register("gaia_door", () -> new DoorBlock(GAIA_SET_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_DOOR)));
     public static final DeferredItem<Item> GAIA_DOOR_ITEM = ITEMS.register("gaia_door", () -> new DoubleHighBlockItem(GAIA_DOOR.get(), new Item.Properties()));

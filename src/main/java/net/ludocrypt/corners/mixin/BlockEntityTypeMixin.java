@@ -22,8 +22,8 @@ public class BlockEntityTypeMixin<T extends BlockEntity> {
 		if (id.equals(BlockEntityType.getKey(BlockEntityType.SIGN)) || id
 			.equals(BlockEntityType.getKey(BlockEntityType.HANGING_SIGN))) {
 
-			if (state.getBlock() == CornerBlocks.GAIA_SIGN || state.getBlock() == CornerBlocks.GAIA_HANGING_SIGN || state
-				.getBlock() == CornerBlocks.GAIA_WALL_HANGING_SIGN || state.getBlock() == CornerBlocks.GAIA_WALL_SIGN) {
+			if (state.getBlock() == CornerBlocks.GAIA_SIGN.get() || state.getBlock() == CornerBlocks.GAIA_HANGING_SIGN.get() || state
+				.getBlock() == CornerBlocks.GAIA_WALL_HANGING_SIGN.get() || state.getBlock() == CornerBlocks.GAIA_WALL_SIGN.get()) {
 				ci.setReturnValue(true);
 			}
 

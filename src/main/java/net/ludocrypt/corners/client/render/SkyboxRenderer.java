@@ -3,8 +3,6 @@ package net.ludocrypt.corners.client.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.ludocrypt.corners.TheCorners;
 import net.ludocrypt.corners.mixin.GameRendererAccessor;
 import net.minecraft.client.Camera;
@@ -15,7 +13,7 @@ import org.joml.Matrix4f;
 public record SkyboxRenderer(String id) implements ShaderCallback {
 
     @Override
-    @Environment(EnvType.CLIENT)
+    @net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
     public void setup(ShaderInstance shader) {
 
         for (int i = 0; i < 6; i++) {
@@ -49,7 +47,7 @@ public record SkyboxRenderer(String id) implements ShaderCallback {
     }
 
 //	@Override
-//	@Environment(EnvType.CLIENT)
+//	@net.neoforged.api.distmarker.OnlyIn(net.neoforged.api.distmarker.Dist.CLIENT)
 //	public MutableQuad modifyQuad(RenderChunkRegion chunkRenderRegion, BlockPos pos, BlockState state, BakedModel model,
 //			BakedQuad quadIn, long modelSeed, MutableQuad quad) {
 //		quad.getV1().setUv(new Vec2(0.0F, 0.0F));

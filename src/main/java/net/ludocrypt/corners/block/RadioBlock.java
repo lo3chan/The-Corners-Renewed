@@ -2,8 +2,6 @@ package net.ludocrypt.corners.block;
 
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
-import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.ludocrypt.corners.packet.PlayRadio;
 import net.ludocrypt.corners.world.feature.GaiaSaplingGenerator;
 import net.minecraft.core.BlockPos;
@@ -189,8 +187,8 @@ public class RadioBlock extends HorizontalDirectionalBlock {
 		if (!world.isClientSide) {
             var playRadio = new PlayRadio(pos, powered);
 
-			for (ServerPlayer serverPlayer : PlayerLookup.tracking((ServerLevel) world, pos)) {
-				ServerPlayNetworking.send(serverPlayer, playRadio);
+			for (ServerPlayer serverPlayer : ((ServerLevel)world).players()) {
+				net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(serverPlayer, playRadio);
 			}
 
 		}

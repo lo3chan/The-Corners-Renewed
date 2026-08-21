@@ -10,13 +10,13 @@ import net.ludocrypt.corners.init.CornerBlocks;
 import net.ludocrypt.corners.init.CornerWorlds;
 import net.ludocrypt.corners.world.maze.GrandMazeGenerator;
 import net.ludocrypt.corners.world.maze.StraightDepthFirstMaze;
-import net.ludocrypt.limlib.api.world.LimlibHelper;
-import net.ludocrypt.limlib.api.world.Manipulation;
-import net.ludocrypt.limlib.api.world.NbtGroup;
-import net.ludocrypt.limlib.api.world.chunk.AbstractNbtChunkGenerator;
-import net.ludocrypt.limlib.api.world.maze.*;
-import net.ludocrypt.limlib.api.world.maze.MazeComponent.CellState;
-import net.ludocrypt.limlib.api.world.maze.MazeComponent.Vec2i;
+import org.dimdev.limlib.api.world.LimlibHelper;
+import org.dimdev.limlib.api.world.Manipulation;
+import org.dimdev.limlib.api.world.NbtGroup;
+import org.dimdev.limlib.api.world.chunk.AbstractNbtChunkGenerator;
+import org.dimdev.limlib.api.world.maze.*;
+import org.dimdev.limlib.api.world.maze.MazeComponent.CellState;
+import org.dimdev.limlib.api.world.maze.MazeComponent.Vec2i;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
@@ -46,7 +46,7 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 
 	public static final MapCodec<CommunalCorridorsChunkGenerator> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
 		return instance.group(BiomeSource.CODEC.fieldOf("biome_source").stable().forGetter((chunkGenerator) -> {
-			return chunkGenerator.biomeSource;
+			return chunkGenerator.getBiomeSource();
 		}), NbtGroup.CODEC.fieldOf("group").stable().forGetter((chunkGenerator) -> {
 			return chunkGenerator.nbtGroup;
 		}), Codec.INT.fieldOf("maze_width").stable().forGetter((chunkGenerator) -> {
@@ -127,7 +127,7 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 		return builder.build();
 	}
 
-	@Override
+
 	protected MapCodec<? extends ChunkGenerator> codec() {
 		return CODEC;
 	}
@@ -279,7 +279,7 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 		return maze;
 	}
 
-    @Override
+
     public CompletableFuture<ChunkAccess> populateNoise(WorldGenRegion region, ServerLevel serverLevel, ChunkGenerator generator, ChunkAccess chunk, Blender blender, RandomState randomState, StructureManager structureManager) {
         this.grandMazeGenerator
 			.generateMaze(new Vec2i(chunk.getPos().getWorldPosition()), region, this::newGrandMaze, this::decorateGrandCell);
@@ -496,7 +496,7 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 
 						for (int y = 0; y < 3; y++) {
 							region
-								.setBlock(pos.offset(x, 11 + y, z), CornerBlocks.DRYWALL.defaultBlockState(),
+								.setBlock(pos.offset(x, 11 + y, z), CornerBlocks.DRYWALL.get().defaultBlockState(),
 									Block.UPDATE_KNOWN_SHAPE, 0);
 						}
 
@@ -552,20 +552,20 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 
 	}
 
-	@Override
+
 	public int getPlacementRadius() {
 		return 2;
 	}
 
 
 
-	@Override
+
 	protected ResourceKey<LootTable> getContainerLootTable(RandomizableContainerBlockEntity container) {
 		return container.getBlockState().is(Blocks.CHEST) ? BuiltInLootTables.WOODLAND_MANSION
 				: BuiltInLootTables.SPAWN_BONUS_CHEST;
 	}
 
-	@Override
+
 	protected void modifyStructure(WorldGenRegion region, BlockPos pos, BlockState state, Optional<CompoundTag> nbt) {
 		super.modifyStructure(region, pos, state, nbt);
 
@@ -576,13 +576,13 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 				case 1:
 					region
 						.setBlock(pos,
-							CornerBlocks.TUNED_RADIO.defaultBlockState().setValue(RadioBlock.FACING, state.getValue(RadioBlock.FACING)),
+							CornerBlocks.TUNED_RADIO.get().defaultBlockState().setValue(RadioBlock.FACING, state.getValue(RadioBlock.FACING)),
 							Block.UPDATE_ALL, 1);
 					break;
 				case 2:
 					region
 						.setBlock(pos,
-							CornerBlocks.BROKEN_RADIO
+							CornerBlocks.BROKEN_RADIO.get()
 								.defaultBlockState()
 								.setValue(RadioBlock.FACING, state.getValue(RadioBlock.FACING)),
 							Block.UPDATE_ALL, 1);
@@ -609,7 +609,7 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 				.create(RandomSource.create(region.getSeed() + 5), 1, 0.2, 0.6, 0.7);
 
 			if (noise.getValue((pos.getX()) / scale, (pos.getZ()) / scale, (pos.getY()) / scale) > 0) {
-				BlockState deepState = RadioBlock.of(state, CornerBlocks.DEEP_BOOKSHELF);
+				BlockState deepState = RadioBlock.of(state, CornerBlocks.DEEP_BOOKSHELF.get());
 				region.setBlock(pos, deepState, Block.UPDATE_ALL, 0);
 
 				if (nbt.isPresent()) {
@@ -627,22 +627,22 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 
 	}
 
-	@Override
+
 	public int getGenDepth() {
 		return 128;
 	}
 
-	@Override
+
 	public int getSeaLevel() {
 		return 0;
 	}
 
-	@Override
+
 	public int getMinY() {
 		return 0;
 	}
 
-	@Override
+
 	public void addDebugScreenInfo(List<String> list, RandomState randomState, BlockPos pos) {
 	}
 

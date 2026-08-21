@@ -4,11 +4,11 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.ludocrypt.corners.TheCorners;
 import net.ludocrypt.corners.init.CornerWorlds;
-import net.ludocrypt.limlib.api.world.LimlibHelper;
-import net.ludocrypt.limlib.api.world.Manipulation;
-import net.ludocrypt.limlib.api.world.NbtGroup;
-import net.ludocrypt.limlib.api.world.NbtPlacerUtil;
-import net.ludocrypt.limlib.api.world.chunk.AbstractNbtChunkGenerator;
+import org.dimdev.limlib.api.world.LimlibHelper;
+import org.dimdev.limlib.api.world.Manipulation;
+import org.dimdev.limlib.api.world.NbtGroup;
+import org.dimdev.limlib.api.world.NbtPlacerUtil;
+import org.dimdev.limlib.api.world.chunk.AbstractNbtChunkGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -30,7 +30,7 @@ public class YearningCanalChunkGenerator extends AbstractNbtChunkGenerator {
 
     public static final MapCodec<YearningCanalChunkGenerator> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
         return instance.group(BiomeSource.CODEC.fieldOf("biome_source").stable().forGetter((chunkGenerator) -> {
-            return chunkGenerator.biomeSource;
+            return chunkGenerator.getBiomeSource();
         }), NbtGroup.CODEC.fieldOf("group").stable().forGetter((chunkGenerator) -> {
             return chunkGenerator.nbtGroup;
         })).apply(instance, instance.stable(YearningCanalChunkGenerator::new));
@@ -59,7 +59,7 @@ public class YearningCanalChunkGenerator extends AbstractNbtChunkGenerator {
             .build();
     }
 
-    @Override
+
     protected MapCodec<? extends ChunkGenerator> codec() {
         return CODEC;
     }
@@ -112,7 +112,7 @@ public class YearningCanalChunkGenerator extends AbstractNbtChunkGenerator {
         }
     }
 
-    @Override
+
     public CompletableFuture<ChunkAccess> populateNoise(WorldGenRegion region, ServerLevel serverLevel, ChunkGenerator generator, ChunkAccess chunk, Blender blender, RandomState randomState, StructureManager structureManager) {
         int max = Math.floorDiv(chunk.getMaxBuildHeight(), 54);
 
@@ -238,27 +238,27 @@ public class YearningCanalChunkGenerator extends AbstractNbtChunkGenerator {
         return CompletableFuture.completedFuture(chunk);
     }
 
-    @Override
+
     public int getPlacementRadius() {
         return 2;
     }
 
-    @Override
+
     public int getGenDepth() {
         return 2032;
     }
 
-    @Override
+
     public int getSeaLevel() {
         return 0;
     }
 
-    @Override
+
     public int getMinY() {
         return 0;
     }
 
-    @Override
+
     public void addDebugScreenInfo(List<String> list, RandomState randomState, BlockPos pos) {
     }
 
