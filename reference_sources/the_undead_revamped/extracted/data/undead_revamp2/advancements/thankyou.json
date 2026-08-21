@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "undead_revamp2:undeadstar"
+    },
+    "title": {
+      "translate": "advancements.thankyou.title"
+    },
+    "description": {
+      "translate": "advancements.thankyou.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "thankyou_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "undead_revamp2:undeadstar"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "undead_revamp2:theundeadchallenges"
+}

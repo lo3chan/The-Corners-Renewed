@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "lush_caves",
+  "features": "undead_revamp2:bostroxore",
+  "step": "underground_ores"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "undead_revamp2:thehunter",
+    "weight": 6,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

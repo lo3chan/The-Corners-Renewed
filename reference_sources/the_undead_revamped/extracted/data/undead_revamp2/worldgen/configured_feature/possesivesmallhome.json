@@ -1,0 +1,7 @@
+{
+  "type": "undead_revamp2:possesivesmallhome",
+  "config": {
+    "structure": "undead_revamp2:prismavillagies",
+    "ignored_blocks": "minecraft:air"
+  }
+}

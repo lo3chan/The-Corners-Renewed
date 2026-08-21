@@ -28,9 +28,12 @@ public abstract class EntityMixin {
 
 				if (!(((Entity) (Object) this) instanceof DimensionalPaintingEntity)) {
 
-					if (painting.getVariant().is(id -> id.location().getNamespace().equals("corners"))) {
+					boolean isCornersPainting = painting.getVariant().unwrapKey()
+						.map(k -> k.location().getNamespace().equals("corners"))
+						.orElse(false);
 
-						if (player.getItemInHand(hand).getItem().equals(Items.FLINT_AND_STEEL)) {
+					if (isCornersPainting) {
+						if (player.getItemInHand(hand).is(Items.FLINT_AND_STEEL)) {
 							DimensionalPaintingEntity dimensional = DimensionalPaintingEntity
 								.create(painting.level(), painting.getPos(),
 									painting.getDirection(), painting.getVariant());
@@ -41,11 +44,10 @@ public abstract class EntityMixin {
 									SoundSource.BLOCKS, 1.0F, 1.0F);
 							player
 								.getItemInHand(hand)
-                                    .hurtAndBreak(1, player, hand.equals(InteractionHand.MAIN_HAND) ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+								.hurtAndBreak(1, player, hand.equals(InteractionHand.MAIN_HAND) ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
 							discard();
 							ci.setReturnValue(InteractionResult.SUCCESS);
 						}
-
 					}
 
 				}

@@ -30,9 +30,7 @@
     "MusicTrackerMixin",
     "RenderTypeMixin",
     "SectionBufferBuilderPackMixin",
-    "SectionCompilerMixin",
     "ShaderInstanceMixin",
-    "SimpleBakedModelMixin",
     "SoundManagerAccessor",
     "WeightedBakedModelAccessor",
     "WorldRendererAccessor"

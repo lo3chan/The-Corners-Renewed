@@ -75,26 +75,19 @@ public class CaveDimensionSpawnRuleHandler {
         Entity entity = event.getEntity();
         boolean isModded = isCornersModdedMob(entity);
 
-        // 1. Never spawn modded mobs outside the Abyss / Cave dimension
-        if (!isCaveDimension && isModded) {
-            event.setCanceled(true);
-            return;
-        }
-
-        // 2. In the Cave Dimension, block all bats unconditionally
+        // 1. In the Cave Dimension, block all bats unconditionally
         if (isCaveDimension && entity instanceof Bat) {
             event.setCanceled(true);
             return;
         }
 
-        // 3. In the Cave Dimension, block all non-modded monsters EXCEPT Spider and Cave Spider
-        // Convert any non-modded monster spawns (e.g. from dungeon spawners or structures) into modded mobs
+        // 2. In the Cave Dimension, convert standard vanilla monsters into modded cave mobs
         if (isCaveDimension) {
             if (entity instanceof Mob mob && mob.getType().getCategory() == net.minecraft.world.entity.MobCategory.MONSTER) {
                 if (!(entity instanceof Spider || entity instanceof CaveSpider || isModded)) {
                     event.setCanceled(true);
 
-                    // If on server level and wasn't loaded from world save, replace with random modded mob
+                    // If on server level, replace with random modded mob
                     if (!level.isClientSide) {
                         EntityType<?> replacementType = getRandomModdedCaveMob(level.getRandom());
                         Entity replacement = replacementType.create(level);

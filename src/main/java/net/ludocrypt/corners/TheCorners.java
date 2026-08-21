@@ -34,20 +34,25 @@ public class TheCorners {
     public TheCorners(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerEntityAttributes);
+        modEventBus.addListener(this::registerSpawnPlacements);
 
         CornerBlocks.BLOCKS.register(modEventBus);
         CornerBlocks.ITEMS.register(modEventBus);
+        CornerBlocks.CREATIVE_MODE_TABS.register(modEventBus);
         CornerEntities.ENTITY_TYPES.register(modEventBus);
         CornerPaintings.PAINTING_VARIANTS.register(modEventBus);
         CornerSoundEvents.SOUND_EVENTS.register(modEventBus);
         CornerRadioRegistry.RADIOS.register(modEventBus);
         CornerBiomes.register(modEventBus);
 
+        CornerPaintings.init();
+
         AutoConfig.register(CornerConfig.class, GsonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(CornerConfig.class).getConfig();
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(CornerEntities.CORVUS.get(), net.ludocrypt.corners.entity.covrus.CorvusEntity.createLivingAttributes().build());
         event.put(CornerEntities.THE_SWARMER.get(), TheSwarmerEntity.createAttributes().build());
         event.put(CornerEntities.THE_LURKER.get(), TheLurkerEntity.createAttributes().build());
         event.put(CornerEntities.THE_HEAVY.get(), TheHeavyEntity.createAttributes().build());
@@ -95,6 +100,17 @@ public class TheCorners {
         event.put(CornerEntities.MAGGOT.get(), MaggotEntity.createAttributes().build());
         event.put(CornerEntities.THORNSHELL_CRAB.get(), ThornshellCrabEntity.createAttributes().build());
         event.put(CornerEntities.DIRE_HOUND_LEADER.get(), DireHoundLeaderEntity.createAttributes().build());
+        event.put(CornerEntities.CRYSTALLINE_GUARDIAN.get(), net.ludocrypt.corners.entity.CrystallineGuardianEntity.createAttributes().build());
+    }
+
+    private void registerSpawnPlacements(net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent event) {
+        event.register(
+            CornerEntities.CRYSTALLINE_GUARDIAN.get(),
+            net.minecraft.world.entity.SpawnPlacementTypes.NO_RESTRICTIONS,
+            net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            net.minecraft.world.entity.monster.Monster::checkMonsterSpawnRules,
+            net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent.Operation.REPLACE
+        );
     }
 
 
@@ -107,7 +123,6 @@ public class TheCorners {
             CornerBlocks.registerDispenserBehaviors();
             CornerBlocks.registerStrippables();
             CornerBlocks.registerFlammables();
-            Registry.register(BuiltInRegistries.FEATURE, CornerBiomes.GAIA_TREE_FEATURE, new GaiaTreeFeature(NoneFeatureConfiguration.CODEC));
         });
     }
 

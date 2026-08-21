@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    "aaa",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "undead_revamp2:undeadstar"
+    },
+    "b": {
+      "item": "minecraft:emerald_block"
+    },
+    "c": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "undead_revamp2:peakofsmite",
+    "count": 1
+  }
+}

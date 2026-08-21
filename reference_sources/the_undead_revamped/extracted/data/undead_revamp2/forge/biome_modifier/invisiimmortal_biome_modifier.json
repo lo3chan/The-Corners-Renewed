@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "undead_revamp2:invisiimmortal",
+    "weight": 7,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

@@ -124,5 +124,12 @@
   "entity.corners.corpse_fish": "Corpse Fish",
   "entity.corners.maggot": "Maggot",
   "entity.corners.thornshell_crab": "Thornshell Crab",
-  "entity.corners.dire_hound_leader": "Dire Hound Leader"
+  "entity.corners.dire_hound_leader": "Dire Hound Leader",
+  "biome.corners.crystal_void": "Crystal Void",
+  "painting.corners.crystal_fractal.title": "Crystal Fractal",
+  "itemGroup.corners.corners_tab": "The Corners",
+  "entity.corners.corvus": "Corvus",
+  "item.corners.corvus_spawn_egg": "Corvus Spawn Egg",
+  "entity.corners.crystalline_guardian": "Crystalline Guardian",
+  "item.corners.crystalline_guardian_spawn_egg": "Crystalline Guardian Spawn Egg"
 }

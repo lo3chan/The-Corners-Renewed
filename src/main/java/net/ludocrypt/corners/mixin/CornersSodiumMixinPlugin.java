@@ -13,7 +13,17 @@ public final class CornersSodiumMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        sodiumLoaded = net.neoforged.fml.ModList.get().isLoaded("sodium");
+        try {
+            if (net.neoforged.fml.loading.FMLLoader.getLoadingModList() != null) {
+                sodiumLoaded = net.neoforged.fml.loading.FMLLoader.getLoadingModList().getModFileById("sodium") != null;
+            } else if (net.neoforged.fml.ModList.get() != null) {
+                sodiumLoaded = net.neoforged.fml.ModList.get().isLoaded("sodium");
+            } else {
+                sodiumLoaded = false;
+            }
+        } catch (Throwable t) {
+            sodiumLoaded = false;
+        }
     }
 
     @Override

@@ -13,7 +13,17 @@ public final class CornersMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        irisLoaded = net.neoforged.fml.ModList.get().isLoaded("iris");
+        try {
+            if (net.neoforged.fml.loading.FMLLoader.getLoadingModList() != null) {
+                irisLoaded = net.neoforged.fml.loading.FMLLoader.getLoadingModList().getModFileById("iris") != null;
+            } else if (net.neoforged.fml.ModList.get() != null) {
+                irisLoaded = net.neoforged.fml.ModList.get().isLoaded("iris");
+            } else {
+                irisLoaded = false;
+            }
+        } catch (Throwable t) {
+            irisLoaded = false;
+        }
     }
 
     @Override

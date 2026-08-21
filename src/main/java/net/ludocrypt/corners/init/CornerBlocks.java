@@ -138,6 +138,66 @@ public class CornerBlocks {
 
     public static final DeferredItem<Item> GAIA_SIGN_ITEM = ITEMS.register("gaia_sign", () -> new SignItem(new Item.Properties().stacksTo(16), GAIA_SIGN.get(), GAIA_WALL_SIGN.get()));
     public static final DeferredItem<Item> GAIA_HANGING_SIGN_ITEM = ITEMS.register("gaia_hanging_sign", () -> new HangingSignItem(GAIA_HANGING_SIGN.get(), GAIA_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<Item> CRYSTALLINE_GUARDIAN_SPAWN_EGG = ITEMS.register("crystalline_guardian_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.CRYSTALLINE_GUARDIAN, 0x9c59d1, 0xdf84ff, new Item.Properties()));
+    public static final DeferredItem<Item> CORVUS_SPAWN_EGG = ITEMS.register("corvus_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.CORVUS, 0x1f1f23, 0x5a5a68, new Item.Properties()));
+
+    public static final Supplier<CreativeModeTab> CORNERS_TAB = CREATIVE_MODE_TABS.register("corners_tab", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(CornerBlocks.TUNED_RADIO.get()))
+            .title(Component.translatable("itemGroup.corners.corners_tab"))
+            .displayItems((parameters, output) -> {
+                output.accept(STONE_PILLAR_ITEM.get());
+                output.accept(DRYWALL_ITEM.get());
+                output.accept(NYLON_FIBER_BLOCK_ITEM.get());
+                output.accept(NYLON_FIBER_STAIRS_ITEM.get());
+                output.accept(NYLON_FIBER_SLAB_ITEM.get());
+                output.accept(SNOWY_GLASS_ITEM.get());
+                output.accept(SNOWY_GLASS_PANE_ITEM.get());
+                output.accept(SNOWY_GLASS_SLAB_ITEM.get());
+                output.accept(DARK_RAILING_ITEM.get());
+                output.accept(DEEP_BOOKSHELF_ITEM.get());
+                output.accept(GROWN_RADIO_ITEM.get());
+                output.accept(BROKEN_RADIO_ITEM.get());
+                output.accept(WOODEN_RADIO_ITEM.get());
+                output.accept(TUNED_RADIO_ITEM.get());
+
+                output.accept(GAIA_LOG_ITEM.get());
+                output.accept(STRIPPED_GAIA_LOG_ITEM.get());
+                output.accept(GAIA_WOOD_ITEM.get());
+                output.accept(STRIPPED_GAIA_WOOD_ITEM.get());
+                output.accept(GAIA_PLANKS_ITEM.get());
+                output.accept(CARVED_GAIA_ITEM.get());
+                output.accept(GAIA_STAIRS_ITEM.get());
+                output.accept(GAIA_SLAB_ITEM.get());
+                output.accept(GAIA_FENCE_ITEM.get());
+                output.accept(GAIA_FENCE_GATE_ITEM.get());
+                output.accept(GAIA_DOOR_ITEM.get());
+                output.accept(GAIA_TRAPDOOR_ITEM.get());
+                output.accept(GAIA_PRESSURE_PLATE_ITEM.get());
+                output.accept(GAIA_BUTTON_ITEM.get());
+                output.accept(GAIA_LEAVES_ITEM.get());
+                output.accept(GAIA_SAPLING_ITEM.get());
+                output.accept(GAIA_SIGN_ITEM.get());
+                output.accept(GAIA_HANGING_SIGN_ITEM.get());
+                output.accept(GAIA_BOAT.get());
+                output.accept(GAIA_CHEST_BOAT.get());
+
+                output.accept(CRYSTALLINE_GUARDIAN_SPAWN_EGG.get());
+                output.accept(CORVUS_SPAWN_EGG.get());
+
+                // Populate paintings with specific variant components
+                parameters.holders().lookup(Registries.PAINTING_VARIANT).ifPresent(lookup -> {
+                    net.minecraft.resources.RegistryOps<net.minecraft.nbt.Tag> registryOps = parameters.holders().createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE);
+                    lookup.listElements().forEach(variantHolder -> {
+                        if (variantHolder.key().location().getNamespace().equals("corners")) {
+                            net.minecraft.world.item.component.CustomData customData = ((net.minecraft.world.item.component.CustomData) net.minecraft.world.item.component.CustomData.EMPTY.update(registryOps, net.minecraft.world.entity.decoration.Painting.VARIANT_MAP_CODEC, variantHolder).getOrThrow()).update((compoundTag) -> compoundTag.putString("id", "minecraft:painting"));
+                            ItemStack paintingItem = new ItemStack(Items.PAINTING);
+                            paintingItem.set(net.minecraft.core.component.DataComponents.ENTITY_DATA, customData);
+                            output.accept(paintingItem);
+                        }
+                    });
+                });
+            })
+            .build());
 
     public static void registerDispenserBehaviors() {
         DispenserBlock.registerBehavior(GAIA_BOAT.get(), new CornerBoatDispensorBehavior(CornerBoat.GAIA, false));
@@ -168,10 +228,6 @@ public class CornerBlocks {
     }
 
     public static void registerStrippables() {
-        // This usually requires an accessor for StrippingMap in NeoForge or event setup.
-        // For simplicity, handled via NeoForge AxeItem behavior if registered.
-        // Strippable blocks in NeoForge can be registered during common setup, usually using a mixin or map accessor if there's no official API.
-        // In 1.21.1, AxeItem.STRIPPABLES is a Map.
     }
 
     @SubscribeEvent
@@ -223,6 +279,10 @@ public class CornerBlocks {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(GAIA_BOAT);
             event.accept(GAIA_CHEST_BOAT);
+        }
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(CRYSTALLINE_GUARDIAN_SPAWN_EGG);
+            event.accept(CORVUS_SPAWN_EGG);
         }
     }
 }

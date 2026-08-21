@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "undead_revamp2:bostrokestone"
+  },
+  "result": "undead_revamp2:cobbledbostroxwall"
+}

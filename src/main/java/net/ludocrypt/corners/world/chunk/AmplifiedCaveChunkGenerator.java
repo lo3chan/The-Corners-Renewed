@@ -61,67 +61,65 @@ public class AmplifiedCaveChunkGenerator extends ChunkGenerator {
 
     @Override
     public CompletableFuture<ChunkAccess> fillFromNoise(Blender blender, RandomState randomState, StructureManager structureManager, ChunkAccess chunk) {
-        return CompletableFuture.supplyAsync(() -> {
-            ChunkPos chunkPos = chunk.getPos();
-            int startX = chunkPos.getMinBlockX();
-            int startZ = chunkPos.getMinBlockZ();
-            int minY = chunk.getMinBuildHeight();
-            int maxY = chunk.getMaxBuildHeight();
+        ChunkPos chunkPos = chunk.getPos();
+        int startX = chunkPos.getMinBlockX();
+        int startZ = chunkPos.getMinBlockZ();
+        int minY = chunk.getMinBuildHeight();
+        int maxY = chunk.getMaxBuildHeight();
 
-            BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 
-            for (int x = 0; x < 16; x++) {
-                for (int z = 0; z < 16; z++) {
-                    int worldX = startX + x;
-                    int worldZ = startZ + z;
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
+                int worldX = startX + x;
+                int worldZ = startZ + z;
 
-                    // Bedrock floor (bottom 5 layers)
-                    for (int y = minY; y < minY + 5; y++) {
-                        if (y == minY || (y - minY < 4 && ((worldX * 31 + worldZ * 17 + y) % 3 != 0))) {
-                            chunk.setBlockState(pos.set(x, y, z), BEDROCK, false);
-                        } else {
-                            chunk.setBlockState(pos.set(x, y, z), DEEPSLATE, false);
-                        }
+                // Bedrock floor (bottom 5 layers)
+                for (int y = minY; y < minY + 5; y++) {
+                    if (y == minY || (y - minY < 4 && ((worldX * 31 + worldZ * 17 + y) % 3 != 0))) {
+                        chunk.setBlockState(pos.set(x, y, z), BEDROCK, false);
+                    } else {
+                        chunk.setBlockState(pos.set(x, y, z), DEEPSLATE, false);
                     }
+                }
 
-                    // Bedrock ceiling (top 5 layers)
-                    for (int y = maxY - 5; y < maxY; y++) {
-                        if (y == maxY - 1 || ((maxY - y) < 4 && ((worldX * 23 + worldZ * 29 + y) % 3 != 0))) {
-                            chunk.setBlockState(pos.set(x, y, z), BEDROCK, false);
-                        } else {
-                            chunk.setBlockState(pos.set(x, y, z), STONE, false);
-                        }
+                // Bedrock ceiling (top 5 layers)
+                for (int y = maxY - 5; y < maxY; y++) {
+                    if (y == maxY - 1 || ((maxY - y) < 4 && ((worldX * 23 + worldZ * 29 + y) % 3 != 0))) {
+                        chunk.setBlockState(pos.set(x, y, z), BEDROCK, false);
+                    } else {
+                        chunk.setBlockState(pos.set(x, y, z), STONE, false);
                     }
+                }
 
-                    // Amplified 3D subterranean cave noise
-                    for (int y = minY + 5; y < maxY - 5; y++) {
-                        double nx = worldX * 0.015;
-                        double ny = y * 0.02;
-                        double nz = worldZ * 0.015;
+                // Amplified 3D subterranean cave noise
+                for (int y = minY + 5; y < maxY - 5; y++) {
+                    double nx = worldX * 0.015;
+                    double ny = y * 0.02;
+                    double nz = worldZ * 0.015;
 
-                        // Swiss cheese 3D noise + massive vertical cavern chambers
-                        double n1 = Math.sin(nx) * Math.cos(ny) * Math.sin(nz);
-                        double n2 = Math.cos(nx * 2.1 + nz * 0.5) * Math.sin(ny * 1.8);
-                        double density = n1 + n2 * 0.5;
+                    // Swiss cheese 3D noise + massive vertical cavern chambers
+                    double n1 = Math.sin(nx) * Math.cos(ny) * Math.sin(nz);
+                    double n2 = Math.cos(nx * 2.1 + nz * 0.5) * Math.sin(ny * 1.8);
+                    double density = n1 + n2 * 0.5;
 
-                        // Density threshold for carving massive open chambers vs giant stone pillars
-                        if (density > 0.25) {
-                            BlockState state = y < 0 ? DEEPSLATE : STONE;
-                            chunk.setBlockState(pos.set(x, y, z), state, false);
+                    // Density threshold for carving massive open chambers vs giant stone pillars
+                    if (density > 0.25) {
+                        BlockState state = y < 0 ? DEEPSLATE : STONE;
+                        chunk.setBlockState(pos.set(x, y, z), state, false);
+                    } else {
+                        // Subterranean water basins at bottom layers
+                        if (y < minY + 24) {
+                            chunk.setBlockState(pos.set(x, y, z), WATER, false);
                         } else {
-                            // Subterranean water basins at bottom layers
-                            if (y < minY + 24) {
-                                chunk.setBlockState(pos.set(x, y, z), WATER, false);
-                            } else {
-                                chunk.setBlockState(pos.set(x, y, z), AIR, false);
-                            }
+                            chunk.setBlockState(pos.set(x, y, z), AIR, false);
                         }
                     }
                 }
             }
+        }
 
-            return chunk;
-        });
+        return CompletableFuture.completedFuture(chunk);
     }
 
     @Override

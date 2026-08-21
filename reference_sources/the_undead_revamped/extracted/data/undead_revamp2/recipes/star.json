@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    "def",
+    "ghi"
+  ],
+  "key": {
+    "a": {
+      "item": "undead_revamp2:the_somnolenceextract"
+    },
+    "b": {
+      "item": "undead_revamp2:shieldmask_helmet"
+    },
+    "c": {
+      "item": "undead_revamp2:beespheromones"
+    },
+    "d": {
+      "item": "undead_revamp2:cloggerupgrade"
+    },
+    "e": {
+      "item": "minecraft:nether_star"
+    },
+    "f": {
+      "item": "undead_revamp2:heavyupgrade"
+    },
+    "g": {
+      "item": "undead_revamp2:blacpetalblock"
+    },
+    "h": {
+      "item": "undead_revamp2:devilurchin"
+    },
+    "i": {
+      "item": "undead_revamp2:wincallerfan"
+    }
+  },
+  "result": {
+    "item": "undead_revamp2:undeadstar",
+    "count": 1
+  }
+}

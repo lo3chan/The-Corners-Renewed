@@ -60,6 +60,7 @@ public class CornerPaintings {
 	public static final ResourceKey<PaintingVariant> COMMUNAL_CORRIDORS = get("communal_corridors");
 	public static final ResourceKey<PaintingVariant> HOARY_CROSSROADS = get("hoary_crossroads");
 	public static final ResourceKey<PaintingVariant> THE_ABYSS = get("the_abyss");
+	public static final ResourceKey<PaintingVariant> CRYSTAL_FRACTAL = get("crystal_fractal");
 
     public static final Supplier<PaintingVariant> OVERWORLD_VARIANT = PAINTING_VARIANTS.register("overworld", () -> new PaintingVariant(16, 16, TheCorners.id("overworld")));
     public static final Supplier<PaintingVariant> OVERWORLD_THIN_VARIANT = PAINTING_VARIANTS.register("overworld_thin", () -> new PaintingVariant(16, 32, TheCorners.id("overworld_thin")));
@@ -68,6 +69,7 @@ public class CornerPaintings {
     public static final Supplier<PaintingVariant> COMMUNAL_CORRIDORS_VARIANT = PAINTING_VARIANTS.register("communal_corridors", () -> new PaintingVariant(16, 16, TheCorners.id("communal_corridors")));
     public static final Supplier<PaintingVariant> HOARY_CROSSROADS_VARIANT = PAINTING_VARIANTS.register("hoary_crossroads", () -> new PaintingVariant(32, 16, TheCorners.id("hoary_crossroads")));
     public static final Supplier<PaintingVariant> THE_ABYSS_VARIANT = PAINTING_VARIANTS.register("the_abyss", () -> new PaintingVariant(64, 48, TheCorners.id("the_abyss")));
+    public static final Supplier<PaintingVariant> CRYSTAL_FRACTAL_VARIANT = PAINTING_VARIANTS.register("crystal_fractal", () -> new PaintingVariant(64, 48, TheCorners.id("crystal_fractal")));
 
 	public static void init() {
         LOGICS.put(OVERWORLD, new DimensionalPaintingTeleportLogic(Level.OVERWORLD, overworldPaintingTarget));
@@ -101,6 +103,40 @@ public class CornerPaintings {
                     }
 
                     Vec3 dest = new Vec3(targetX + 0.5D, safeY, targetZ + 0.5D);
+                    return new DimensionTransition(level, dest, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), e -> {});
+                }));
+        LOGICS.put(CRYSTAL_FRACTAL, new DimensionalPaintingTeleportLogic(CornerWorlds.CRYSTAL_FRACTAL_KEY,
+                (level, entity, painting) -> {
+                    int originX = (int) entity.getX();
+                    int originZ = (int) entity.getZ();
+                    int finalX = originX;
+                    int finalZ = originZ;
+                    int safeY = 64;
+                    boolean found = false;
+
+                    // Scan in expanding radial box (radius 0 to 16 blocks) for solid amethyst footing
+                    BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+                    searchLoop:
+                    for (int r = 0; r <= 16; r += (r == 0 ? 1 : 3)) {
+                        for (int dx = -r; dx <= r; dx += (r == 0 ? 1 : Math.max(1, r))) {
+                            for (int dz = -r; dz <= r; dz += (r == 0 ? 1 : Math.max(1, r))) {
+                                int checkX = originX + dx;
+                                int checkZ = originZ + dz;
+                                for (int y = 300; y >= -300; y -= 2) {
+                                    pos.set(checkX, y, checkZ);
+                                    if (!level.getBlockState(pos).isAir() && level.getBlockState(pos.above()).isAir() && level.getBlockState(pos.above(2)).isAir()) {
+                                        finalX = checkX;
+                                        finalZ = checkZ;
+                                        safeY = y + 1;
+                                        found = true;
+                                        break searchLoop;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    Vec3 dest = new Vec3(finalX + 0.5D, safeY, finalZ + 0.5D);
                     return new DimensionTransition(level, dest, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), e -> {});
                 }));
 	}

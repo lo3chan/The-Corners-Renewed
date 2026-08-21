@@ -1,0 +1,10 @@
+{
+  "type": "corners:the_abyss",
+  "generator": {
+    "type": "corners:amplified_cave_chunk_generator",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "corners:abyssal_chasm"
+    }
+  }
+}

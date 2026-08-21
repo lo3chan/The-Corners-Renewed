@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "experience": 1.5,
+  "cookingtime": 500,
+  "ingredient": {
+    "item": "minecraft:bread"
+  },
+  "result": "undead_revamp2:ancientbread"
+}

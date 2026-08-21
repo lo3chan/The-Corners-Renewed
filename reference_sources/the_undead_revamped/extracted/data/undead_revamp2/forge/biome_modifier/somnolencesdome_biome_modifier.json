@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "features": "undead_revamp2:somnolencesdome",
+  "step": "underground_structures"
+}

@@ -45,6 +45,9 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.DIMENSIONAL_PAINTING_ENTITY.get(), PaintingRenderer::new);
         event.registerEntityRenderer(CornerEntities.GAIA_BOAT.get(), context -> new CornerBoatEntityRenderer(context, false, CornerBoat.GAIA));
         event.registerEntityRenderer(CornerEntities.GAIA_CHEST_BOAT.get(), context -> new CornerBoatEntityRenderer(context, true, CornerBoat.GAIA));
+        event.registerEntityRenderer(CornerEntities.CORVUS.get(), net.ludocrypt.corners.client.entity.corvus.CorvusEntityRenderer::new);
+        event.registerEntityRenderer(CornerEntities.CRYSTALLINE_GUARDIAN.get(), net.ludocrypt.corners.client.render.entity.CrystallineGuardianRenderer::new);
+
         event.registerEntityRenderer(CornerEntities.THE_SWARMER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(CornerEntities.THE_LURKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(CornerEntities.THE_HEAVY.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
@@ -94,15 +97,10 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.DIRE_HOUND_LEADER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
     }
 
-
-
-
-
-
-
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, false), BoatModel::createBodyModel);
         event.registerLayerDefinition(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, true), ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(net.ludocrypt.corners.client.entity.corvus.CorvusEntityModel.LAYER_LOCATION, net.ludocrypt.corners.client.entity.corvus.CorvusEntityModel::createBodyLayer);
     }
 }

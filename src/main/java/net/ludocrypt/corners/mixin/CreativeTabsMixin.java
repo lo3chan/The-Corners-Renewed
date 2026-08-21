@@ -31,20 +31,16 @@ public class CreativeTabsMixin {
 
     @Inject(method = "generatePresetPaintings", at = @At("HEAD"), cancellable = true)
     private static void painting(CreativeModeTab.Output output, HolderLookup.Provider provider, HolderLookup.RegistryLookup<PaintingVariant> registryLookup, Predicate<Holder<PaintingVariant>> predicate, CreativeModeTab.TabVisibility tabVisibility, CallbackInfo ci) {
-        System.out.println();
-
         RegistryOps<Tag> registryOps = provider.createSerializationContext(NbtOps.INSTANCE);
-
         var list = registryLookup.listElements().filter(predicate).sorted(PAINTING_COMPARATOR).toList();
 
         list.forEach((reference) -> {
-            CustomData customData = ((CustomData)CustomData.EMPTY.update(registryOps, Painting.VARIANT_MAP_CODEC, reference).getOrThrow()).update((compoundTag) -> compoundTag.putString("id", "minecraft:painting"));
+            CustomData customData = ((CustomData) CustomData.EMPTY.update(registryOps, Painting.VARIANT_MAP_CODEC, reference).getOrThrow()).update((compoundTag) -> compoundTag.putString("id", "minecraft:painting"));
             ItemStack itemStack = new ItemStack(Items.PAINTING);
             itemStack.set(DataComponents.ENTITY_DATA, customData);
             output.accept(itemStack, tabVisibility);
         });
 
         ci.cancel();
-
     }
 }

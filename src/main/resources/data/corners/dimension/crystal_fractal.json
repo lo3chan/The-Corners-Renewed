@@ -1,0 +1,10 @@
+{
+  "type": "corners:crystal_fractal",
+  "generator": {
+    "type": "corners:crystal_fractal_chunk_generator",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "corners:crystal_void"
+    }
+  }
+}

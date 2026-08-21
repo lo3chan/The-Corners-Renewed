@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "misc",
+  "experience": 1.5,
+  "cookingtime": 140,
+  "ingredient": {
+    "item": "undead_revamp2:suckermemebrane"
+  },
+  "result": "undead_revamp2:friedsucker"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "undead_revamp2:possesivehome_1",
+  "config": {
+    "structure": "undead_revamp2:posessivebankies",
+    "ignored_blocks": "minecraft:air"
+  }
+}

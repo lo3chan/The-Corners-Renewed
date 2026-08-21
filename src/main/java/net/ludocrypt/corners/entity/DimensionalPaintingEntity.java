@@ -33,15 +33,10 @@ public class DimensionalPaintingEntity extends Painting {
 	}
 
 	public static DimensionalPaintingEntity create(Level world, BlockPos pos, Direction direction, Holder<PaintingVariant> variant) {
-        if(variant.unwrap().left().map(CornerPaintings.LOGICS::containsKey).orElse(false)) {
-			DimensionalPaintingEntity entity = create(world, pos);
-			((PaintingEntityAccessor) entity).callSetVariant(variant);
-			entity.setDirection(direction);
-			return entity;
-		}
-
-		TheCorners.LOGGER.warn("PaintingVariant {} is not DimensionalPaintingVariant, has nowhere to go!", variant);
-		throw new UnsupportedOperationException();
+		DimensionalPaintingEntity entity = create(world, pos);
+		((PaintingEntityAccessor) entity).callSetVariant(variant);
+		entity.setDirection(direction);
+		return entity;
 	}
 
 	public static Painting createRegular(Level world, BlockPos pos, Direction direction, Holder<PaintingVariant> variant) {
@@ -53,43 +48,36 @@ public class DimensionalPaintingEntity extends Painting {
 	}
 
 	public static Painting createFromMotive(Level world, BlockPos pos, Direction direction, Holder<PaintingVariant> variant) {
-
-        if(variant.unwrap().left().map(CornerPaintings.LOGICS::containsKey).orElse(false)) {
+		boolean isDimensional = variant.unwrapKey().map(CornerPaintings.LOGICS::containsKey).orElse(false);
+		if (isDimensional) {
 			return create(world, pos, direction, variant);
 		} else {
 			return createRegular(world, pos, direction, variant);
 		}
-
 	}
 
 	@Override
 	public void playerTouch(Player player) {
 		super.playerTouch(player);
 
-        var variant = getVariant().unwrapKey().map(CornerPaintings.LOGICS::get).orElse(null);
+		var variantKey = getVariant().unwrapKey().orElse(null);
+		var logic = variantKey != null ? CornerPaintings.LOGICS.get(variantKey) : null;
 
-		if (variant != null) {
-			AABB box = this.getBoundingBox().inflate(0.3D);
+		if (logic != null) {
+			AABB box = this.getBoundingBox().inflate(0.2D);
 
-			if (box.contains(player.getEyePosition()) && box.contains(player.position()) && box
-				.contains(player.position().add(0.0D, player.getBbHeight(), 0.0D))) {
-
-				if (player.getDeltaMovement().length() > 0.05) {
-
-					if (this.level() instanceof ServerLevel && player instanceof ServerPlayer spe) {
-						ServerLevel world = player.getServer().getLevel(variant.dimension().apply(spe, this));
-                        DimensionTransition teleportTarget = variant.teleportTarget().apply(world, spe, this);
+			if (box.intersects(player.getBoundingBox())) {
+				if (this.level() instanceof ServerLevel && player instanceof ServerPlayer spe) {
+					ServerLevel world = spe.server.getLevel(logic.dimension().apply(spe, this));
+					if (world != null) {
+						DimensionTransition teleportTarget = logic.teleportTarget().apply(world, spe, this);
 						LimlibTravelling
 							.travelTo(spe, world, teleportTarget, CornerSoundEvents.PAINTING_PORTAL_TRAVEL.get(), 0.25F,
 								world.getRandom().nextFloat() * 0.4F + 0.8F);
 					}
-
 				}
-
 			}
-
 		}
-
 	}
 
 }
