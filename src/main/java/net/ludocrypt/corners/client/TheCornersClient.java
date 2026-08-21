@@ -61,7 +61,23 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.THE_SUCKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(CornerEntities.THE_BIG_SUCKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(CornerEntities.THE_FIRE_DUST.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.DEAD_CLOGGER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.SLAVEMAN.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_MOONFLOWER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_BEARTAMER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_BIDY.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_BIDY_UPSIDE.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_DUNGEON.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_GLITER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_IMMORTAL.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_ORDURE.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_POSESSIVE.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_RABIDUS.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SKEEPER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SMOKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SOMNOLENCE.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
     }
+
 
 
 

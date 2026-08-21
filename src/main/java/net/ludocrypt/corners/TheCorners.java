@@ -64,7 +64,23 @@ public class TheCorners {
         event.put(CornerEntities.THE_SUCKER.get(), TheSuckerEntity.createAttributes().build());
         event.put(CornerEntities.THE_BIG_SUCKER.get(), TheBigSuckerEntity.createAttributes().build());
         event.put(CornerEntities.THE_FIRE_DUST.get(), TheFireDustEntity.createAttributes().build());
+        event.put(CornerEntities.DEAD_CLOGGER.get(), DeadCloggerEntity.createAttributes().build());
+        event.put(CornerEntities.SLAVEMAN.get(), SlavemanEntity.createAttributes().build());
+        event.put(CornerEntities.THE_MOONFLOWER.get(), TheMoonflowerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_BEARTAMER.get(), TheBeartamerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_BIDY.get(), TheBidyEntity.createAttributes().build());
+        event.put(CornerEntities.THE_BIDY_UPSIDE.get(), TheBidyUpsideEntity.createAttributes().build());
+        event.put(CornerEntities.THE_DUNGEON.get(), TheDungeonEntity.createAttributes().build());
+        event.put(CornerEntities.THE_GLITER.get(), TheGliterEntity.createAttributes().build());
+        event.put(CornerEntities.THE_IMMORTAL.get(), TheImmortalEntity.createAttributes().build());
+        event.put(CornerEntities.THE_ORDURE.get(), TheOrdureEntity.createAttributes().build());
+        event.put(CornerEntities.THE_POSESSIVE.get(), ThePosessiveEntity.createAttributes().build());
+        event.put(CornerEntities.THE_RABIDUS.get(), TheRabidusEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SKEEPER.get(), TheSkeeperEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SMOKER.get(), TheSmokerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SOMNOLENCE.get(), TheSomnolenceEntity.createAttributes().build());
     }
+
 
 
 

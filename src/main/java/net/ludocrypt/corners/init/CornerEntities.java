@@ -127,7 +127,98 @@ public class CornerEntities {
             .sized(0.6F, 1.8F)
             .clientTrackingRange(8)
             .build("the_fire_dust"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.DeadCloggerEntity>> DEAD_CLOGGER = ENTITY_TYPES.register("dead_clogger",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.DeadCloggerEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 1.9F)
+            .clientTrackingRange(8)
+            .build("dead_clogger"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.SlavemanEntity>> SLAVEMAN = ENTITY_TYPES.register("slaveman",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.SlavemanEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("slaveman"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheMoonflowerEntity>> THE_MOONFLOWER = ENTITY_TYPES.register("the_moonflower",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheMoonflowerEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.9F)
+            .clientTrackingRange(8)
+            .build("the_moonflower"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheBeartamerEntity>> THE_BEARTAMER = ENTITY_TYPES.register("the_beartamer",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheBeartamerEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 2.0F)
+            .clientTrackingRange(10)
+            .build("the_beartamer"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheBidyEntity>> THE_BIDY = ENTITY_TYPES.register("the_bidy",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheBidyEntity::new, MobCategory.MONSTER)
+            .sized(0.5F, 1.0F)
+            .clientTrackingRange(8)
+            .build("the_bidy"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheBidyUpsideEntity>> THE_BIDY_UPSIDE = ENTITY_TYPES.register("the_bidy_upside",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheBidyUpsideEntity::new, MobCategory.MONSTER)
+            .sized(0.5F, 1.0F)
+            .clientTrackingRange(8)
+            .build("the_bidy_upside"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheDungeonEntity>> THE_DUNGEON = ENTITY_TYPES.register("the_dungeon",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheDungeonEntity::new, MobCategory.MONSTER)
+            .sized(1.2F, 2.6F)
+            .clientTrackingRange(10)
+            .build("the_dungeon"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheGliterEntity>> THE_GLITER = ENTITY_TYPES.register("the_gliter",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheGliterEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("the_gliter"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheImmortalEntity>> THE_IMMORTAL = ENTITY_TYPES.register("the_immortal",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheImmortalEntity::new, MobCategory.MONSTER)
+            .sized(1.0F, 2.2F)
+            .clientTrackingRange(12)
+            .build("the_immortal"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheOrdureEntity>> THE_ORDURE = ENTITY_TYPES.register("the_ordure",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheOrdureEntity::new, MobCategory.MONSTER)
+            .sized(0.7F, 1.9F)
+            .clientTrackingRange(8)
+            .build("the_ordure"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.ThePosessiveEntity>> THE_POSESSIVE = ENTITY_TYPES.register("the_posessive",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.ThePosessiveEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(10)
+            .build("the_posessive"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheRabidusEntity>> THE_RABIDUS = ENTITY_TYPES.register("the_rabidus",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheRabidusEntity::new, MobCategory.MONSTER)
+            .sized(0.7F, 1.95F)
+            .clientTrackingRange(8)
+            .build("the_rabidus"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSkeeperEntity>> THE_SKEEPER = ENTITY_TYPES.register("the_skeeper",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSkeeperEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("the_skeeper"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSmokerEntity>> THE_SMOKER = ENTITY_TYPES.register("the_smoker",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSmokerEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.8F)
+            .clientTrackingRange(8)
+            .build("the_smoker"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSomnolenceEntity>> THE_SOMNOLENCE = ENTITY_TYPES.register("the_somnolence",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSomnolenceEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 2.0F)
+            .clientTrackingRange(8)
+            .build("the_somnolence"));
 }
+
 
 
 

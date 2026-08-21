@@ -9,14 +9,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:raw_iron"
+          "name": "minecraft:mossy_cobblestone"
         }
       ]
     },
     {
       "rolls": {
-        "min": 4,
-        "max": 8
+        "min": 1,
+        "max": 3
       },
       "entries": [
         {
@@ -36,7 +36,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:chainmail_chestplate"
+          "name": "minecraft:name_tag"
         }
       ]
     },
@@ -51,7 +51,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_block"
+          "name": "minecraft:golden_apple"
         }
       ]
     }

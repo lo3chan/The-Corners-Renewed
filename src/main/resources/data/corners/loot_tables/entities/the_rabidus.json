@@ -9,19 +9,19 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:raw_iron"
+          "name": "minecraft:rotten_flesh"
         }
       ]
     },
     {
       "rolls": {
-        "min": 4,
-        "max": 8
+        "min": 1,
+        "max": 2
       },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bone"
+          "name": "minecraft:fermented_spider_eye"
         }
       ]
     },
@@ -36,22 +36,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:chainmail_chestplate"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.05
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_block"
+          "name": "minecraft:potion"
         }
       ]
     }

@@ -4,24 +4,33 @@
     {
       "rolls": {
         "min": 2,
-        "max": 4
+        "max": 5
       },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:raw_iron"
+          "name": "minecraft:coarse_dirt"
         }
       ]
     },
     {
       "rolls": {
-        "min": 4,
-        "max": 8
+        "min": 1,
+        "max": 3
       },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bone"
+          "name": "minecraft:clay_ball"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh"
         }
       ]
     },
@@ -30,28 +39,13 @@
       "conditions": [
         {
           "condition": "minecraft:random_chance",
-          "chance": 0.1
+          "chance": 0.25
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:chainmail_chestplate"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.05
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_block"
+          "name": "minecraft:brown_mushroom"
         }
       ]
     }

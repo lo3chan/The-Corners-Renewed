@@ -4,19 +4,7 @@
     {
       "rolls": {
         "min": 2,
-        "max": 4
-      },
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:raw_iron"
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 4,
-        "max": 8
+        "max": 5
       },
       "entries": [
         {
@@ -26,17 +14,14 @@
       ]
     },
     {
-      "rolls": 1,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.1
-        }
-      ],
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:chainmail_chestplate"
+          "name": "minecraft:arrow"
         }
       ]
     },
@@ -45,13 +30,31 @@
       "conditions": [
         {
           "condition": "minecraft:random_chance",
-          "chance": 0.05
+          "chance": 0.15
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_block"
+          "name": "minecraft:bow"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 1,
+        "max": 3
+      },
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.2
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spectral_arrow"
         }
       ]
     }

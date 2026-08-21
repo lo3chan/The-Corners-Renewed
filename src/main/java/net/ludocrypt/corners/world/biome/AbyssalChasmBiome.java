@@ -32,8 +32,23 @@ public class AbyssalChasmBiome {
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_WHEEZER.get(), 60, 2, 4));
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_LUMBER.get(), 35, 1, 2));
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SUCKER.get(), 80, 3, 6));
-		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_BIG_SUCKER.get(), 25, 1, 1));
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_FIRE_DUST.get(), 50, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.DEAD_CLOGGER.get(), 30, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.SLAVEMAN.get(), 40, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_MOONFLOWER.get(), 35, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_BEARTAMER.get(), 20, 1, 1));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_BIDY.get(), 75, 3, 6));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_BIDY_UPSIDE.get(), 75, 3, 6));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_DUNGEON.get(), 15, 1, 1));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_GLITER.get(), 30, 1, 3));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_IMMORTAL.get(), 10, 1, 1));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_ORDURE.get(), 45, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_POSESSIVE.get(), 25, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_RABIDUS.get(), 50, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SKEEPER.get(), 45, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SMOKER.get(), 55, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SOMNOLENCE.get(), 30, 1, 2));
+
 
 
 
