@@ -48,6 +48,25 @@ public class AbyssalChasmBiome {
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SKEEPER.get(), 45, 2, 4));
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SMOKER.get(), 55, 2, 4));
 		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SOMNOLENCE.get(), 30, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.RESTLESS_SPIRIT.get(), 40, 1, 3));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.DECREPIT_SKELETON.get(), 60, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.DECAYING_ZOMBIE.get(), 70, 2, 5));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.SKELETON_DEMOMAN.get(), 35, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.SKELETON_THRASHER.get(), 20, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.DARK_VORTEX.get(), 15, 1, 1));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.BONE_IMP.get(), 80, 3, 6));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.NIGHTMARE_STALKER.get(), 20, 1, 1));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.FALLEN_CHAOS_KNIGHT.get(), 15, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.MISSIONER.get(), 25, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.SEARED_SPIRIT.get(), 35, 1, 3));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.PHANTOM_CREEPER.get(), 25, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.CORPSE_FISH.get(), 70, 4, 8));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.MAGGOT.get(), 90, 4, 10));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THORNSHELL_CRAB.get(), 40, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.DIRE_HOUND_LEADER.get(), 30, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(net.minecraft.world.entity.EntityType.SPIDER, 65, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(net.minecraft.world.entity.EntityType.CAVE_SPIDER, 85, 3, 6));
+
 
 
 

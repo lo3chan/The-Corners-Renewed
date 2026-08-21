@@ -217,7 +217,104 @@ public class CornerEntities {
             .sized(0.8F, 2.0F)
             .clientTrackingRange(8)
             .build("the_somnolence"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.RestlessSpiritEntity>> RESTLESS_SPIRIT = ENTITY_TYPES.register("restless_spirit",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.RestlessSpiritEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("restless_spirit"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.DecrepitSkeletonEntity>> DECREPIT_SKELETON = ENTITY_TYPES.register("decrepit_skeleton",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.DecrepitSkeletonEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.99F)
+            .clientTrackingRange(8)
+            .build("decrepit_skeleton"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.DecayingZombieEntity>> DECAYING_ZOMBIE = ENTITY_TYPES.register("decaying_zombie",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.DecayingZombieEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("decaying_zombie"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.SkeletonDemomanEntity>> SKELETON_DEMOMAN = ENTITY_TYPES.register("skeleton_demoman",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.SkeletonDemomanEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.99F)
+            .clientTrackingRange(8)
+            .build("skeleton_demoman"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.SkeletonThrasherEntity>> SKELETON_THRASHER = ENTITY_TYPES.register("skeleton_thrasher",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.SkeletonThrasherEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 2.2F)
+            .clientTrackingRange(10)
+            .build("skeleton_thrasher"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.DarkVortexEntity>> DARK_VORTEX = ENTITY_TYPES.register("dark_vortex",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.DarkVortexEntity::new, MobCategory.MONSTER)
+            .sized(1.0F, 2.0F)
+            .clientTrackingRange(10)
+            .build("dark_vortex"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.BoneImpEntity>> BONE_IMP = ENTITY_TYPES.register("bone_imp",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.BoneImpEntity::new, MobCategory.MONSTER)
+            .sized(0.5F, 0.8F)
+            .clientTrackingRange(8)
+            .build("bone_imp"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.NightmareStalkerEntity>> NIGHTMARE_STALKER = ENTITY_TYPES.register("nightmare_stalker",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.NightmareStalkerEntity::new, MobCategory.MONSTER)
+            .sized(0.9F, 2.4F)
+            .clientTrackingRange(12)
+            .build("nightmare_stalker"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.FallenChaosKnightEntity>> FALLEN_CHAOS_KNIGHT = ENTITY_TYPES.register("fallen_chaos_knight",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.FallenChaosKnightEntity::new, MobCategory.MONSTER)
+            .sized(0.9F, 2.2F)
+            .clientTrackingRange(10)
+            .build("fallen_chaos_knight"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.MissionerEntity>> MISSIONER = ENTITY_TYPES.register("missioner",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.MissionerEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(10)
+            .build("missioner"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.SearedSpiritEntity>> SEARED_SPIRIT = ENTITY_TYPES.register("seared_spirit",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.SearedSpiritEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("seared_spirit"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.PhantomCreeperEntity>> PHANTOM_CREEPER = ENTITY_TYPES.register("phantom_creeper",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.PhantomCreeperEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.7F)
+            .clientTrackingRange(8)
+            .build("phantom_creeper"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.CorpseFishEntity>> CORPSE_FISH = ENTITY_TYPES.register("corpse_fish",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.CorpseFishEntity::new, MobCategory.MONSTER)
+            .sized(0.4F, 0.3F)
+            .clientTrackingRange(6)
+            .build("corpse_fish"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.MaggotEntity>> MAGGOT = ENTITY_TYPES.register("maggot",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.MaggotEntity::new, MobCategory.MONSTER)
+            .sized(0.3F, 0.2F)
+            .clientTrackingRange(6)
+            .build("maggot"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.ThornshellCrabEntity>> THORNSHELL_CRAB = ENTITY_TYPES.register("thornshell_crab",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.ThornshellCrabEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 0.5F)
+            .clientTrackingRange(8)
+            .build("thornshell_crab"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.DireHoundLeaderEntity>> DIRE_HOUND_LEADER = ENTITY_TYPES.register("dire_hound_leader",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.DireHoundLeaderEntity::new, MobCategory.MONSTER)
+            .sized(0.9F, 1.1F)
+            .clientTrackingRange(10)
+            .build("dire_hound_leader"));
 }
+
 
 
 

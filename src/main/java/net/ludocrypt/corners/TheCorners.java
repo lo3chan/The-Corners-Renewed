@@ -79,7 +79,24 @@ public class TheCorners {
         event.put(CornerEntities.THE_SKEEPER.get(), TheSkeeperEntity.createAttributes().build());
         event.put(CornerEntities.THE_SMOKER.get(), TheSmokerEntity.createAttributes().build());
         event.put(CornerEntities.THE_SOMNOLENCE.get(), TheSomnolenceEntity.createAttributes().build());
+        event.put(CornerEntities.RESTLESS_SPIRIT.get(), RestlessSpiritEntity.createAttributes().build());
+        event.put(CornerEntities.DECREPIT_SKELETON.get(), DecrepitSkeletonEntity.createAttributes().build());
+        event.put(CornerEntities.DECAYING_ZOMBIE.get(), DecayingZombieEntity.createAttributes().build());
+        event.put(CornerEntities.SKELETON_DEMOMAN.get(), SkeletonDemomanEntity.createAttributes().build());
+        event.put(CornerEntities.SKELETON_THRASHER.get(), SkeletonThrasherEntity.createAttributes().build());
+        event.put(CornerEntities.DARK_VORTEX.get(), DarkVortexEntity.createAttributes().build());
+        event.put(CornerEntities.BONE_IMP.get(), BoneImpEntity.createAttributes().build());
+        event.put(CornerEntities.NIGHTMARE_STALKER.get(), NightmareStalkerEntity.createAttributes().build());
+        event.put(CornerEntities.FALLEN_CHAOS_KNIGHT.get(), FallenChaosKnightEntity.createAttributes().build());
+        event.put(CornerEntities.MISSIONER.get(), MissionerEntity.createAttributes().build());
+        event.put(CornerEntities.SEARED_SPIRIT.get(), SearedSpiritEntity.createAttributes().build());
+        event.put(CornerEntities.PHANTOM_CREEPER.get(), PhantomCreeperEntity.createAttributes().build());
+        event.put(CornerEntities.CORPSE_FISH.get(), CorpseFishEntity.createAttributes().build());
+        event.put(CornerEntities.MAGGOT.get(), MaggotEntity.createAttributes().build());
+        event.put(CornerEntities.THORNSHELL_CRAB.get(), ThornshellCrabEntity.createAttributes().build());
+        event.put(CornerEntities.DIRE_HOUND_LEADER.get(), DireHoundLeaderEntity.createAttributes().build());
     }
+
 
 
 
