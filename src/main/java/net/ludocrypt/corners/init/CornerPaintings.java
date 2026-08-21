@@ -85,9 +85,26 @@ public class CornerPaintings {
                                         .subtract(new Vec3(player.getX() % 512.0D, player.getY(), player.getZ() % 512.0D))
                                         .add(256.0D, 263.0D, 0.0D)
                                         .add(4.0D, 0, 4.0D)));
-        LOGICS.put(THE_ABYSS, DimensionalPaintingTeleportLogic.create(CornerWorlds.THE_ABYSS_KEY,
-                                (player, painting) -> new Vec3(player.getX() * 7.0D, 64.0D, player.getZ() * 7.0D)));
+        LOGICS.put(THE_ABYSS, new DimensionalPaintingTeleportLogic(CornerWorlds.THE_ABYSS_KEY,
+                (level, entity, painting) -> {
+                    int targetX = (int) (entity.getX() * 7.0D);
+                    int targetZ = (int) (entity.getZ() * 7.0D);
+                    int safeY = 64;
+
+                    BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(targetX, 32, targetZ);
+                    for (int y = 32; y < 250; y++) {
+                        pos.setY(y);
+                        if (level.getBlockState(pos).isAir() && level.getBlockState(pos.above()).isAir() && !level.getBlockState(pos.below()).isAir()) {
+                            safeY = y;
+                            break;
+                        }
+                    }
+
+                    Vec3 dest = new Vec3(targetX + 0.5D, safeY, targetZ + 0.5D);
+                    return new DimensionTransition(level, dest, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), e -> {});
+                }));
 	}
+
 
 
 	public static ResourceKey<PaintingVariant> get(String id) {
