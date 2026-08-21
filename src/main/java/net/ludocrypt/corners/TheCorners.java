@@ -56,7 +56,16 @@ public class TheCorners {
         event.put(CornerEntities.THE_HUNTER.get(), TheHunterEntity.createAttributes().build());
         event.put(CornerEntities.THE_HORRORS.get(), TheHorrorsEntity.createAttributes().build());
         event.put(CornerEntities.THE_UNDEAD_WOLF.get(), TheUndeadWolfEntity.createAttributes().build());
+        event.put(CornerEntities.THE_ROD.get(), TheRodEntity.createAttributes().build());
+        event.put(CornerEntities.THE_CLOGGER.get(), TheCloggerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_PREGNANT.get(), ThePregnantEntity.createAttributes().build());
+        event.put(CornerEntities.THE_WHEEZER.get(), TheWheezerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_LUMBER.get(), TheLumberEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SUCKER.get(), TheSuckerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_BIG_SUCKER.get(), TheBigSuckerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_FIRE_DUST.get(), TheFireDustEntity.createAttributes().build());
     }
+
 
 
 

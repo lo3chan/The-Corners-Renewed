@@ -53,7 +53,16 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.THE_HUNTER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(CornerEntities.THE_HORRORS.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
         event.registerEntityRenderer(CornerEntities.THE_UNDEAD_WOLF.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_ROD.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_CLOGGER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_PREGNANT.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_WHEEZER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_LUMBER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SUCKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_BIG_SUCKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_FIRE_DUST.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
     }
+
 
 
 

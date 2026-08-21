@@ -79,6 +79,55 @@ public class CornerEntities {
             .sized(0.8F, 0.85F)
             .clientTrackingRange(8)
             .build("the_undead_wolf"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheRodEntity>> THE_ROD = ENTITY_TYPES.register("the_rod",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheRodEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("the_rod"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheCloggerEntity>> THE_CLOGGER = ENTITY_TYPES.register("the_clogger",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheCloggerEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 1.9F)
+            .clientTrackingRange(8)
+            .build("the_clogger"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.ThePregnantEntity>> THE_PREGNANT = ENTITY_TYPES.register("the_pregnant",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.ThePregnantEntity::new, MobCategory.MONSTER)
+            .sized(0.7F, 1.95F)
+            .clientTrackingRange(8)
+            .build("the_pregnant"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheWheezerEntity>> THE_WHEEZER = ENTITY_TYPES.register("the_wheezer",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheWheezerEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.8F)
+            .clientTrackingRange(8)
+            .build("the_wheezer"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheLumberEntity>> THE_LUMBER = ENTITY_TYPES.register("the_lumber",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheLumberEntity::new, MobCategory.MONSTER)
+            .sized(0.9F, 2.2F)
+            .clientTrackingRange(8)
+            .build("the_lumber"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSuckerEntity>> THE_SUCKER = ENTITY_TYPES.register("the_sucker",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSuckerEntity::new, MobCategory.MONSTER)
+            .sized(0.5F, 1.5F)
+            .clientTrackingRange(8)
+            .build("the_sucker"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheBigSuckerEntity>> THE_BIG_SUCKER = ENTITY_TYPES.register("the_big_sucker",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheBigSuckerEntity::new, MobCategory.MONSTER)
+            .sized(1.1F, 2.3F)
+            .clientTrackingRange(10)
+            .build("the_big_sucker"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheFireDustEntity>> THE_FIRE_DUST = ENTITY_TYPES.register("the_fire_dust",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheFireDustEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.8F)
+            .clientTrackingRange(8)
+            .build("the_fire_dust"));
 }
+
 
 
