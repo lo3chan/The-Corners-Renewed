@@ -1,0 +1,9 @@
+﻿{
+  "replace": false,
+  "values": [
+    "corners:abyssal_chasm",
+    "minecraft:lush_caves",
+    "minecraft:dripstone_caves",
+    "minecraft:deep_dark"
+  ]
+}

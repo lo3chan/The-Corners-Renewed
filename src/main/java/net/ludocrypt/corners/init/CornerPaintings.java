@@ -59,6 +59,7 @@ public class CornerPaintings {
 	public static final ResourceKey<PaintingVariant> YEARNING_CANAL = get("yearning_canal");
 	public static final ResourceKey<PaintingVariant> COMMUNAL_CORRIDORS = get("communal_corridors");
 	public static final ResourceKey<PaintingVariant> HOARY_CROSSROADS = get("hoary_crossroads");
+	public static final ResourceKey<PaintingVariant> THE_ABYSS = get("the_abyss");
 
     public static final Supplier<PaintingVariant> OVERWORLD_VARIANT = PAINTING_VARIANTS.register("overworld", () -> new PaintingVariant(16, 16, TheCorners.id("overworld")));
     public static final Supplier<PaintingVariant> OVERWORLD_THIN_VARIANT = PAINTING_VARIANTS.register("overworld_thin", () -> new PaintingVariant(16, 32, TheCorners.id("overworld_thin")));
@@ -66,6 +67,7 @@ public class CornerPaintings {
     public static final Supplier<PaintingVariant> YEARNING_CANAL_VARIANT = PAINTING_VARIANTS.register("yearning_canal", () -> new PaintingVariant(16, 16, TheCorners.id("yearning_canal")));
     public static final Supplier<PaintingVariant> COMMUNAL_CORRIDORS_VARIANT = PAINTING_VARIANTS.register("communal_corridors", () -> new PaintingVariant(16, 16, TheCorners.id("communal_corridors")));
     public static final Supplier<PaintingVariant> HOARY_CROSSROADS_VARIANT = PAINTING_VARIANTS.register("hoary_crossroads", () -> new PaintingVariant(32, 16, TheCorners.id("hoary_crossroads")));
+    public static final Supplier<PaintingVariant> THE_ABYSS_VARIANT = PAINTING_VARIANTS.register("the_abyss", () -> new PaintingVariant(64, 48, TheCorners.id("the_abyss")));
 
 	public static void init() {
         LOGICS.put(OVERWORLD, new DimensionalPaintingTeleportLogic(Level.OVERWORLD, overworldPaintingTarget));
@@ -83,7 +85,10 @@ public class CornerPaintings {
                                         .subtract(new Vec3(player.getX() % 512.0D, player.getY(), player.getZ() % 512.0D))
                                         .add(256.0D, 263.0D, 0.0D)
                                         .add(4.0D, 0, 4.0D)));
+        LOGICS.put(THE_ABYSS, DimensionalPaintingTeleportLogic.create(CornerWorlds.THE_ABYSS_KEY,
+                                (player, painting) -> new Vec3(player.getX() * 7.0D, 64.0D, player.getZ() * 7.0D)));
 	}
+
 
 	public static ResourceKey<PaintingVariant> get(String id) {
 		return ResourceKey.create(Registries.PAINTING_VARIANT, TheCorners.id(id));

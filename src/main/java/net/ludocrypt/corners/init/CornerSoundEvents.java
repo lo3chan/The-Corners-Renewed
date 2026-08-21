@@ -43,9 +43,9 @@ public class CornerSoundEvents {
 	// Ambient
 	public static final Supplier<SoundEvent> BIOME_LOOP_COMMUNAL_CORRIDORS = SOUND_EVENTS.register("biome.communal_corridors.loop", () -> SoundEvent.createVariableRangeEvent(TheCorners.id("biome.communal_corridors.loop")));
 	public static final Supplier<SoundEvent> BIOME_LOOP_HOARY_CROSSROADS = SOUND_EVENTS.register("biome.hoary_crossroads.loop", () -> SoundEvent.createVariableRangeEvent(TheCorners.id("biome.hoary_crossroads.loop")));
-
-
-
-
-
+	public static final Supplier<SoundEvent> BIOME_LOOP_THE_ABYSS = SOUND_EVENTS.register("biome.the_abyss.loop", () -> SoundEvent.createVariableRangeEvent(TheCorners.id("biome.the_abyss.loop")));
+	public static final Supplier<SoundEvent> ENGULFING_DARKNESS_HEARTBEAT = SOUND_EVENTS.register("darkness.heartbeat", () -> SoundEvent.createVariableRangeEvent(TheCorners.id("darkness.heartbeat")));
+	public static final Supplier<SoundEvent> ENGULFING_DARKNESS_WHISPER = SOUND_EVENTS.register("darkness.whisper", () -> SoundEvent.createVariableRangeEvent(TheCorners.id("darkness.whisper")));
+	public static final Supplier<SoundEvent> EYES_IN_DARKNESS_VANISH = SOUND_EVENTS.register("darkness.eyes_vanish", () -> SoundEvent.createVariableRangeEvent(TheCorners.id("darkness.eyes_vanish")));
 }
+

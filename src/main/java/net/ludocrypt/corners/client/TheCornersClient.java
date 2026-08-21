@@ -45,7 +45,11 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.DIMENSIONAL_PAINTING_ENTITY.get(), PaintingRenderer::new);
         event.registerEntityRenderer(CornerEntities.GAIA_BOAT.get(), context -> new CornerBoatEntityRenderer(context, false, CornerBoat.GAIA));
         event.registerEntityRenderer(CornerEntities.GAIA_CHEST_BOAT.get(), context -> new CornerBoatEntityRenderer(context, true, CornerBoat.GAIA));
+        event.registerEntityRenderer(CornerEntities.UNDEAD_GHOUL.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.UNDEAD_KNIGHT.get(), net.minecraft.client.renderer.entity.SkeletonRenderer::new);
+        event.registerEntityRenderer(CornerEntities.CRAWLING_UNDEAD.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
     }
+
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {

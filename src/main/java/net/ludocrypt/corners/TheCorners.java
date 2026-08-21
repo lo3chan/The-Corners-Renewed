@@ -21,6 +21,9 @@ import net.ludocrypt.corners.init.CornerSoundEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.ludocrypt.corners.entity.undead.*;
+
 @Mod("corners")
 public class TheCorners {
 
@@ -30,6 +33,7 @@ public class TheCorners {
 
     public TheCorners(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerEntityAttributes);
 
         CornerBlocks.BLOCKS.register(modEventBus);
         CornerBlocks.ITEMS.register(modEventBus);
@@ -41,6 +45,12 @@ public class TheCorners {
 
         AutoConfig.register(CornerConfig.class, GsonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(CornerConfig.class).getConfig();
+    }
+
+    private void registerEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(CornerEntities.UNDEAD_GHOUL.get(), UndeadGhoulEntity.createAttributes().build());
+        event.put(CornerEntities.UNDEAD_KNIGHT.get(), UndeadKnightEntity.createAttributes().build());
+        event.put(CornerEntities.CRAWLING_UNDEAD.get(), CrawlingUndeadEntity.createAttributes().build());
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -56,4 +66,5 @@ public class TheCorners {
         return ResourceLocation.fromNamespaceAndPath("corners", id);
     }
 }
+
 

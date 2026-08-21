@@ -31,4 +31,23 @@ public class CornerEntities {
             .sized(1.375f, 0.5625f)
             .clientTrackingRange(10)
             .build("gaia_chest_boat"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.UndeadGhoulEntity>> UNDEAD_GHOUL = ENTITY_TYPES.register("undead_ghoul",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.UndeadGhoulEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("undead_ghoul"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.UndeadKnightEntity>> UNDEAD_KNIGHT = ENTITY_TYPES.register("undead_knight",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.UndeadKnightEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.99F)
+            .clientTrackingRange(8)
+            .build("undead_knight"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.CrawlingUndeadEntity>> CRAWLING_UNDEAD = ENTITY_TYPES.register("crawling_undead",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.CrawlingUndeadEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 0.6F)
+            .clientTrackingRange(8)
+            .build("crawling_undead"));
 }
+

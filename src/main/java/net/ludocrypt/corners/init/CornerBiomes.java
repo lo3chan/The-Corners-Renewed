@@ -25,6 +25,9 @@ public class CornerBiomes {
             .create(Registries.BIOME, TheCorners.id(CornerWorlds.COMMUNAL_CORRIDORS));
     public static final ResourceKey<Biome> HOARY_CROSSROADS_BIOME = ResourceKey
             .create(Registries.BIOME, TheCorners.id(CornerWorlds.HOARY_CROSSROADS));
+    public static final ResourceKey<Biome> ABYSSAL_CHASM_BIOME = ResourceKey
+            .create(Registries.BIOME, TheCorners.id("abyssal_chasm"));
+
     public static final ResourceKey<Feature<?>> GAIA_TREE_FEATURE = ResourceKey
             .create(Registries.FEATURE, TheCorners.id("gaia_tree"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_GAIA_TREE_FEATURE = ResourceKey
@@ -35,9 +38,11 @@ public class CornerBiomes {
     public static final Supplier<MapCodec<YearningCanalChunkGenerator>> YEARNING_CANAL_CHUNK_GENERATOR = CHUNK_GENERATORS.register("yearning_canal_chunk_generator", () -> YearningCanalChunkGenerator.CODEC);
     public static final Supplier<MapCodec<CommunalCorridorsChunkGenerator>> COMMUNAL_CORRIDORS_CHUNK_GENERATOR = CHUNK_GENERATORS.register("communal_corridors_chunk_generator", () -> CommunalCorridorsChunkGenerator.CODEC);
     public static final Supplier<MapCodec<HoaryCrossroadsChunkGenerator>> HOARY_CROSSROADS_CHUNK_GENERATOR = CHUNK_GENERATORS.register("hoary_crossroads_chunk_generator", () -> HoaryCrossroadsChunkGenerator.CODEC);
+    public static final Supplier<MapCodec<net.ludocrypt.corners.world.chunk.AmplifiedCaveChunkGenerator>> AMPLIFIED_CAVE_CHUNK_GENERATOR = CHUNK_GENERATORS.register("amplified_cave_chunk_generator", () -> net.ludocrypt.corners.world.chunk.AmplifiedCaveChunkGenerator.CODEC);
 
     public static void register(IEventBus bus) {
         CHUNK_GENERATORS.register(bus);
     }
 }
+
 
