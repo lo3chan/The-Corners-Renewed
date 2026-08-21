@@ -1,0 +1,12 @@
+{
+  "type": "crystal_realm:crystal_fractal",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "crystal_realm:crystal_void",
+      "features": false,
+      "lakes": false,
+      "layers": []
+    }
+  }
+}

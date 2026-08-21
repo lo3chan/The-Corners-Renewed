@@ -1,0 +1,11 @@
+{
+  "type": "crystal_realm:crystal_fractal",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "crystal_realm:crystal_fractal",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "crystal_realm:crystal_void"
+    }
+  }
+}

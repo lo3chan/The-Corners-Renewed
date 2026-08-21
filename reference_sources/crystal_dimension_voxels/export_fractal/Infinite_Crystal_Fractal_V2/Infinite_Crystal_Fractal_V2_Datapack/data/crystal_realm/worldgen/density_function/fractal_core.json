@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:add",
+  "argument1": {
+    "type": "minecraft:mul",
+    "argument1": 0.6,
+    "argument2": "crystal_realm:scale1_lattice"
+  },
+  "argument2": {
+    "type": "minecraft:mul",
+    "argument1": 0.4,
+    "argument2": "crystal_realm:scale2_bridges"
+  }
+}
