@@ -17,9 +17,16 @@ public class AbyssalChasmBiome {
 		Biome.BiomeBuilder biome = new Biome.BiomeBuilder();
 
 		MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
-		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.UNDEAD_GHOUL.get(), 80, 2, 4));
-		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.UNDEAD_KNIGHT.get(), 50, 1, 3));
-		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.CRAWLING_UNDEAD.get(), 100, 3, 6));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SWARMER.get(), 90, 4, 8));
+
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_LURKER.get(), 60, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_HEAVY.get(), 30, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SPITTER.get(), 60, 2, 4));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_SPECTRE.get(), 40, 1, 3));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_HUNTER.get(), 50, 1, 2));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_HORRORS.get(), 15, 1, 1));
+		spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CornerEntities.THE_UNDEAD_WOLF.get(), 70, 3, 5));
+
 
 		BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder(features, carvers);
 

@@ -45,10 +45,17 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.DIMENSIONAL_PAINTING_ENTITY.get(), PaintingRenderer::new);
         event.registerEntityRenderer(CornerEntities.GAIA_BOAT.get(), context -> new CornerBoatEntityRenderer(context, false, CornerBoat.GAIA));
         event.registerEntityRenderer(CornerEntities.GAIA_CHEST_BOAT.get(), context -> new CornerBoatEntityRenderer(context, true, CornerBoat.GAIA));
-        event.registerEntityRenderer(CornerEntities.UNDEAD_GHOUL.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
-        event.registerEntityRenderer(CornerEntities.UNDEAD_KNIGHT.get(), net.minecraft.client.renderer.entity.SkeletonRenderer::new);
-        event.registerEntityRenderer(CornerEntities.CRAWLING_UNDEAD.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SWARMER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_LURKER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_HEAVY.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SPITTER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_SPECTRE.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_HUNTER.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_HORRORS.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
+        event.registerEntityRenderer(CornerEntities.THE_UNDEAD_WOLF.get(), net.minecraft.client.renderer.entity.ZombieRenderer::new);
     }
+
+
 
 
     @SubscribeEvent

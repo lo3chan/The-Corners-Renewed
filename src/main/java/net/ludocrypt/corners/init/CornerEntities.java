@@ -32,22 +32,53 @@ public class CornerEntities {
             .clientTrackingRange(10)
             .build("gaia_chest_boat"));
 
-    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.UndeadGhoulEntity>> UNDEAD_GHOUL = ENTITY_TYPES.register("undead_ghoul",
-        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.UndeadGhoulEntity::new, MobCategory.MONSTER)
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSwarmerEntity>> THE_SWARMER = ENTITY_TYPES.register("the_swarmer",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSwarmerEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.8F)
+            .clientTrackingRange(8)
+            .build("the_swarmer"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheLurkerEntity>> THE_LURKER = ENTITY_TYPES.register("the_lurker",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheLurkerEntity::new, MobCategory.MONSTER)
             .sized(0.6F, 1.95F)
             .clientTrackingRange(8)
-            .build("undead_ghoul"));
+            .build("the_lurker"));
 
-    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.UndeadKnightEntity>> UNDEAD_KNIGHT = ENTITY_TYPES.register("undead_knight",
-        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.UndeadKnightEntity::new, MobCategory.MONSTER)
-            .sized(0.6F, 1.99F)
-            .clientTrackingRange(8)
-            .build("undead_knight"));
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheHeavyEntity>> THE_HEAVY = ENTITY_TYPES.register("the_heavy",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheHeavyEntity::new, MobCategory.MONSTER)
+            .sized(1.2F, 2.4F)
+            .clientTrackingRange(10)
+            .build("the_heavy"));
 
-    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.CrawlingUndeadEntity>> CRAWLING_UNDEAD = ENTITY_TYPES.register("crawling_undead",
-        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.CrawlingUndeadEntity::new, MobCategory.MONSTER)
-            .sized(0.8F, 0.6F)
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSpitterEntity>> THE_SPITTER = ENTITY_TYPES.register("the_spitter",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSpitterEntity::new, MobCategory.MONSTER)
+            .sized(0.7F, 1.9F)
             .clientTrackingRange(8)
-            .build("crawling_undead"));
+            .build("the_spitter"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheSpectreEntity>> THE_SPECTRE = ENTITY_TYPES.register("the_spectre",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheSpectreEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F)
+            .clientTrackingRange(8)
+            .build("the_spectre"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheHunterEntity>> THE_HUNTER = ENTITY_TYPES.register("the_hunter",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheHunterEntity::new, MobCategory.MONSTER)
+            .sized(0.7F, 2.0F)
+            .clientTrackingRange(10)
+            .build("the_hunter"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheHorrorsEntity>> THE_HORRORS = ENTITY_TYPES.register("the_horrors",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheHorrorsEntity::new, MobCategory.MONSTER)
+            .sized(1.4F, 2.8F)
+            .clientTrackingRange(10)
+            .build("the_horrors"));
+
+    public static final Supplier<EntityType<net.ludocrypt.corners.entity.undead.TheUndeadWolfEntity>> THE_UNDEAD_WOLF = ENTITY_TYPES.register("the_undead_wolf",
+        () -> EntityType.Builder.of(net.ludocrypt.corners.entity.undead.TheUndeadWolfEntity::new, MobCategory.MONSTER)
+            .sized(0.8F, 0.85F)
+            .clientTrackingRange(8)
+            .build("the_undead_wolf"));
 }
+
 

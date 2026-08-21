@@ -48,10 +48,17 @@ public class TheCorners {
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(CornerEntities.UNDEAD_GHOUL.get(), UndeadGhoulEntity.createAttributes().build());
-        event.put(CornerEntities.UNDEAD_KNIGHT.get(), UndeadKnightEntity.createAttributes().build());
-        event.put(CornerEntities.CRAWLING_UNDEAD.get(), CrawlingUndeadEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SWARMER.get(), TheSwarmerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_LURKER.get(), TheLurkerEntity.createAttributes().build());
+        event.put(CornerEntities.THE_HEAVY.get(), TheHeavyEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SPITTER.get(), TheSpitterEntity.createAttributes().build());
+        event.put(CornerEntities.THE_SPECTRE.get(), TheSpectreEntity.createAttributes().build());
+        event.put(CornerEntities.THE_HUNTER.get(), TheHunterEntity.createAttributes().build());
+        event.put(CornerEntities.THE_HORRORS.get(), TheHorrorsEntity.createAttributes().build());
+        event.put(CornerEntities.THE_UNDEAD_WOLF.get(), TheUndeadWolfEntity.createAttributes().build());
     }
+
+
 
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
