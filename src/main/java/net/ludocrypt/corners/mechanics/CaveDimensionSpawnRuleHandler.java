@@ -6,6 +6,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.monster.CaveSpider;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.level.Level;
@@ -80,7 +81,13 @@ public class CaveDimensionSpawnRuleHandler {
             return;
         }
 
-        // 2. In the Cave Dimension, block all non-modded monsters EXCEPT Spider and Cave Spider
+        // 2. In the Cave Dimension, block all bats unconditionally
+        if (isCaveDimension && entity instanceof Bat) {
+            event.setCanceled(true);
+            return;
+        }
+
+        // 3. In the Cave Dimension, block all non-modded monsters EXCEPT Spider and Cave Spider
         // Convert any non-modded monster spawns (e.g. from dungeon spawners or structures) into modded mobs
         if (isCaveDimension) {
             if (entity instanceof Mob mob && mob.getType().getCategory() == net.minecraft.world.entity.MobCategory.MONSTER) {
