@@ -20,7 +20,6 @@
   "client": [
     "BackgroundRendererMixin",
     "BlockModelDeserializerMixin",
-    "BlockModelMixin",
     "FrustumAccessor",
     "GameRendererAccessor",
     "LevelRendererMixin",
@@ -30,7 +29,6 @@
     "MusicTrackerMixin",
     "RenderTypeMixin",
     "SectionBufferBuilderPackMixin",
-    "ShaderInstanceMixin",
     "SoundManagerAccessor",
     "WeightedBakedModelAccessor",
     "WorldRendererAccessor"

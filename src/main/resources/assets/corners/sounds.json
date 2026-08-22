@@ -242,5 +242,33 @@
 				"type": "event"
 			}
 		]
+	},
+	"biome.the_abyss.loop": {
+		"sounds": [
+			{
+				"name": "minecraft:ambient/cave/cave1"
+			}
+		]
+	},
+	"darkness.heartbeat": {
+		"sounds": [
+			{
+				"name": "minecraft:ambient/cave/cave2"
+			}
+		]
+	},
+	"darkness.whisper": {
+		"sounds": [
+			{
+				"name": "minecraft:ambient/cave/cave3"
+			}
+		]
+	},
+	"darkness.eyes_vanish": {
+		"sounds": [
+			{
+				"name": "minecraft:ambient/cave/cave4"
+			}
+		]
 	}
 }
