@@ -29,17 +29,17 @@ public class CornerRadioRegistry {
         RADIOS.register(bus);
     }
 
-	public static final Supplier<RadioSoundTable> DEFAULT = RADIOS.register("default_radio", () -> new RadioSoundTable((net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_DEFAULT_STATIC.get(),
-		(net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_DEFAULT_STATIC.get(), (net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_DEFAULT_STATIC.get()));
+	public static final Supplier<RadioSoundTable> DEFAULT = RADIOS.register("default_radio", () -> new RadioSoundTable(CornerSoundEvents.RADIO_DEFAULT_STATIC,
+		CornerSoundEvents.RADIO_DEFAULT_STATIC, CornerSoundEvents.RADIO_DEFAULT_STATIC));
 
-	public static final Supplier<RadioSoundTable> YEARNING_CANAL = RADIOS.register("yearning_canal", () -> new RadioSoundTable((net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_YEARNING_CANAL_MUSIC.get(),
-			(net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_YEARNING_CANAL_STATIC.get(), (net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_YEARNING_CANAL.get()));
+	public static final Supplier<RadioSoundTable> YEARNING_CANAL = RADIOS.register("yearning_canal", () -> new RadioSoundTable(CornerSoundEvents.RADIO_YEARNING_CANAL_MUSIC,
+			CornerSoundEvents.RADIO_YEARNING_CANAL_STATIC, CornerSoundEvents.RADIO_YEARNING_CANAL));
 
-    public static final Supplier<RadioSoundTable> COMMUNAL_CORRIDORS = RADIOS.register("communal_corridors", () -> new RadioSoundTable((net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_COMMUNAL_CORRIDORS_MUSIC.get(),
-			(net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_COMMUNAL_CORRIDORS_STATIC.get(), (net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_COMMUNAL_CORRIDORS.get()));
+    public static final Supplier<RadioSoundTable> COMMUNAL_CORRIDORS = RADIOS.register("communal_corridors", () -> new RadioSoundTable(CornerSoundEvents.RADIO_COMMUNAL_CORRIDORS_MUSIC,
+			CornerSoundEvents.RADIO_COMMUNAL_CORRIDORS_STATIC, CornerSoundEvents.RADIO_COMMUNAL_CORRIDORS));
 
-    public static final Supplier<RadioSoundTable> HOARY_CROSSROADS = RADIOS.register("hoary_crossroads", () -> new RadioSoundTable((net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_HOARY_CROSSROADS_MUSIC.get(),
-			(net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_HOARY_CROSSROADS_STATIC.get(), (net.minecraft.core.Holder.Reference<net.minecraft.sounds.SoundEvent>) (Object) CornerSoundEvents.RADIO_HOARY_CROSSROADS.get()));
+    public static final Supplier<RadioSoundTable> HOARY_CROSSROADS = RADIOS.register("hoary_crossroads", () -> new RadioSoundTable(CornerSoundEvents.RADIO_HOARY_CROSSROADS_MUSIC,
+			CornerSoundEvents.RADIO_HOARY_CROSSROADS_STATIC, CornerSoundEvents.RADIO_HOARY_CROSSROADS));
 
 	public static void init() {
 

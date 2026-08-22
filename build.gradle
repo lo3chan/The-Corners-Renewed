@@ -87,3 +87,4 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
     withSourcesJar()
 }
+tasks.withType(JavaCompile) { options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation" }

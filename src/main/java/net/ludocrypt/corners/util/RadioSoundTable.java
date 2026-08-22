@@ -1,30 +1,30 @@
 package net.ludocrypt.corners.util;
 
-import net.minecraft.core.Holder;
+import java.util.function.Supplier;
 import net.minecraft.sounds.SoundEvent;
 
 public class RadioSoundTable {
 
-	private final Holder.Reference<SoundEvent> musicSound;
-	private final Holder.Reference<SoundEvent> staticSound;
-	private final Holder.Reference<SoundEvent> radioSound;
+	private final Supplier<SoundEvent> musicSound;
+	private final Supplier<SoundEvent> staticSound;
+	private final Supplier<SoundEvent> radioSound;
 
-	public RadioSoundTable(Holder.Reference<SoundEvent> musicSound, Holder.Reference<SoundEvent> staticSound,
-			Holder.Reference<SoundEvent> radioSound) {
+	public RadioSoundTable(Supplier<SoundEvent> musicSound, Supplier<SoundEvent> staticSound,
+			Supplier<SoundEvent> radioSound) {
 		this.musicSound = musicSound;
 		this.staticSound = staticSound;
 		this.radioSound = radioSound;
 	}
 
-	public Holder.Reference<SoundEvent> getMusicSound() {
+	public Supplier<SoundEvent> getMusicSound() {
 		return musicSound;
 	}
 
-	public Holder.Reference<SoundEvent> getStaticSound() {
+	public Supplier<SoundEvent> getStaticSound() {
 		return staticSound;
 	}
 
-	public Holder.Reference<SoundEvent> getRadioSound() {
+	public Supplier<SoundEvent> getRadioSound() {
 		return radioSound;
 	}
 
