@@ -92,18 +92,36 @@ public class CornerPaintings {
                     int targetX = (int) (entity.getX() * 7.0D);
                     int targetZ = (int) (entity.getZ() * 7.0D);
                     int safeY = 64;
+                    boolean foundSafe = false;
 
                     BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(targetX, 32, targetZ);
                     for (int y = 32; y < 250; y++) {
                         pos.setY(y);
                         if (level.getBlockState(pos).isAir() && level.getBlockState(pos.above()).isAir() && !level.getBlockState(pos.below()).isAir()) {
                             safeY = y;
+                            foundSafe = true;
                             break;
                         }
                     }
 
                     Vec3 dest = new Vec3(targetX + 0.5D, safeY, targetZ + 0.5D);
-                    return new DimensionTransition(level, dest, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), e -> {});
+                    final int finalSafeY = safeY;
+                    final boolean finalFoundSafe = foundSafe;
+
+                    return new DimensionTransition(level, dest, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), e -> {
+                        if (!finalFoundSafe && level instanceof ServerLevel serverLevel) {
+                            BlockPos center = BlockPos.containing(targetX, finalSafeY, targetZ);
+                            // Carve 3x3x4 sphere of air and place basalt platform
+                            for (int dx = -1; dx <= 1; dx++) {
+                                for (int dz = -1; dz <= 1; dz++) {
+                                    for (int dy = 0; dy < 4; dy++) {
+                                        serverLevel.setBlockAndUpdate(center.offset(dx, dy, dz), net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+                                    }
+                                    serverLevel.setBlockAndUpdate(center.offset(dx, -1, dz), net.minecraft.world.level.block.Blocks.BASALT.defaultBlockState());
+                                }
+                            }
+                        }
+                    });
                 }));
         LOGICS.put(CRYSTAL_FRACTAL, new DimensionalPaintingTeleportLogic(CornerWorlds.CRYSTAL_FRACTAL_KEY,
                 (level, entity, painting) -> {

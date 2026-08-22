@@ -36,8 +36,9 @@ public class AmplifiedCaveChunkGenerator extends ChunkGenerator {
     );
 
     private static final BlockState BEDROCK = Blocks.BEDROCK.defaultBlockState();
-    private static final BlockState DEEPSLATE = Blocks.DEEPSLATE.defaultBlockState();
-    private static final BlockState STONE = Blocks.STONE.defaultBlockState();
+    private static final BlockState BASALT = Blocks.BASALT.defaultBlockState();
+    private static final BlockState POLISHED_BASALT = Blocks.POLISHED_BASALT.defaultBlockState();
+    private static final BlockState SMOOTH_BASALT = Blocks.SMOOTH_BASALT.defaultBlockState();
     private static final BlockState WATER = Blocks.WATER.defaultBlockState();
     private static final BlockState AIR = Blocks.AIR.defaultBlockState();
 
@@ -79,7 +80,7 @@ public class AmplifiedCaveChunkGenerator extends ChunkGenerator {
                     if (y == minY || (y - minY < 4 && ((worldX * 31 + worldZ * 17 + y) % 3 != 0))) {
                         chunk.setBlockState(pos.set(x, y, z), BEDROCK, false);
                     } else {
-                        chunk.setBlockState(pos.set(x, y, z), DEEPSLATE, false);
+                        chunk.setBlockState(pos.set(x, y, z), BASALT, false);
                     }
                 }
 
@@ -88,7 +89,7 @@ public class AmplifiedCaveChunkGenerator extends ChunkGenerator {
                     if (y == maxY - 1 || ((maxY - y) < 4 && ((worldX * 23 + worldZ * 29 + y) % 3 != 0))) {
                         chunk.setBlockState(pos.set(x, y, z), BEDROCK, false);
                     } else {
-                        chunk.setBlockState(pos.set(x, y, z), STONE, false);
+                        chunk.setBlockState(pos.set(x, y, z), POLISHED_BASALT, false);
                     }
                 }
 
@@ -101,11 +102,12 @@ public class AmplifiedCaveChunkGenerator extends ChunkGenerator {
                     // Swiss cheese 3D noise + massive vertical cavern chambers
                     double n1 = Math.sin(nx) * Math.cos(ny) * Math.sin(nz);
                     double n2 = Math.cos(nx * 2.1 + nz * 0.5) * Math.sin(ny * 1.8);
-                    double density = n1 + n2 * 0.5;
+                    double n3 = Math.sin(nx * 3.5) * Math.sin(nz * 3.5) * Math.cos(ny * 2.0); // For jagged drop-offs
+                    double density = n1 + n2 * 0.5 + n3 * 0.25;
 
                     // Density threshold for carving massive open chambers vs giant stone pillars
-                    if (density > 0.25) {
-                        BlockState state = y < 0 ? DEEPSLATE : STONE;
+                    if (density > 0.15) { // Lower threshold creates more solid space, generating massive pillars
+                        BlockState state = y < 0 ? BASALT : SMOOTH_BASALT; // Using basalt variants
                         chunk.setBlockState(pos.set(x, y, z), state, false);
                     } else {
                         // Subterranean water basins at bottom layers
