@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:abs",
+  "argument": {
+    "type": "minecraft:noise",
+    "noise": "minecraft:spaghetti_3d_2",
+    "xz_scale": 0.333,
+    "y_scale": 0.333
+  }
+}

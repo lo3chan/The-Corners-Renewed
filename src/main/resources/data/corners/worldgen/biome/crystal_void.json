@@ -9,7 +9,13 @@
     "water_fog_color": 329011,
     "grass_color": 9470120,
     "foliage_color": 7378850,
-    "ambient_sound": "minecraft:ambient.cave"
+    "ambient_sound": "minecraft:ambient.cave",
+    "particle": {
+      "options": {
+        "type": "minecraft:amethyst_shard"
+      },
+      "probability": 0.015
+    }
   },
   "spawners": {
     "monster": [

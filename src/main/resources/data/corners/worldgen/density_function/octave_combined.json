@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:add",
+  "argument1": {
+    "type": "minecraft:mul",
+    "argument1": 0.5,
+    "argument2": "corners:octave_macro"
+  },
+  "argument2": {
+    "type": "minecraft:add",
+    "argument1": {
+      "type": "minecraft:mul",
+      "argument1": 0.3,
+      "argument2": "corners:octave_subframe"
+    },
+    "argument2": {
+      "type": "minecraft:mul",
+      "argument1": 0.2,
+      "argument2": "corners:octave_micro"
+    }
+  }
+}

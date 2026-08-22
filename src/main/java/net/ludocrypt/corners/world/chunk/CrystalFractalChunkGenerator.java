@@ -115,7 +115,7 @@ public class CrystalFractalChunkGenerator extends ChunkGenerator {
                 int relX = voxelData[offset] & 0xFF;
                 int relZ = voxelData[offset + 1] & 0xFF;
                 int rawH = ((voxelData[offset + 2] & 0xFF) << 8) | (voxelData[offset + 3] & 0xFF);
-                int y = (rawH >> 3) - 1024;
+                int y = (rawH >> 3) - 64;
                 int blockType = rawH & 7;
 
                 BlockState state = (blockType == 3) ? BUDDING_AMETHYST : AMETHYST_BLOCK;
@@ -147,17 +147,17 @@ public class CrystalFractalChunkGenerator extends ChunkGenerator {
 
     @Override
     public int getGenDepth() {
-        return 1536;
+        return 448;
     }
 
     @Override
     public int getMinY() {
-        return -1024;
+        return -64;
     }
 
     @Override
     public int getSeaLevel() {
-        return -1024;
+        return -64;
     }
 
     @Override
