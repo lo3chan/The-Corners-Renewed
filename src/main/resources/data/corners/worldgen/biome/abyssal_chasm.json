@@ -14,9 +14,9 @@
     "monster": [
       {
         "type": "corners:the_swarmer",
-        "weight": 90,
-        "minCount": 4,
-        "maxCount": 8
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "type": "corners:the_lurker",
@@ -26,45 +26,45 @@
       },
       {
         "type": "corners:the_heavy",
-        "weight": 30,
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "corners:the_spitter",
+        "weight": 7,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "corners:the_spectre",
+        "weight": 3,
         "minCount": 1,
         "maxCount": 2
       },
       {
-        "type": "corners:the_spitter",
-        "weight": 60,
+        "type": "corners:the_hunter",
+        "weight": 6,
         "minCount": 2,
         "maxCount": 4
       },
       {
-        "type": "corners:the_spectre",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
-        "type": "corners:the_hunter",
-        "weight": 50,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
         "type": "corners:the_horrors",
-        "weight": 15,
+        "weight": 2,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "corners:the_undead_wolf",
-        "weight": 70,
-        "minCount": 3,
-        "maxCount": 5
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 2
       },
       {
         "type": "corners:the_rod",
-        "weight": 50,
+        "weight": 4,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 2
       },
       {
         "type": "corners:the_clogger",
@@ -74,9 +74,9 @@
       },
       {
         "type": "corners:the_pregnant",
-        "weight": 45,
+        "weight": 2,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
       },
       {
         "type": "corners:the_wheezer",
@@ -86,7 +86,7 @@
       },
       {
         "type": "corners:the_lumber",
-        "weight": 35,
+        "weight": 7,
         "minCount": 1,
         "maxCount": 2
       },
@@ -98,9 +98,9 @@
       },
       {
         "type": "corners:the_big_sucker",
-        "weight": 40,
+        "weight": 3,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 3
       },
       {
         "type": "corners:the_fire_dust",
@@ -116,9 +116,9 @@
       },
       {
         "type": "corners:slaveman",
-        "weight": 40,
-        "minCount": 2,
-        "maxCount": 4
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "type": "corners:the_moonflower",
@@ -128,15 +128,15 @@
       },
       {
         "type": "corners:the_beartamer",
-        "weight": 20,
+        "weight": 4,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "corners:the_bidy",
-        "weight": 75,
+        "weight": 1,
         "minCount": 3,
-        "maxCount": 6
+        "maxCount": 4
       },
       {
         "type": "corners:the_bidy_upside",
@@ -152,9 +152,9 @@
       },
       {
         "type": "corners:the_gliter",
-        "weight": 30,
-        "minCount": 1,
-        "maxCount": 3
+        "weight": 6,
+        "minCount": 2,
+        "maxCount": 4
       },
       {
         "type": "corners:the_immortal",
@@ -164,9 +164,9 @@
       },
       {
         "type": "corners:the_ordure",
-        "weight": 45,
-        "minCount": 2,
-        "maxCount": 4
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "type": "corners:the_posessive",
@@ -176,27 +176,27 @@
       },
       {
         "type": "corners:the_rabidus",
-        "weight": 50,
-        "minCount": 2,
-        "maxCount": 4
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 2
       },
       {
         "type": "corners:the_skeeper",
-        "weight": 45,
-        "minCount": 2,
-        "maxCount": 4
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "type": "corners:the_smoker",
-        "weight": 55,
-        "minCount": 2,
-        "maxCount": 4
+        "weight": 6,
+        "minCount": 1,
+        "maxCount": 2
       },
       {
         "type": "corners:the_somnolence",
-        "weight": 30,
-        "minCount": 1,
-        "maxCount": 2
+        "weight": 35,
+        "minCount": 3,
+        "maxCount": 8
       },
       {
         "type": "corners:restless_spirit",

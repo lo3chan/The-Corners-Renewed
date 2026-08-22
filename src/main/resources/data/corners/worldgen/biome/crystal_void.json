@@ -18,14 +18,7 @@
     }
   },
   "spawners": {
-    "monster": [
-      {
-        "type": "corners:crystalline_guardian",
-        "weight": 20,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
+    "monster": [],
     "creature": [],
     "ambient": [],
     "water_creature": [],

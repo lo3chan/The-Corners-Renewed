@@ -2,14 +2,40 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": {
-        "min": 1,
-        "max": 3
-      },
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:blaze_powder"
+          "name": "minecraft:charcoal",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "born_in_chaos_v1:flaming_evil_pumpkin",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
         }
       ]
     },
@@ -21,24 +47,34 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:fire_charge"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.25
-        }
-      ],
-      "entries": [
+          "name": "born_in_chaos_v1:ethereal_spirit",
+          "weight": 80,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
         {
           "type": "minecraft:item",
-          "name": "minecraft:magma_cream"
+          "name": "born_in_chaos_v1:fire_dust",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "random_sequence": "born_in_chaos_v1:entities/seared_spirit"
 }
