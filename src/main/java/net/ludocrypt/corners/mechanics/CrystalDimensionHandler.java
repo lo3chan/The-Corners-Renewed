@@ -48,7 +48,7 @@ public class CrystalDimensionHandler {
         }
 
         // Block bats and vanilla monsters from cluttering the crystal fractal void
-        if (entity instanceof Bat || (entity instanceof Monster && !(entity instanceof net.ludocrypt.corners.entity.CrystallineGuardianEntity))) {
+        if (entity instanceof Bat || entity instanceof Monster) {
             event.setCanceled(true);
         }
     }

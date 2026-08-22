@@ -314,11 +314,6 @@ public class CornerEntities {
             .clientTrackingRange(10)
             .build("dire_hound_leader"));
 
-    public static final Supplier<EntityType<net.ludocrypt.corners.entity.CrystallineGuardianEntity>> CRYSTALLINE_GUARDIAN = ENTITY_TYPES.register("crystalline_guardian",
-        () -> EntityType.Builder.<net.ludocrypt.corners.entity.CrystallineGuardianEntity>of(net.ludocrypt.corners.entity.CrystallineGuardianEntity::new, MobCategory.MONSTER)
-            .sized(0.85F, 0.85F)
-            .clientTrackingRange(12)
-            .build("crystalline_guardian"));
 
     public static final Supplier<EntityType<net.ludocrypt.corners.entity.covrus.CorvusEntity>> CORVUS = ENTITY_TYPES.register("corvus",
         () -> EntityType.Builder.<net.ludocrypt.corners.entity.covrus.CorvusEntity>of(net.ludocrypt.corners.entity.covrus.CorvusEntity::new, MobCategory.CREATURE)

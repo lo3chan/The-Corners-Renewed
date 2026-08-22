@@ -7,3 +7,5 @@ run/
 *.py
 *.sh
 
+
+build_old*

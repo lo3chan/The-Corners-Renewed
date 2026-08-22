@@ -46,7 +46,6 @@ public class TheCornersClient {
         event.registerEntityRenderer(CornerEntities.GAIA_BOAT.get(), context -> new CornerBoatEntityRenderer(context, false, CornerBoat.GAIA));
         event.registerEntityRenderer(CornerEntities.GAIA_CHEST_BOAT.get(), context -> new CornerBoatEntityRenderer(context, true, CornerBoat.GAIA));
         event.registerEntityRenderer(CornerEntities.CORVUS.get(), net.ludocrypt.corners.client.entity.corvus.CorvusEntityRenderer::new);
-        event.registerEntityRenderer(CornerEntities.CRYSTALLINE_GUARDIAN.get(), net.ludocrypt.corners.client.render.entity.CrystallineGuardianRenderer::new);
 
         event.registerEntityRenderer(CornerEntities.THE_SWARMER.get(), context -> new net.ludocrypt.corners.client.entity.undead.GenericGeoRenderer<>(context, "the_swarmer"));
         event.registerEntityRenderer(CornerEntities.THE_LURKER.get(), context -> new net.ludocrypt.corners.client.entity.undead.GenericGeoRenderer<>(context, "the_lurker"));
@@ -103,4 +102,64 @@ public class TheCornersClient {
         event.registerLayerDefinition(CornerBoatEntityRenderer.getModelLayer(CornerBoat.GAIA, true), ChestBoatModel::createBodyModel);
         event.registerLayerDefinition(net.ludocrypt.corners.client.entity.corvus.CorvusEntityModel.LAYER_LOCATION, net.ludocrypt.corners.client.entity.corvus.CorvusEntityModel::createBodyLayer);
     }
+
+    @SubscribeEvent
+    public static void registerItemColors(net.neoforged.neoforge.client.event.RegisterColorHandlersEvent.Item event) {
+        event.register((stack, tintIndex) -> {
+            if (stack.getItem() instanceof net.neoforged.neoforge.common.DeferredSpawnEggItem egg) {
+                return egg.getColor(tintIndex);
+            }
+            return -1;
+        },
+            CornerBlocks.THE_SWARMER_SPAWN_EGG.get(),
+            CornerBlocks.THE_LURKER_SPAWN_EGG.get(),
+            CornerBlocks.THE_HEAVY_SPAWN_EGG.get(),
+            CornerBlocks.THE_SPITTER_SPAWN_EGG.get(),
+            CornerBlocks.THE_SPECTRE_SPAWN_EGG.get(),
+            CornerBlocks.THE_HUNTER_SPAWN_EGG.get(),
+            CornerBlocks.THE_HORRORS_SPAWN_EGG.get(),
+            CornerBlocks.THE_UNDEAD_WOLF_SPAWN_EGG.get(),
+            CornerBlocks.THE_ROD_SPAWN_EGG.get(),
+            CornerBlocks.THE_CLOGGER_SPAWN_EGG.get(),
+            CornerBlocks.THE_PREGNANT_SPAWN_EGG.get(),
+            CornerBlocks.THE_WHEEZER_SPAWN_EGG.get(),
+            CornerBlocks.THE_LUMBER_SPAWN_EGG.get(),
+            CornerBlocks.THE_SUCKER_SPAWN_EGG.get(),
+            CornerBlocks.THE_BIG_SUCKER_SPAWN_EGG.get(),
+            CornerBlocks.THE_FIRE_DUST_SPAWN_EGG.get(),
+            CornerBlocks.DEAD_CLOGGER_SPAWN_EGG.get(),
+            CornerBlocks.SLAVEMAN_SPAWN_EGG.get(),
+            CornerBlocks.THE_MOONFLOWER_SPAWN_EGG.get(),
+            CornerBlocks.THE_BEARTAMER_SPAWN_EGG.get(),
+            CornerBlocks.THE_BIDY_SPAWN_EGG.get(),
+            CornerBlocks.THE_BIDY_UPSIDE_SPAWN_EGG.get(),
+            CornerBlocks.THE_DUNGEON_SPAWN_EGG.get(),
+            CornerBlocks.THE_GLITER_SPAWN_EGG.get(),
+            CornerBlocks.THE_IMMORTAL_SPAWN_EGG.get(),
+            CornerBlocks.THE_ORDURE_SPAWN_EGG.get(),
+            CornerBlocks.THE_POSESSIVE_SPAWN_EGG.get(),
+            CornerBlocks.THE_RABIDUS_SPAWN_EGG.get(),
+            CornerBlocks.THE_SKEEPER_SPAWN_EGG.get(),
+            CornerBlocks.THE_SMOKER_SPAWN_EGG.get(),
+            CornerBlocks.THE_SOMNOLENCE_SPAWN_EGG.get(),
+            CornerBlocks.RESTLESS_SPIRIT_SPAWN_EGG.get(),
+            CornerBlocks.DECREPIT_SKELETON_SPAWN_EGG.get(),
+            CornerBlocks.DECAYING_ZOMBIE_SPAWN_EGG.get(),
+            CornerBlocks.SKELETON_DEMOMAN_SPAWN_EGG.get(),
+            CornerBlocks.SKELETON_THRASHER_SPAWN_EGG.get(),
+            CornerBlocks.DARK_VORTEX_SPAWN_EGG.get(),
+            CornerBlocks.BONE_IMP_SPAWN_EGG.get(),
+            CornerBlocks.NIGHTMARE_STALKER_SPAWN_EGG.get(),
+            CornerBlocks.FALLEN_CHAOS_KNIGHT_SPAWN_EGG.get(),
+            CornerBlocks.MISSIONER_SPAWN_EGG.get(),
+            CornerBlocks.SEARED_SPIRIT_SPAWN_EGG.get(),
+            CornerBlocks.PHANTOM_CREEPER_SPAWN_EGG.get(),
+            CornerBlocks.CORPSE_FISH_SPAWN_EGG.get(),
+            CornerBlocks.MAGGOT_SPAWN_EGG.get(),
+            CornerBlocks.THORNSHELL_CRAB_SPAWN_EGG.get(),
+            CornerBlocks.DIRE_HOUND_LEADER_SPAWN_EGG.get(),
+            CornerBlocks.CORVUS_SPAWN_EGG.get()
+        );
+    }
+
 }

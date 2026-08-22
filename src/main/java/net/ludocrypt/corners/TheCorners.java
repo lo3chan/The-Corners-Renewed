@@ -34,7 +34,6 @@ public class TheCorners {
     public TheCorners(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerEntityAttributes);
-        modEventBus.addListener(this::registerSpawnPlacements);
 
         CornerBlocks.BLOCKS.register(modEventBus);
         CornerBlocks.ITEMS.register(modEventBus);
@@ -100,17 +99,6 @@ public class TheCorners {
         event.put(CornerEntities.MAGGOT.get(), MaggotEntity.createAttributes().build());
         event.put(CornerEntities.THORNSHELL_CRAB.get(), ThornshellCrabEntity.createAttributes().build());
         event.put(CornerEntities.DIRE_HOUND_LEADER.get(), DireHoundLeaderEntity.createAttributes().build());
-        event.put(CornerEntities.CRYSTALLINE_GUARDIAN.get(), net.ludocrypt.corners.entity.CrystallineGuardianEntity.createAttributes().build());
-    }
-
-    private void registerSpawnPlacements(net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent event) {
-        event.register(
-            CornerEntities.CRYSTALLINE_GUARDIAN.get(),
-            net.minecraft.world.entity.SpawnPlacementTypes.NO_RESTRICTIONS,
-            net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-            net.minecraft.world.entity.monster.Monster::checkMonsterSpawnRules,
-            net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent.Operation.REPLACE
-        );
     }
 
 

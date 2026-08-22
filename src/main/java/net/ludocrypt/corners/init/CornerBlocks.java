@@ -185,7 +185,6 @@ public class CornerBlocks {
     public static final DeferredItem<Item> MAGGOT_SPAWN_EGG = ITEMS.register("maggot_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.MAGGOT, 0x3d3930, 0x8f8674, new Item.Properties()));
     public static final DeferredItem<Item> THORNSHELL_CRAB_SPAWN_EGG = ITEMS.register("thornshell_crab_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.THORNSHELL_CRAB, 0x3d271e, 0x8a4b33, new Item.Properties()));
     public static final DeferredItem<Item> DIRE_HOUND_LEADER_SPAWN_EGG = ITEMS.register("dire_hound_leader_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.DIRE_HOUND_LEADER, 0x1c1c1c, 0x8f2424, new Item.Properties()));
-    public static final DeferredItem<Item> CRYSTALLINE_GUARDIAN_SPAWN_EGG = ITEMS.register("crystalline_guardian_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.CRYSTALLINE_GUARDIAN, 0x9c59d1, 0xdf84ff, new Item.Properties()));
     public static final DeferredItem<Item> CORVUS_SPAWN_EGG = ITEMS.register("corvus_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CornerEntities.CORVUS, 0x1f1f23, 0x5a5a68, new Item.Properties()));
 
     public static final Supplier<CreativeModeTab> CORNERS_TAB = CREATIVE_MODE_TABS.register("corners_tab", () -> CreativeModeTab.builder()
@@ -275,7 +274,6 @@ public class CornerBlocks {
                 output.accept(MAGGOT_SPAWN_EGG.get());
                 output.accept(THORNSHELL_CRAB_SPAWN_EGG.get());
                 output.accept(DIRE_HOUND_LEADER_SPAWN_EGG.get());
-                output.accept(CRYSTALLINE_GUARDIAN_SPAWN_EGG.get());
                 output.accept(CORVUS_SPAWN_EGG.get());
 
                 // Populate paintings with specific variant components
@@ -422,7 +420,6 @@ public class CornerBlocks {
             event.accept(MAGGOT_SPAWN_EGG);
             event.accept(THORNSHELL_CRAB_SPAWN_EGG);
             event.accept(DIRE_HOUND_LEADER_SPAWN_EGG);
-            event.accept(CRYSTALLINE_GUARDIAN_SPAWN_EGG);
             event.accept(CORVUS_SPAWN_EGG);
         }
     }
