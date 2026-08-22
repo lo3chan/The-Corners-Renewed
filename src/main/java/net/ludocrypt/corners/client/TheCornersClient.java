@@ -20,7 +20,7 @@ import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.PaintingRenderer;
 
-@EventBusSubscriber(modid = "corners", value = Dist.CLIENT)
+@EventBusSubscriber(modid = "corners", bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class TheCornersClient {
 
     @SubscribeEvent
