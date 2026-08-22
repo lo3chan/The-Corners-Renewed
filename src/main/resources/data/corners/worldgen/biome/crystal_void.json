@@ -12,7 +12,7 @@
     "ambient_sound": "minecraft:ambient.cave",
     "particle": {
       "options": {
-        "type": "minecraft:amethyst_shard"
+        "type": "minecraft:end_rod"
       },
       "probability": 0.015
     }
