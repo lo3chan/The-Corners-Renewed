@@ -14,7 +14,14 @@ import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class TheSpitterEntity extends Zombie implements RangedAttackMob {
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.RawAnimation;
+
+public class TheSpitterEntity extends Zombie implements RangedAttackMob, GeoEntity {
 
     public TheSpitterEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
@@ -47,5 +54,22 @@ public class TheSpitterEntity extends Zombie implements RangedAttackMob {
         SmallFireball fireball = new SmallFireball(this.level(), this, look);
         fireball.setPos(this.getX(), this.getEyeY(), this.getZ());
         this.level().addFreshEntity(fireball);
+    }
+
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "controller", 5, state -> {
+            if (state.isMoving()) {
+                return state.setAndContinue(RawAnimation.begin().thenLoop("animation.walk"));
+            }
+            return state.setAndContinue(RawAnimation.begin().thenLoop("animation.idle"));
+        }));
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
     }
 }

@@ -13,7 +13,14 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
-public class TheSwarmerEntity extends Zombie {
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.RawAnimation;
+
+public class TheSwarmerEntity extends Zombie implements GeoEntity {
 
     public TheSwarmerEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
@@ -39,5 +46,22 @@ public class TheSwarmerEntity extends Zombie {
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+    }
+
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "controller", 5, state -> {
+            if (state.isMoving()) {
+                return state.setAndContinue(RawAnimation.begin().thenLoop("animation.walk"));
+            }
+            return state.setAndContinue(RawAnimation.begin().thenLoop("animation.idle"));
+        }));
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
     }
 }

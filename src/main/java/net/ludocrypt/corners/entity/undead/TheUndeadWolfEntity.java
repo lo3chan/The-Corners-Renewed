@@ -10,7 +10,14 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-public class TheUndeadWolfEntity extends Zombie {
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.RawAnimation;
+
+public class TheUndeadWolfEntity extends Zombie implements GeoEntity {
 
     public TheUndeadWolfEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
@@ -36,5 +43,22 @@ public class TheUndeadWolfEntity extends Zombie {
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+    }
+
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "controller", 5, state -> {
+            if (state.isMoving()) {
+                return state.setAndContinue(RawAnimation.begin().thenLoop("animation.walk"));
+            }
+            return state.setAndContinue(RawAnimation.begin().thenLoop("animation.idle"));
+        }));
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
     }
 }
