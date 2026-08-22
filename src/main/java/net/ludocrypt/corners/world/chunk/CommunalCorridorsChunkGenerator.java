@@ -566,6 +566,7 @@ public class CommunalCorridorsChunkGenerator extends AbstractNbtChunkGenerator {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	protected void modifyStructure(WorldGenRegion region, BlockPos pos, BlockState state, Optional<CompoundTag> nbt) {
 		super.modifyStructure(region, pos, state, nbt);
 
