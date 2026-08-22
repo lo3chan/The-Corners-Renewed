@@ -54,11 +54,17 @@ repositories {
     maven {
         url = 'https://maven.shedaniel.me/'
     }
+    maven {
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+    }
 }
 
 dependencies {
     // Cloth Config for NeoForge
     implementation "me.shedaniel.cloth:cloth-config-neoforge:15.0.140"
+
+    // GeckoLib
+    implementation 'software.bernie.geckolib:geckolib-neoforge-1.21.1:4.6.4'
 
     // Liminal Library (LimLib) for NeoForge
     // CurseForge Project ID: 1646280.
