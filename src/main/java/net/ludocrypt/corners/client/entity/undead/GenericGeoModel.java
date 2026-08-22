@@ -70,11 +70,13 @@ public class GenericGeoModel<T extends GeoEntity> extends GeoModel<T> {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public ResourceLocation getModelResource(T object) {
         return TheCorners.id("geo/" + resolvedId + ".geo.json");
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public ResourceLocation getTextureResource(T object) {
         return TheCorners.id("textures/entity/" + resolvedId + ".png");
     }

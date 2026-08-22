@@ -102,10 +102,10 @@ public class CornerBlocks {
     public static final DeferredItem<BlockItem> GAIA_LEAVES_ITEM = ITEMS.registerSimpleBlockItem("gaia_leaves", GAIA_LEAVES);
 
     public static final DeferredBlock<Block> GAIA_SIGN = BLOCKS.register("gaia_sign", () -> new StandingSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN)));
-    public static final DeferredBlock<Block> GAIA_WALL_SIGN = BLOCKS.register("gaia_wall_sign", () -> new WallSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WALL_SIGN).dropsLike(GAIA_SIGN.get())));
+    public static final DeferredBlock<Block> GAIA_WALL_SIGN = BLOCKS.register("gaia_wall_sign", () -> new WallSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WALL_SIGN)));
 
     public static final DeferredBlock<Block> GAIA_HANGING_SIGN = BLOCKS.register("gaia_hanging_sign", () -> new CeilingHangingSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_HANGING_SIGN)));
-    public static final DeferredBlock<Block> GAIA_WALL_HANGING_SIGN = BLOCKS.register("gaia_wall_hanging_sign", () -> new WallHangingSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WALL_HANGING_SIGN).dropsLike(GAIA_HANGING_SIGN.get())));
+    public static final DeferredBlock<Block> GAIA_WALL_HANGING_SIGN = BLOCKS.register("gaia_wall_hanging_sign", () -> new WallHangingSignBlock(GAIA_SIGN_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WALL_HANGING_SIGN)));
 
     public static final DeferredBlock<Block> GAIA_PRESSURE_PLATE = BLOCKS.register("gaia_pressure_plate", () -> new PressurePlateBlock(GAIA_SET_TYPE, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PRESSURE_PLATE)));
     public static final DeferredItem<BlockItem> GAIA_PRESSURE_PLATE_ITEM = ITEMS.registerSimpleBlockItem("gaia_pressure_plate", GAIA_PRESSURE_PLATE);
