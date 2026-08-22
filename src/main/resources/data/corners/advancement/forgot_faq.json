@@ -1,0 +1,29 @@
+{
+	"parent": "corners:root",
+	"display": {
+		"icon": {
+          "count": 1,
+          "id": "minecraft:painting"
+		},
+		"title": {
+			"translate": "advancements.forgot_faq.root.title"
+		},
+		"description": {
+			"translate": "advancements.forgot_faq.root.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"forgot_faq": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"requirements": [
+		[
+			"forgot_faq"
+		]
+	]
+}
