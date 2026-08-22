@@ -1,47 +1,47 @@
-# The Corners Renewed: Master Migration Specification & Verification Roadmap (1.21.1 / NeoForge)
+# The Corners Renewed: Verification, Deep Hardening & Analysis Specification (1.21.1 / NeoForge)
 
-## 1. Project Overview & Architecture Target
-The Corners Renewed is a modern port and enhancement of the iconic liminal dimensions mod targeting **Minecraft 1.21.1 / NeoForge (21.1.248+) / Java 21**.
+> **CORE DIRECTIVE: ZERO NEW FEATURES.**
+> Focus 100% on verifying, hardening, stress-testing, and deeply analyzing the exact user-specified systems against reference sources.
 
 ---
 
-## 2. Core Subsystems
+## 1. Scope Boundaries (Strictly Defined Systems Only)
 
-### 2.1 Dimensional Systems
+### 1.1 Dimensional Systems
 1. **The Abyss (`corners:the_abyss`)**:
-   - **Specification**: A pure Overworld enclosed cave dimension spanning Y = -64 to Y = 320 (total depth 384 blocks).
-   - **Generation**: Utilizes custom noise router `corners:the_abyss` based on stone and deepslate vertical gradients with aquifers, ore veins, and cave cheese noise.
-   - **Biomes**: Multi-noise distribution containing `corners:abyssal_chasm`, `minecraft:lush_caves`, `minecraft:dripstone_caves`, and `minecraft:deep_dark`.
-   - **Underground Structures**: Spawns underground vanilla structures (`minecraft:mineshaft`, `minecraft:ancient_city`, `minecraft:trial_chambers`, `minecraft:stronghold`).
-   - **Ambient Sound**: No harsh looping cave noises; ambient sound is clean and atmosphere-appropriate.
-   - **Dimension Type**: `effects: "minecraft:overworld"`, `bed_works: true`, `has_skylight: false`, `has_ceiling: true`.
+   - Pure Overworld enclosed cave dimension spanning Y = -64 to Y = 320.
+   - Noise generation: Custom Overworld noise router `corners:the_abyss` with stone/deepslate, aquifers, ore veins, and cave cheese.
+   - Multi-noise distribution: `corners:abyssal_chasm`, `minecraft:lush_caves`, `minecraft:dripstone_caves`, `minecraft:deep_dark`.
+   - Underground structures: `minecraft:mineshaft`, `minecraft:ancient_city`, `minecraft:trial_chambers`, `minecraft:stronghold`.
+   - Ambient sound: No harsh repetitive cave sound loops.
+   - Safe arrival: Platform carving in `CornerPaintings.java` ensuring players never spawn inside solid blocks or void.
 
 2. **Crystal Fractal (`corners:crystal_fractal`)**:
-   - **Specification**: Infinite 3D procedural amethyst fractal lattice.
-   - **Generation**: Native `minecraft:noise` chunk generator pointing to density function `corners:final_density` and sub-octave noise graphs (`octave_macro`, `octave_micro`, `octave_subframe`, `octave_combined`).
-   - **Bounds**: `min_y: 0`, `height: 384`, `logical_height: 384`, `effects: "minecraft:the_end"`.
-   - **Surface Rules**: Generates stone foundations, calcite thresholds, budding amethyst accents, and amethyst blocks.
-   - **Mob Spawns**: Crystalline Guardian is fully removed; bat and monster spawns are suppressed in the void.
+   - 1:1 procedural 3D amethyst fractal lattice using native `minecraft:noise` chunk generator with `corners:final_density` and ported octave density functions (`octave_macro`, `octave_micro`, `octave_subframe`, `octave_combined`).
+   - Bounds: `min_y: 0`, `height: 384`, `logical_height: 384`, `effects: "minecraft:the_end"`.
+   - Surface rules: Stone foundations, calcite, budding amethyst, and amethyst blocks.
+   - Complete removal of Crystalline Guardian; suppress vanilla monster and bat clutter in the void.
 
 3. **Communal Corridors, Hoary Crossroads, Yearning Canal**:
-   - Fully functional dimensional paintings (`CornerPaintings.java`) providing seamless portal transitions.
+   - Verify dimensional painting interactions, portal traversal, and ambient atmosphere.
 
 ---
 
-### 2.2 Mob Systems & GeckoLib 3D Models
-- All 48 horror and undead entities use GeckoLib `4.7.7` with `GenericGeoRenderer` dynamically linking each mob to its authentic `.geo.json` model, `.png` texture, and `.animation.json` sequences.
+### 1.2 Mobs & Visual Presentation
+- All 48 horror and undead mobs use GeckoLib 4.7.7 `GenericGeoRenderer` resolving each entity to its authentic 3D model, texture, and animation.
 - `CorvusEntity` has full 3D flight pathfinding, `FlyingMoveControl`, and `FlyingPathNavigation`.
-- Every mob has a registered `DeferredSpawnEggItem` with distinct primary/secondary colors, full `en_us.json` translation keys, template JSON item models, and registered client color handlers (`RegisterColorHandlersEvent.Item`).
+- All 48 mobs have a registered `DeferredSpawnEggItem` with primary/secondary colors, full translation keys in `en_us.json`, and registered color handlers (`RegisterColorHandlersEvent.Item`).
 
 ---
 
-### 2.3 Audio, Radios & Shaders
-- `RadioBlock.java`, `RadioBlockEntity.java`, `RadioMenu.java`, `RadioScreen.java` handle radio tuning frequencies, audio streaming packets, and static channel filtering.
-- Shaders and post-processing filters (`TheCornersShaders.java`) safely hook into NeoForge client render pipelines.
+### 1.3 Radios & Audio Systems
+- `RadioBlock.java`, `RadioBlockEntity.java`, `RadioMenu.java`, `RadioScreen.java` handle frequency tuning, custom payload packets, and stream playback.
+- `sounds.json` audio event mapping verification without memory leaks or sound engine missing sound warnings.
 
 ---
 
-## 3. Autonomous Verification Suite
-1. **Compilation Floor**: `./gradlew compileJava --no-daemon` must exit with code 0 and 0 errors.
-2. **Resource Validation**: Data packs, dimension JSONs, biomes, density functions, item models, and sound events must load without `IllegalStateException` or missing registry keys.
-3. **Headless Server Testing**: `./gradlew runGameTestServer` and headless execution must load all 5 dimensions without crashing.
+## 2. Deep Analysis & Continuous Verification Protocol
+1. **Compilation Floor**: Zero compilation errors (`./gradlew compileJava --no-daemon`).
+2. **Registry & Codec Integrity**: Zero missing registry keys, zero `IllegalStateException` on data loading.
+3. **Headless Server & GameTests**: Automated tests verifying all 5 dimensions load, chunks generate, radios place and tune, and paintings teleport safely without crash.
+4. **Architectural Review**: Continuous failure-mode analysis and edge-case testing with Jules.
