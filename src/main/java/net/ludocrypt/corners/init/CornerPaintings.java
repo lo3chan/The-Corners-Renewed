@@ -106,12 +106,11 @@ public class CornerPaintings {
 
                     Vec3 dest = new Vec3(targetX + 0.5D, safeY, targetZ + 0.5D);
                     final int finalSafeY = safeY;
-                    final boolean finalFoundSafe = foundSafe;
 
                     return new DimensionTransition(level, dest, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), e -> {
-                        if (!finalFoundSafe && level instanceof ServerLevel serverLevel) {
+                        if (level instanceof ServerLevel serverLevel) {
                             BlockPos center = BlockPos.containing(targetX, finalSafeY, targetZ);
-                            // Carve 3x3x4 sphere of air and place basalt platform
+                            // Carve 3x3x4 sphere of air and place basalt platform unconditionally to ensure safe arrival in full cave gen
                             for (int dx = -1; dx <= 1; dx++) {
                                 for (int dz = -1; dz <= 1; dz++) {
                                     for (int dy = 0; dy < 4; dy++) {

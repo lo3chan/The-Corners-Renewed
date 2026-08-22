@@ -39,7 +39,15 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.FixedBiomeSource;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSourceParameterList;
+import net.minecraft.world.level.biome.Climate;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
+import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.dimension.DimensionType;
+import com.mojang.datafixers.util.Pair;
+import java.util.List;
 import net.minecraft.world.level.dimension.DimensionType.MonsterSettings;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
@@ -155,11 +163,18 @@ public class CornersDynamicRegistryProvider {
                                 HoaryCrossroadsChunkGenerator.createGroup(), 16, 16, 4, 0))
         );
 
+        var noiseSettingsGetter = context.lookup(Registries.NOISE_SETTINGS);
+
         context.register(ResourceKey.create(Registries.LEVEL_STEM, TheCorners.id(THE_ABYSS)), new LevelStem(
                 dimensionTypeGetter.getOrThrow(ResourceKey.create(Registries.DIMENSION_TYPE, TheCorners.id(THE_ABYSS))),
-                        new net.ludocrypt.corners.world.chunk.AmplifiedCaveChunkGenerator(
-                                new FixedBiomeSource(
-                                biomeGetter.getOrThrow(CornerBiomes.ABYSSAL_CHASM_BIOME))))
+                        new NoiseBasedChunkGenerator(
+                                MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(List.of(
+                                        Pair.of(Climate.parameters(Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(0.0f, 1.0f), Climate.Parameter.point(0.0f), 0.0f), biomeGetter.getOrThrow(CornerBiomes.ABYSSAL_CHASM_BIOME)),
+                                        Pair.of(Climate.parameters(Climate.Parameter.span(-0.5f, 0.5f), Climate.Parameter.span(0.5f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 0.0f), Climate.Parameter.point(0.0f), 0.0f), biomeGetter.getOrThrow(Biomes.LUSH_CAVES)),
+                                        Pair.of(Climate.parameters(Climate.Parameter.span(0.5f, 1.0f), Climate.Parameter.span(-1.0f, -0.5f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 0.0f), Climate.Parameter.point(0.0f), 0.0f), biomeGetter.getOrThrow(Biomes.DRIPSTONE_CAVES)),
+                                        Pair.of(Climate.parameters(Climate.Parameter.span(-1.0f, -0.5f), Climate.Parameter.span(-1.0f, -0.5f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 1.0f), Climate.Parameter.span(-1.0f, 0.0f), Climate.Parameter.point(0.0f), 0.0f), biomeGetter.getOrThrow(Biomes.DEEP_DARK))
+                                ))),
+                                noiseSettingsGetter.getOrThrow(NoiseGeneratorSettings.CAVES)))
         );
     }
 
