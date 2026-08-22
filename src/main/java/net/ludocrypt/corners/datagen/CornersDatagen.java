@@ -28,7 +28,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-@EventBusSubscriber(modid = "corners", bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = "corners")
 public class CornersDatagen {
 
     @SubscribeEvent

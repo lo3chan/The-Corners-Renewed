@@ -26,7 +26,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Comparator;
 import java.util.Optional;
 
-@EventBusSubscriber(modid = "corners", bus = EventBusSubscriber.Bus.MOD, value = net.neoforged.api.distmarker.Dist.CLIENT)
+@EventBusSubscriber(modid = "corners", value = net.neoforged.api.distmarker.Dist.CLIENT)
 public class ServerToClientPackets {
 
     @SubscribeEvent
