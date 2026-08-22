@@ -1,59 +1,65 @@
 # The Corners Renewed: 1:1 Reference Porting & Verification Specification (1.21.1 / NeoForge)
 
-> **CORE DIRECTIVE: 1:1 FIDELITY WITH ORIGINAL REFERENCE MODS (ZERO INVENTED FEATURES).**
-> Other than the two new dimensions (The Abyss & Crystal Fractal), this project is a strict 1-to-1 modern port of the original reference codebases to NeoForge 1.21.1 / Java 21 / GeckoLib 4.7.7.
+> **CORE DIRECTIVE: 1:1 FIDELITY WITH ORIGINAL REFERENCE CODEBASES (ZERO INVENTED MECHANICS / ZERO GUIS).**
 
 ---
 
-## 1. Primary Reference Lineage
+## 1. Verified Original The Corners Reference Mechanics (`reference_sources/the_corners_original/`)
 
-### 1.1 The Corners (Original Fabric 1.18.2 by LudoCrypt)
-Path: `reference_sources/the_corners_original/`
-- **Blocks & Items**: 
-  - Gaia Wood Set: logs, stripped logs, wood, planks, stairs, slab, fence, fence gate, door, trapdoor, pressure plate, button, carved planks, leaves, sapling, signs, hanging signs, boats, chest boats.
-  - Architectural: Stone Pillar, Thin Pillar, Drywall, Nylon Fiber (block, stairs, slab), Snowy Glass (block, pane, slab with cutout transparency), Dark Railing, Deep Bookshelf.
-  - Radios: Wooden Radio, Tuned Radio, Broken Radio, Grown Radio with frequency tuning (46.0 MHz - 108.0 MHz), podcasts, static audio, and music tracks.
-- **Original Dimensions**:
-  - `communal_corridors` (Backrooms-esque infinite hallways).
-  - `hoary_crossroads` (Snowy infinite crossroads).
-  - `yearning_canal` (Atmospheric flooded channels).
-- **Dimensional Paintings & Portals**:
-  - Painting Variants: Cascade, Goat Mountain, Shoreline, Hoary Crossroads, Communal Corridors, Yearning Canal.
-- **Advancements**:
-  - "The Corners", "Forgetting the FAQ", "I Change My Mind", "Tears of Void", "Backrooms-esque", "Unabridged Road".
+### 1.1 In-World Radio System (Zero GUI / Immersive Physical Interaction)
+*Source: `net/ludocrypt/corners/block/RadioBlock.java` & `net/ludocrypt/corners/packet/ServerToClientPackets.java`*
 
-### 1.2 Born in Chaos & The Undead Revamped
-Path: `reference_sources/born_in_chaos/` & `reference_sources/the_undead_revamped/`
-- **All 47 Horror & Undead Mobs + Corvus**:
-  - Port exact base attributes (health, attack damage, speed, follow range, armor).
-  - Port exact GeckoLib 3D models (`.geo.json`), textures (`.png`), and animations (`.animation.json`).
-  - Port attack goals, sound mappings, and loot tables.
-  - `CorvusEntity` retains full 3D aerial navigation, flying move control, and flight AI.
-  - Every mob has a registered `DeferredSpawnEggItem` with original primary/secondary colors and translation names.
+- **Block Variants**:
+  1. `grown_radio`: Grown via bone meal on Gaia sapling (`new RadioBlock(null, null, ...)`).
+  2. `broken_radio`: Empty radio chassis (`new RadioBlock(null, GROWN_RADIO, ...)`).
+  3. `wooden_radio`: Loaded with `Items.GOLD_INGOT` (`new RadioBlock(Items.GOLD_INGOT, BROKEN_RADIO, ...)`).
+  4. `tuned_radio`: Loaded with `Items.AMETHYST_SHARD` (`new RadioBlock(Items.AMETHYST_SHARD, BROKEN_RADIO, ...)`).
 
----
+- **In-World Player Interaction**:
+  - **Core Insertion**: Right-clicking the front face of a Broken Radio with a `GOLD_INGOT` inserts the core and transforms it into a `WOODEN_RADIO`. Right-clicking with an `AMETHYST_SHARD` transforms it into a `TUNED_RADIO`.
+  - **Core Extraction**: Right-clicking the front face of a Wooden or Tuned Radio with an empty hand pops the core item (`gold_ingot` or `amethyst_shard`) back into the player's inventory and resets the block to a `broken_radio`.
+  - **Bone Meal**: Applying bone meal to a Broken Radio or Grown Radio interacts with Gaia sapling growth.
+  - **Power / Playback**: Right-clicking or powering with redstone toggles the `POWERED` boolean property and broadcasts `PLAY_RADIO` packet to all tracking clients.
 
-## 2. The Two New Custom Dimensions
-
-### 2.1 The Abyss (`corners:the_abyss`)
-- **Specification**: A pure Overworld enclosed cave world spanning Y = -64 to Y = 320.
-- **Generation**: Custom Overworld noise router (`corners:the_abyss`) using stone/deepslate layers, aquifers, ore veins, and cave cheese.
-- **Biomes**: Multi-noise distribution with `corners:abyssal_chasm`, `minecraft:lush_caves`, `minecraft:dripstone_caves`, `minecraft:deep_dark`.
-- **Underground Structures**: Spawns underground vanilla structures (`minecraft:mineshaft`, `minecraft:ancient_city`, `minecraft:trial_chambers`, `minecraft:stronghold`).
-- **Sound**: Subtle ambient atmosphere (no harsh repeating cave rumble loops).
-- **Safe Arrival**: Painting platform carving in `CornerPaintings.java` ensuring players never spawn in solid blocks or void.
-
-### 2.2 Crystal Fractal (`corners:crystal_fractal`)
-- **Specification**: 1:1 infinite procedural 3D amethyst fractal lattice (ported from the standalone crystal fractal datapack).
-- **Generation**: Native `minecraft:noise` chunk generator with `corners:final_density` and 5 ported octave density functions (`octave_macro`, `octave_micro`, `octave_subframe`, `octave_combined`).
-- **Bounds**: `min_y: 0`, `height: 384`, `logical_height: 384`, `effects: "minecraft:the_end"`.
-- **Surface Rules**: Generates stone foundation base, calcite, budding amethyst, and amethyst blocks.
-- **Mob Spawns**: Crystalline Guardian removed; void is clean.
+- **Client Sound Resolution & Painting Proximity**:
+  - When `PLAY_RADIO` starts, client checks for the closest `PaintingEntity` within a 16-block radius possessing a `DimensionalPaintingVariant`.
+  - The nearby painting determines the radio station channel (`Yearning Canal`, `Communal Corridors`, or `Hoary Crossroads`).
+  - **Audio Channel Mapping**:
+    - `broken_radio` / No Painting: Default static sound (`id.getStaticSound()`).
+    - `wooden_radio`: Dimension podcast / voice transmission (`id.getRadioSound()`).
+    - `tuned_radio`: Dimension ambient music track (`id.getMusicSound()`).
+  - Uses `LoopingPositionedSoundInstance` on `SoundCategory.RECORDS` at `pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5`.
 
 ---
 
-## 3. Strict 1:1 Porting Quality Gate
-1. **Zero Divergence**: Every ported class must match the logic, mathematical equations, and behavior of the reference codebase.
-2. **Zero Errors**: Build must pass with `./gradlew compileJava --no-daemon` with exit code 0.
-3. **Registry & Resource Integrity**: Zero missing textures, zero missing language translations, zero missing sound events.
-4. **Automated Verification**: Automated headless GameTest server tests verifying block interaction, dimension hopping, and mob AI.
+### 1.2 Original Blocks, Wood & Translucent Cutouts
+- **Gaia Wood Set**: Logs, Stripped Logs, Wood, Planks, Stairs, Slab, Fence, Fence Gate, Door, Trapdoor, Pressure Plate, Button, Carved Planks, Leaves, Sapling, Sign, Hanging Sign, Boat, Chest Boat.
+- **Architectural**: Stone Pillar, Thin Pillar, Drywall, Nylon Fiber (blocks, stairs, slabs), Dark Railing, Deep Bookshelf.
+- **Snowy Glass**: Blocks, Panes, Slabs registered with `RenderType.cutout()` for alpha transparency.
+
+### 1.3 Original Dimensions & Painting Portals
+- **Dimensions**: `communal_corridors`, `hoary_crossroads`, `yearning_canal`.
+- **Paintings**: Cascade, Goat Mountain, Shoreline, Hoary Crossroads, Communal Corridors, Yearning Canal.
+- **Advancements**: "The Corners", "Forgetting the FAQ", "I Change My Mind", "Tears of Void", "Backrooms-esque", "Unabridged Road".
+
+---
+
+## 2. Verified Born in Chaos & The Undead Revamped Reference Mechanics
+*Sources: `reference_sources/born_in_chaos/` & `reference_sources/the_undead_revamped/`*
+
+- **47 Horror & Undead Mobs + Corvus**:
+  - Exact base attributes (health, attack damage, speed, follow range, armor).
+  - Exact GeckoLib 3D models (`.geo.json`), textures (`.png`), and animations (`.animation.json`).
+  - `CorvusEntity` has full 3D aerial navigation, `FlyingMoveControl`, and `FlyingPathNavigation`.
+  - All 48 mobs have a registered `DeferredSpawnEggItem` with primary/secondary colors and translation names.
+
+---
+
+## 3. The Two Custom Dimensions
+1. **The Abyss (`corners:the_abyss`)**:
+   - Pure Overworld enclosed cave world spanning Y = -64 to Y = 320.
+   - Multi-noise biomes: `abyssal_chasm`, `lush_caves`, `dripstone_caves`, `deep_dark`.
+   - Underground structures: `mineshaft`, `ancient_city`, `trial_chambers`, `stronghold`.
+   - Safe arrival platform carving in `CornerPaintings.java`.
+2. **Crystal Fractal (`corners:crystal_fractal`)**:
+   - 1:1 procedural 3D amethyst fractal lattice using native `minecraft:noise` chunk generator with `corners:final_density` and ported octave density functions.
