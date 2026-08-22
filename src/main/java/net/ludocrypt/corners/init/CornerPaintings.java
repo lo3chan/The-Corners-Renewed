@@ -94,8 +94,8 @@ public class CornerPaintings {
                     int safeY = 64;
                     boolean foundSafe = false;
 
-                    BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(targetX, 32, targetZ);
-                    for (int y = 32; y < 250; y++) {
+                    BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(targetX, -64, targetZ);
+                    for (int y = -64; y < 320; y++) {
                         pos.setY(y);
                         if (level.getBlockState(pos).isAir() && level.getBlockState(pos.above()).isAir() && !level.getBlockState(pos.below()).isAir()) {
                             safeY = y;
@@ -139,7 +139,7 @@ public class CornerPaintings {
                             for (int dz = -r; dz <= r; dz += (r == 0 ? 1 : Math.max(1, r))) {
                                 int checkX = originX + dx;
                                 int checkZ = originZ + dz;
-                                for (int y = 300; y >= -300; y -= 2) {
+                                for (int y = 384; y >= 0; y -= 2) {
                                     pos.set(checkX, y, checkZ);
                                     if (!level.getBlockState(pos).isAir() && level.getBlockState(pos.above()).isAir() && level.getBlockState(pos.above(2)).isAir()) {
                                         finalX = checkX;

@@ -24,6 +24,11 @@ neoForge {
             server()
             programArgument '--nogui'
         }
+        gameTestServer {
+            type = "gameTestServer"
+            systemProperty 'neoforge.logging.console.level', 'debug'
+            systemProperty 'neoforge.logging.markers', 'REGISTRIES'
+        }
         data {
             data()
             programArguments.addAll '--mod', 'corners', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
@@ -64,7 +69,7 @@ dependencies {
     implementation "me.shedaniel.cloth:cloth-config-neoforge:15.0.140"
 
     // GeckoLib
-    implementation 'software.bernie.geckolib:geckolib-neoforge-1.21.1:4.6.4'
+    implementation 'software.bernie.geckolib:geckolib-neoforge-1.21.1:4.7.+'
 
     // Liminal Library (LimLib) for NeoForge
     // CurseForge Project ID: 1646280.

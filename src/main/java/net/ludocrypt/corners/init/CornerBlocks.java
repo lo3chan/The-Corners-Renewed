@@ -24,7 +24,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = "corners", bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = "corners")
 public class CornerBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks("corners");

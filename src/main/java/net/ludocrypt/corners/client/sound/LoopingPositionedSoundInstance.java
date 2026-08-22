@@ -45,6 +45,7 @@ public class LoopingPositionedSoundInstance extends SimpleSoundInstance implemen
 		if (!(this.world.getBlockState(pos).getBlock() instanceof RadioBlock)) {
 			this.isDone = true;
 			((MusicTrackerAccess) (Minecraft.getInstance().getMusicManager())).getRadioPositions().remove(pos);
+			Minecraft.getInstance().getSoundManager().stop(this);
 		}
 
 	}

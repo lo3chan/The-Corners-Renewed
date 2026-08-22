@@ -93,35 +93,39 @@ public class RadioBlock extends HorizontalDirectionalBlock {
 			}
 
 		} else if (hit.getDirection().equals(state.getValue(FACING))) {
-
-			if (core != null && empty != null) {
-
-				if (!world.isClientSide()) {
-					player.getInventory().placeItemBackInInventory(core.getDefaultInstance());
-					world.setBlockAndUpdate(pos, of(state, empty));
-				}
-
-				world.playLocalSound(pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F, false);
-				return ItemInteractionResult.SUCCESS;
-			} else if (CORES.containsKey(itemStack.getItem())) {
-
+			if (CORES.containsKey(itemStack.getItem())) {
 				if (!world.isClientSide()) {
 					world.setBlockAndUpdate(pos, of(state, CORES.get(itemStack.getItem())));
 
 					if (!player.getAbilities().instabuild) {
 						itemStack.shrink(1);
 					}
-
 				}
 
 				world.playLocalSound(pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 0.5F, false);
 				return ItemInteractionResult.SUCCESS;
 			}
-
 		}
 
 		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
+
+    @Override
+    protected net.minecraft.world.InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+        if (hit.getDirection().equals(state.getValue(FACING))) {
+            if (core != null && empty != null) {
+                if (!world.isClientSide()) {
+                    player.getInventory().placeItemBackInInventory(core.getDefaultInstance());
+                    world.setBlockAndUpdate(pos, of(state, empty));
+                }
+
+                world.playLocalSound(pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F, false);
+                return net.minecraft.world.InteractionResult.SUCCESS;
+            }
+        }
+
+        return net.minecraft.world.InteractionResult.PASS;
+    }
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static BlockState of(BlockState from, Block to) {
