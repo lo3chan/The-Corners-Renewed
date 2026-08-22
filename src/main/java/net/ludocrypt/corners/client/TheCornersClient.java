@@ -26,13 +26,6 @@ public class TheCornersClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.SNOWY_GLASS_PANE.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.SNOWY_GLASS.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.SNOWY_GLASS_SLAB.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.GAIA_DOOR.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.GAIA_TRAPDOOR.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.GAIA_SAPLING.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(CornerBlocks.POTTED_GAIA_SAPLING.get(), RenderType.cutout());
         });
 
         TheCornersModelPlugin.init();

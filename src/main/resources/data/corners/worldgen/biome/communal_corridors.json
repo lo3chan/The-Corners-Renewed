@@ -2,6 +2,12 @@
   "carvers": {},
   "downfall": 0.0,
   "effects": {
+    "background_music": {
+      "sound": "corners:music.communal_corridors",
+      "max_delay": 8000,
+      "min_delay": 3000,
+      "replace_current_music": true
+    },
     "ambient_sound": "corners:biome.communal_corridors.loop",
     "fog_color": 13548960,
     "grass_color": 13818488,

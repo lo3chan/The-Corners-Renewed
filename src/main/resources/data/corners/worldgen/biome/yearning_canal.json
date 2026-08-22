@@ -2,6 +2,12 @@
   "carvers": {},
   "downfall": 0.0,
   "effects": {
+    "background_music": {
+      "sound": "corners:music.yearning_canal",
+      "max_delay": 8000,
+      "min_delay": 3000,
+      "replace_current_music": true
+    },
     "fog_color": 16777215,
     "grass_color": 13818488,
     "sky_color": 16777215,

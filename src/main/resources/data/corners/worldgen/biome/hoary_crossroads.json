@@ -2,6 +2,12 @@
   "carvers": {},
   "downfall": 1.0,
   "effects": {
+    "background_music": {
+      "sound": "corners:music.hoary_crossroads",
+      "max_delay": 8000,
+      "min_delay": 3000,
+      "replace_current_music": true
+    },
     "ambient_sound": "corners:biome.hoary_crossroads.loop",
     "fog_color": 13224908,
     "grass_color": 6796479,
