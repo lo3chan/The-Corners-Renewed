@@ -1,274 +1,2772 @@
 {
-	"misc.portal.painting.travel": {
-		"sounds": [
-			{
-				"name": "corners:portal/painting/travel_1",
-				"stream": true
-			},
-			{
-				"name": "corners:portal/painting/travel_2",
-				"stream": true
-			},
-			{
-				"name": "corners:portal/painting/travel_3",
-				"stream": true
-			}
-		]
-	},
-	"music.yearning_canal": {
-		"sounds": [
-			{
-				"name": "corners:music/yearning_canal/elevated",
-				"weight": 3,
-				"stream": true
-			},
-			{
-				"name": "corners:music/yearning_canal/halls",
-				"weight": 2,
-				"stream": true
-			},
-			{
-				"name": "corners:music/yearning_canal/yearn",
-				"stream": true
-			}
-		]
-	},
-	"music.communal_corridors": {
-		"sounds": [
-			{
-				"name": "corners:music/communal_corridors/polar",
-				"weight": 3,
-				"stream": true
-			},
-			{
-				"name": "corners:music/communal_corridors/pelt",
-				"weight": 2,
-				"stream": true
-			},
-			{
-				"name": "corners:music/communal_corridors/the_colds",
-				"stream": true
-			}
-		]
-	},
-	"music.communal_corridors.christmas": {
-		"sounds": [
-			{
-				"name": "corners:music/communal_corridors/polar_winter",
-				"stream": true
-			},
-			{
-				"name": "corners:music/communal_corridors/snowball_pelt",
-				"stream": true
-			}
-		]
-	},
-	"biome.communal_corridors.loop": {
-		"sounds": [
-			{
-				"name": "corners:ambient/communal_corridors/loop",
-				"stream": true
-			}
-		]
-	},
-	"music.hoary_crossroads": {
-		"sounds": [
-			{
-				"name": "corners:music/hoary_crossroads/crossroads",
-				"weight": 3,
-				"stream": true
-			},
-			{
-				"name": "corners:music/hoary_crossroads/i_leave_trails",
-				"weight": 2,
-				"stream": true
-			},
-			{
-				"name": "corners:music/hoary_crossroads/wandering",
-				"stream": true
-			}
-		]
-	},
-	"biome.hoary_crossroads.loop": {
-		"sounds": [
-			{
-				"name": "corners:ambient/hoary_crossroads/loop",
-				"stream": true
-			}
-		]
-	},
-	"radio.default.static": {
-		"sounds": [
-			{
-				"name": "corners:radio/default_static",
-				"stream": true
-			}
-		]
-	},
-	"radio.yearning_canal.static": {
-		"sounds": [
-			{
-				"name": "corners:radio/voice_static_1",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/voice_static_2",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/voice_static_3",
-				"stream": true,
-				"weight": 2
-			}
-		]
-	},
-	"radio.communal_corridors.static": {
-		"sounds": [
-			{
-				"name": "corners:radio/podcast_static_1",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/podcast_static_2",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/podcast_static_3",
-				"stream": true,
-				"weight": 2
-			}
-		]
-	},
-	"radio.hoary_crossroads.static": {
-		"sounds": [
-			{
-				"name": "corners:radio/wind_static_1",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/wind_static_2",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/wind_static_3",
-				"stream": true,
-				"weight": 2
-			},
-			{
-				"name": "corners:radio/wind_static_4",
-				"stream": true,
-				"weight": 2
-			}
-		]
-	},
-	"radio.yearning_canal.music": {
-		"sounds": [
-			{
-				"name": "corners:radio/music/reception",
-				"stream": true
-			},
-			{
-				"name": "corners:radio/music/tsuki",
-				"stream": true
-			}
-		]
-	},
-	"radio.communal_corridors.music": {
-		"sounds": [
-			{
-				"name": "corners:radio/music/poly",
-				"stream": true
-			},
-			{
-				"name": "corners:radio/music/partial",
-				"stream": true
-			},
-			{
-				"name": "corners:radio/music/petrify",
-				"stream": true
-			}
-		]
-	},
-	"radio.hoary_crossroads.music": {
-		"sounds": [
-			{
-				"name": "corners:radio/music/trickle",
-				"stream": true
-			},
-			{
-				"name": "corners:radio/music/solemn",
-				"stream": true
-			}
-		]
-	},
-	"radio.yearning_canal": {
-		"sounds": [
-			{
-				"name": "corners:radio.yearning_canal.static",
-				"type": "event"
-			},
-			{
-				"name": "corners:radio.yearning_canal.music",
-				"type": "event"
-			}
-		]
-	},
-	"radio.communal_corridors": {
-		"sounds": [
-			{
-				"name": "corners:radio.communal_corridors.static",
-				"type": "event"
-			},
-			{
-				"name": "corners:radio.communal_corridors.music",
-				"type": "event"
-			}
-		]
-	},
-	"radio.hoary_crossroads": {
-		"sounds": [
-			{
-				"name": "corners:radio.hoary_crossroads.static",
-				"type": "event"
-			},
-			{
-				"name": "corners:radio.hoary_crossroads.music",
-				"type": "event"
-			}
-		]
-	},
-	"biome.the_abyss.loop": {
-		"sounds": [
-			{
-				"name": "minecraft:ambient/cave/cave1"
-			}
-		]
-	},
-	"darkness.heartbeat": {
-		"sounds": [
-			{
-				"name": "minecraft:ambient/cave/cave2"
-			}
-		]
-	},
-	"darkness.whisper": {
-		"sounds": [
-			{
-				"name": "minecraft:ambient/cave/cave3"
-			}
-		]
-	},
-	"darkness.eyes_vanish": {
-		"sounds": [
-			{
-				"name": "minecraft:ambient/cave/cave4"
-			}
-		]
-	}
+  "misc.portal.painting.travel": {
+    "sounds": [
+      {
+        "name": "corners:portal/painting/travel_1",
+        "stream": true
+      },
+      {
+        "name": "corners:portal/painting/travel_2",
+        "stream": true
+      },
+      {
+        "name": "corners:portal/painting/travel_3",
+        "stream": true
+      }
+    ]
+  },
+  "music.yearning_canal": {
+    "sounds": [
+      {
+        "name": "corners:music/yearning_canal/elevated",
+        "weight": 3,
+        "stream": true
+      },
+      {
+        "name": "corners:music/yearning_canal/halls",
+        "weight": 2,
+        "stream": true
+      },
+      {
+        "name": "corners:music/yearning_canal/yearn",
+        "stream": true
+      }
+    ]
+  },
+  "music.communal_corridors": {
+    "sounds": [
+      {
+        "name": "corners:music/communal_corridors/polar",
+        "weight": 3,
+        "stream": true
+      },
+      {
+        "name": "corners:music/communal_corridors/pelt",
+        "weight": 2,
+        "stream": true
+      },
+      {
+        "name": "corners:music/communal_corridors/the_colds",
+        "stream": true
+      }
+    ]
+  },
+  "music.communal_corridors.christmas": {
+    "sounds": [
+      {
+        "name": "corners:music/communal_corridors/polar_winter",
+        "stream": true
+      },
+      {
+        "name": "corners:music/communal_corridors/snowball_pelt",
+        "stream": true
+      }
+    ]
+  },
+  "biome.communal_corridors.loop": {
+    "sounds": [
+      {
+        "name": "corners:ambient/communal_corridors/loop",
+        "stream": true
+      }
+    ]
+  },
+  "music.hoary_crossroads": {
+    "sounds": [
+      {
+        "name": "corners:music/hoary_crossroads/crossroads",
+        "weight": 3,
+        "stream": true
+      },
+      {
+        "name": "corners:music/hoary_crossroads/i_leave_trails",
+        "weight": 2,
+        "stream": true
+      },
+      {
+        "name": "corners:music/hoary_crossroads/wandering",
+        "stream": true
+      }
+    ]
+  },
+  "biome.hoary_crossroads.loop": {
+    "sounds": [
+      {
+        "name": "corners:ambient/hoary_crossroads/loop",
+        "stream": true
+      }
+    ]
+  },
+  "radio.default.static": {
+    "sounds": [
+      {
+        "name": "corners:radio/default_static",
+        "stream": true
+      }
+    ]
+  },
+  "radio.yearning_canal.static": {
+    "sounds": [
+      {
+        "name": "corners:radio/voice_static_1",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/voice_static_2",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/voice_static_3",
+        "stream": true,
+        "weight": 2
+      }
+    ]
+  },
+  "radio.communal_corridors.static": {
+    "sounds": [
+      {
+        "name": "corners:radio/podcast_static_1",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/podcast_static_2",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/podcast_static_3",
+        "stream": true,
+        "weight": 2
+      }
+    ]
+  },
+  "radio.hoary_crossroads.static": {
+    "sounds": [
+      {
+        "name": "corners:radio/wind_static_1",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/wind_static_2",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/wind_static_3",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "corners:radio/wind_static_4",
+        "stream": true,
+        "weight": 2
+      }
+    ]
+  },
+  "radio.yearning_canal.music": {
+    "sounds": [
+      {
+        "name": "corners:radio/music/reception",
+        "stream": true
+      },
+      {
+        "name": "corners:radio/music/tsuki",
+        "stream": true
+      }
+    ]
+  },
+  "radio.communal_corridors.music": {
+    "sounds": [
+      {
+        "name": "corners:radio/music/poly",
+        "stream": true
+      },
+      {
+        "name": "corners:radio/music/partial",
+        "stream": true
+      },
+      {
+        "name": "corners:radio/music/petrify",
+        "stream": true
+      }
+    ]
+  },
+  "radio.hoary_crossroads.music": {
+    "sounds": [
+      {
+        "name": "corners:radio/music/trickle",
+        "stream": true
+      },
+      {
+        "name": "corners:radio/music/solemn",
+        "stream": true
+      }
+    ]
+  },
+  "radio.yearning_canal": {
+    "sounds": [
+      {
+        "name": "corners:radio.yearning_canal.static",
+        "type": "event"
+      },
+      {
+        "name": "corners:radio.yearning_canal.music",
+        "type": "event"
+      }
+    ]
+  },
+  "radio.communal_corridors": {
+    "sounds": [
+      {
+        "name": "corners:radio.communal_corridors.static",
+        "type": "event"
+      },
+      {
+        "name": "corners:radio.communal_corridors.music",
+        "type": "event"
+      }
+    ]
+  },
+  "radio.hoary_crossroads": {
+    "sounds": [
+      {
+        "name": "corners:radio.hoary_crossroads.static",
+        "type": "event"
+      },
+      {
+        "name": "corners:radio.hoary_crossroads.music",
+        "type": "event"
+      }
+    ]
+  },
+  "biome.the_abyss.loop": {
+    "sounds": [
+      {
+        "name": "minecraft:ambient/cave/cave1"
+      }
+    ]
+  },
+  "darkness.heartbeat": {
+    "sounds": [
+      {
+        "name": "minecraft:ambient/cave/cave2"
+      }
+    ]
+  },
+  "darkness.whisper": {
+    "sounds": [
+      {
+        "name": "minecraft:ambient/cave/cave3"
+      }
+    ]
+  },
+  "darkness.eyes_vanish": {
+    "sounds": [
+      {
+        "name": "minecraft:ambient/cave/cave4"
+      }
+    ]
+  },
+  "dfjn": {
+    "sounds": [
+      {
+        "name": "corners:doors3_online-audio-converter.com",
+        "stream": true
+      }
+    ]
+  },
+  "door1": {
+    "sounds": [
+      {
+        "name": "corners:shieldhit1",
+        "stream": false
+      }
+    ]
+  },
+  "door2": {
+    "sounds": [
+      {
+        "name": "corners:shieldhit2",
+        "stream": false
+      }
+    ]
+  },
+  "serpumpkinheadm": {
+    "sounds": [
+      {
+        "name": "corners:halloween_update",
+        "stream": true
+      }
+    ]
+  },
+  "restless_spirit_idle": {
+    "sounds": [
+      {
+        "name": "corners:restless_spirit_idle1",
+        "stream": false
+      }
+    ]
+  },
+  "restless_spirit_hurt": {
+    "sounds": [
+      {
+        "name": "corners:restless_spirit_hurt1",
+        "stream": false
+      }
+    ]
+  },
+  "restless_spirit_death": {
+    "sounds": [
+      {
+        "name": "corners:restless_spirit_death2",
+        "stream": false
+      }
+    ]
+  },
+  "skeleton_trasher_step": {
+    "sounds": [
+      {
+        "name": "corners:skeleton_trasher_step2",
+        "stream": false
+      }
+    ]
+  },
+  "skeleton_trasher_attack": {
+    "sounds": [
+      {
+        "name": "corners:skeleton_trasher_attack",
+        "stream": false
+      }
+    ]
+  },
+  "skeleton_trasher_block1": {
+    "sounds": [
+      {
+        "name": "corners:skeleton_trasher_block1",
+        "stream": false
+      }
+    ]
+  },
+  "skeleton_trasher_block2": {
+    "sounds": [
+      {
+        "name": "corners:skeleton_trasher_block2",
+        "stream": false
+      }
+    ]
+  },
+  "skeleton_trasher_block3": {
+    "sounds": [
+      {
+        "name": "corners:skeleton_trasher_block3",
+        "stream": false
+      }
+    ]
+  },
+  "nightmare_stalker_roar": {
+    "sounds": [
+      {
+        "name": "corners:nightmare_stalker_roar",
+        "stream": false
+      }
+    ]
+  },
+  "spirit_idle": {
+    "sounds": [
+      {
+        "name": "corners:spirit_idle",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_death": {
+    "sounds": [
+      {
+        "name": "corners:stalker_death",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_hurt1": {
+    "sounds": [
+      {
+        "name": "corners:vortex_hurt1",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_hurt2": {
+    "sounds": [
+      {
+        "name": "corners:vortex_hurt2",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_idle1": {
+    "sounds": [
+      {
+        "name": "corners:vortex_idle1",
+        "stream": false
+      }
+    ]
+  },
+  "fallen_attack": {
+    "sounds": [
+      {
+        "name": "corners:fallen_attack2",
+        "stream": false
+      }
+    ]
+  },
+  "fallen_curse_mark": {
+    "sounds": [
+      {
+        "name": "corners:fallen_curse_mark",
+        "stream": false
+      }
+    ]
+  },
+  "fallen_death": {
+    "sounds": [
+      {
+        "name": "corners:fallen_death1",
+        "stream": false
+      }
+    ]
+  },
+  "fallen_hurt": {
+    "sounds": [
+      {
+        "name": "corners:fallen_hurt1",
+        "stream": false
+      }
+    ]
+  },
+  "fallen_idle": {
+    "sounds": [
+      {
+        "name": "corners:fallen_idle3",
+        "stream": false
+      }
+    ]
+  },
+  "fallen_step": {
+    "sounds": [
+      {
+        "name": "corners:fallen_step1",
+        "stream": false
+      }
+    ]
+  },
+  "persecutor_death": {
+    "sounds": [
+      {
+        "name": "corners:persecutor_death",
+        "stream": false
+      }
+    ]
+  },
+  "persecutor_hurt": {
+    "sounds": [
+      {
+        "name": "corners:persecutor_hurt2",
+        "stream": false
+      }
+    ]
+  },
+  "persecutor_idle": {
+    "sounds": [
+      {
+        "name": "corners:persecutor_idle3",
+        "stream": false
+      }
+    ]
+  },
+  "persecutor_scream": {
+    "sounds": [
+      {
+        "name": "corners:persecutor_scream",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_death2": {
+    "sounds": [
+      {
+        "name": "corners:stalker_death2",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_death1": {
+    "sounds": [
+      {
+        "name": "corners:vortex_death1",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_idle2": {
+    "sounds": [
+      {
+        "name": "corners:vortex_idle2",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_hurt11": {
+    "sounds": [
+      {
+        "name": "corners:vortex_hurt1.1",
+        "stream": false
+      }
+    ]
+  },
+  "vortex_hurt21": {
+    "sounds": [
+      {
+        "name": "corners:vortex_hurt2.1",
+        "stream": false
+      }
+    ]
+  },
+  "hah": {
+    "sounds": [
+      {
+        "name": "corners:hah",
+        "stream": false
+      }
+    ]
+  },
+  "haha": {
+    "sounds": [
+      {
+        "name": "corners:hah",
+        "stream": false
+      }
+    ]
+  },
+  "doorblokc": {
+    "sounds": [
+      {
+        "name": "corners:shieldhit1",
+        "stream": false
+      }
+    ]
+  },
+  "doorblokc2": {
+    "sounds": [
+      {
+        "name": "corners:shieldhit2",
+        "stream": false
+      }
+    ]
+  },
+  "halloween": {
+    "sounds": [
+      {
+        "name": "corners:halloween_update",
+        "stream": false
+      }
+    ]
+  },
+  "doorsdisc": {
+    "sounds": [
+      {
+        "name": "corners:doors3_online-audio-converter.com",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_roar": {
+    "sounds": [
+      {
+        "name": "corners:stalker_roar",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_dead": {
+    "sounds": [
+      {
+        "name": "corners:stalker_dead",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_step": {
+    "sounds": [
+      {
+        "name": "corners:stalker_step2",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_hit": {
+    "sounds": [
+      {
+        "name": "corners:stalker_hit",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_hurt": {
+    "sounds": [
+      {
+        "name": "corners:stalker_hurt_1",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkin_spirit_hurt": {
+    "sounds": [
+      {
+        "name": "corners:pumpkin_spirit_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkin_spirit_death": {
+    "sounds": [
+      {
+        "name": "corners:pumpkin_spirit_death",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_roar_distant": {
+    "sounds": [
+      {
+        "name": "corners:stalker_roar_distant",
+        "stream": false
+      }
+    ]
+  },
+  "hound_death": {
+    "sounds": [
+      {
+        "name": "corners:wolf_death",
+        "stream": false
+      }
+    ]
+  },
+  "hound_hit": {
+    "sounds": [
+      {
+        "name": "corners:wolf_getting_damage",
+        "stream": false
+      }
+    ]
+  },
+  "hound_ambient": {
+    "sounds": [
+      {
+        "name": "corners:wolf_growl_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "hound_attack": {
+    "sounds": [
+      {
+        "name": "corners:wolf_growl_attack",
+        "stream": false
+      }
+    ]
+  },
+  "seared_spirit_death": {
+    "sounds": [
+      {
+        "name": "corners:seared_spirit_death_ogg_mono",
+        "stream": false
+      }
+    ]
+  },
+  "houndtrap": {
+    "sounds": [
+      {
+        "name": "corners:hound_trap",
+        "stream": false
+      }
+    ]
+  },
+  "dark_warlblade_atak": {
+    "sounds": [
+      {
+        "name": "corners:dark_warlblade_sfx_2_heavy",
+        "stream": false
+      }
+    ]
+  },
+  "stomach_open": {
+    "sounds": [
+      {
+        "name": "corners:stomach_open",
+        "stream": false
+      }
+    ]
+  },
+  "clown_step": {
+    "sounds": [
+      {
+        "name": "corners:clown_step",
+        "stream": false
+      }
+    ]
+  },
+  "clown_hurt": {
+    "sounds": [
+      {
+        "name": "corners:clown_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "clown_death": {
+    "sounds": [
+      {
+        "name": "corners:clown_death",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_clown_attack": {
+    "sounds": [
+      {
+        "name": "corners:zombie_clown_attack",
+        "stream": false
+      }
+    ]
+  },
+  "corpse_fly_ambient": {
+    "sounds": [
+      {
+        "name": "corners:corpse_fly_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "corpse_fly_death": {
+    "sounds": [
+      {
+        "name": "corners:corpse_fly_death",
+        "stream": false
+      }
+    ]
+  },
+  "corpse_fly_hurt": {
+    "sounds": [
+      {
+        "name": "corners:corpse_fly_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "gadfly_idle": {
+    "sounds": [
+      {
+        "name": "corners:gadfly_idle",
+        "stream": false
+      }
+    ]
+  },
+  "gadfly_hurt": {
+    "sounds": [
+      {
+        "name": "corners:gadfly_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "gadfly_death": {
+    "sounds": [
+      {
+        "name": "corners:gadfly_death",
+        "stream": false
+      }
+    ]
+  },
+  "corpse_fly_ambient2": {
+    "sounds": [
+      {
+        "name": "corners:corpse_fly_ambient2",
+        "stream": false
+      }
+    ]
+  },
+  "corpse_fly_hurt2": {
+    "sounds": [
+      {
+        "name": "corners:corpse_fly_hurt2",
+        "stream": false
+      }
+    ]
+  },
+  "corpse_fly_death2": {
+    "sounds": [
+      {
+        "name": "corners:corpse_fly_death2",
+        "stream": false
+      }
+    ]
+  },
+  "fish_slap": {
+    "sounds": [
+      {
+        "name": "corners:fish_slap",
+        "stream": false
+      }
+    ]
+  },
+  "swarmer_idle": {
+    "sounds": [
+      {
+        "name": "corners:swarmer_idle",
+        "stream": false
+      }
+    ]
+  },
+  "swarmer_hurt": {
+    "sounds": [
+      {
+        "name": "corners:swarmer_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "swarmer_death": {
+    "sounds": [
+      {
+        "name": "corners:swarmer_death",
+        "stream": false
+      }
+    ]
+  },
+  "crab_death": {
+    "sounds": [
+      {
+        "name": "corners:crab_death",
+        "stream": false
+      }
+    ]
+  },
+  "crab_idle": {
+    "sounds": [
+      {
+        "name": "corners:crab_idle",
+        "stream": false
+      }
+    ]
+  },
+  "crab_step": {
+    "sounds": [
+      {
+        "name": "corners:crab_step",
+        "stream": false
+      }
+    ]
+  },
+  "crab_hurt": {
+    "sounds": [
+      {
+        "name": "corners:crab_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "glutton_fish_ambient": {
+    "sounds": [
+      {
+        "name": "corners:glutton_fish_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "glutton_fish_attack": {
+    "sounds": [
+      {
+        "name": "corners:glutton_fish_attack",
+        "stream": false
+      }
+    ]
+  },
+  "glutton_fish_hurt": {
+    "sounds": [
+      {
+        "name": "corners:glutton_fish_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "glutton_fish_death": {
+    "sounds": [
+      {
+        "name": "corners:glutton_fish_death",
+        "stream": false
+      }
+    ]
+  },
+  "fly_move": {
+    "sounds": [
+      {
+        "name": "corners:fly_move",
+        "stream": false
+      }
+    ]
+  },
+  "brute_zombie_attack": {
+    "sounds": [
+      {
+        "name": "corners:brute_zombie_attack",
+        "stream": false
+      }
+    ]
+  },
+  "brute_zombie_step": {
+    "sounds": [
+      {
+        "name": "corners:brute_zombie_step",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_brute_death": {
+    "sounds": [
+      {
+        "name": "corners:zombie_brute_death",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_brute_hurt": {
+    "sounds": [
+      {
+        "name": "corners:zombie_brute_hurt1",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_brute_idle": {
+    "sounds": [
+      {
+        "name": "corners:zombie_brute_idle1",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkinhead_reload": {
+    "sounds": [
+      {
+        "name": "corners:pumpkinhead_reload",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkinhead_gun_fire": {
+    "sounds": [
+      {
+        "name": "corners:pumpkinhead_gun_fire",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkinhead_bomb_curse": {
+    "sounds": [
+      {
+        "name": "corners:pumpkinhead_bomb_curse",
+        "stream": false
+      }
+    ]
+  },
+  "charm_of_stealth_use": {
+    "sounds": [
+      {
+        "name": "corners:charm_of_stealth_use",
+        "stream": false
+      }
+    ]
+  },
+  "charm_of_endurance_use": {
+    "sounds": [
+      {
+        "name": "corners:charm_of_endurance_use",
+        "stream": false
+      }
+    ]
+  },
+  "charm_of_strenght_use": {
+    "sounds": [
+      {
+        "name": "corners:charm_of_strenght_use",
+        "stream": false
+      }
+    ]
+  },
+  "charm_of_rage_use": {
+    "sounds": [
+      {
+        "name": "corners:charm_of_rage_use",
+        "stream": false
+      }
+    ]
+  },
+  "charm_of_protection_use": {
+    "sounds": [
+      {
+        "name": "corners:charm_of_protection_use",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_death": {
+    "sounds": [
+      {
+        "name": "corners:missionary_death",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_hurt": {
+    "sounds": [
+      {
+        "name": "corners:missionary_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_idle": {
+    "sounds": [
+      {
+        "name": "corners:missionary_idle",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_spawn_mobs": {
+    "sounds": [
+      {
+        "name": "corners:missionary_spawn_mobs",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_step": {
+    "sounds": [
+      {
+        "name": "corners:missionary_step",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_teleport": {
+    "sounds": [
+      {
+        "name": "corners:missionary_teleport",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_shoot": {
+    "sounds": [
+      {
+        "name": "corners:missionary_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "obsession": {
+    "sounds": [
+      {
+        "name": "corners:chaos_spirit_posses",
+        "stream": false
+      }
+    ]
+  },
+  "chaos_spirit_haunt": {
+    "sounds": [
+      {
+        "name": "corners:chaos_spirit_haunt",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_alert": {
+    "sounds": [
+      {
+        "name": "corners:missionary_alert",
+        "stream": false
+      }
+    ]
+  },
+  "nsstep": {
+    "sounds": [
+      {
+        "name": "corners:ns_step_4",
+        "stream": false
+      }
+    ]
+  },
+  "step5": {
+    "sounds": [
+      {
+        "name": "corners:step5",
+        "stream": false
+      }
+    ]
+  },
+  "step_st": {
+    "sounds": [
+      {
+        "name": "corners:step1",
+        "stream": false
+      }
+    ]
+  },
+  "lifestealer_hurt": {
+    "sounds": [
+      {
+        "name": "corners:lifestealer_hurt_2",
+        "stream": false
+      }
+    ]
+  },
+  "lifestealer_idle": {
+    "sounds": [
+      {
+        "name": "corners:lifestealer_idle_2",
+        "stream": false
+      }
+    ]
+  },
+  "lifestealer_death": {
+    "sounds": [
+      {
+        "name": "corners:lifestealer_death_2",
+        "stream": false
+      }
+    ]
+  },
+  "lifestealer_scream": {
+    "sounds": [
+      {
+        "name": "corners:lifestealer_scream_1",
+        "stream": false
+      }
+    ]
+  },
+  "lifestealer_scream_ap": {
+    "sounds": [
+      {
+        "name": "corners:lifestealer_scream_2",
+        "stream": false
+      }
+    ]
+  },
+  "magic_staff_shoot": {
+    "sounds": [
+      {
+        "name": "corners:magic_staff_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkin_staff_shoot": {
+    "sounds": [
+      {
+        "name": "corners:pumpkin_staff_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "pumpkin_hit": {
+    "sounds": [
+      {
+        "name": "corners:pumpkin_hit",
+        "stream": false
+      }
+    ]
+  },
+  "spider_splash": {
+    "sounds": [
+      {
+        "name": "corners:spider_splash",
+        "stream": false
+      }
+    ]
+  },
+  "mother_spider_step": {
+    "sounds": [
+      {
+        "name": "corners:mother_spider_step",
+        "stream": false
+      }
+    ]
+  },
+  "mother_spider_idle": {
+    "sounds": [
+      {
+        "name": "corners:mother_spider_idle",
+        "stream": false
+      }
+    ]
+  },
+  "missionary_stun": {
+    "sounds": [
+      {
+        "name": "corners:missionary_stun",
+        "stream": false
+      }
+    ]
+  },
+  "mother_spider_hurt": {
+    "sounds": [
+      {
+        "name": "corners:mother_spider_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "spider_mother_death": {
+    "sounds": [
+      {
+        "name": "corners:spider_mother_death",
+        "stream": false
+      }
+    ]
+  },
+  "haha_lord": {
+    "sounds": [
+      {
+        "name": "corners:haha_lord",
+        "stream": false
+      }
+    ]
+  },
+  "bonk": {
+    "sounds": [
+      {
+        "name": "corners:bonk",
+        "stream": false
+      }
+    ]
+  },
+  "bonk_hit": {
+    "sounds": [
+      {
+        "name": "corners:bonk_hit",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_death": {
+    "sounds": [
+      {
+        "name": "corners:krampus_death",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_roar": {
+    "sounds": [
+      {
+        "name": "corners:krampus_roar",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_idle": {
+    "sounds": [
+      {
+        "name": "corners:krampus_idle",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_blow": {
+    "sounds": [
+      {
+        "name": "corners:krampus_blow",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_horn_use": {
+    "sounds": [
+      {
+        "name": "corners:krampus_horn_use",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_alert_far": {
+    "sounds": [
+      {
+        "name": "corners:krampus_alert_far",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_alert": {
+    "sounds": [
+      {
+        "name": "corners:krampus_alert",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_alert_close": {
+    "sounds": [
+      {
+        "name": "corners:krampus_alert_close",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_hurt": {
+    "sounds": [
+      {
+        "name": "corners:krampus_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "krampus_step": {
+    "sounds": [
+      {
+        "name": "corners:krampus_step",
+        "stream": false
+      }
+    ]
+  },
+  "minion_blow": {
+    "sounds": [
+      {
+        "name": "corners:minion_blow",
+        "stream": false
+      }
+    ]
+  },
+  "minion_death": {
+    "sounds": [
+      {
+        "name": "corners:minion_death",
+        "stream": false
+      }
+    ]
+  },
+  "minion_hurt": {
+    "sounds": [
+      {
+        "name": "corners:minion_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "minion_idle": {
+    "sounds": [
+      {
+        "name": "corners:minion_idle",
+        "stream": false
+      }
+    ]
+  },
+  "bomber_ambient": {
+    "subtitle": "subtitles.bomber_ambient",
+    "sounds": [
+      {
+        "name": "corners:bomber_bre_new",
+        "stream": false
+      }
+    ]
+  },
+  "bomber_ready": {
+    "subtitle": "subtitles.bomber_ready",
+    "sounds": [
+      {
+        "name": "corners:bomber_pain",
+        "stream": false
+      }
+    ]
+  },
+  "spechurt": {
+    "subtitle": "subtitles.spechurt",
+    "sounds": [
+      {
+        "name": "corners:spectrehurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:spectrehurt2",
+        "stream": false
+      }
+    ]
+  },
+  "specded": {
+    "subtitle": "subtitles.specded",
+    "sounds": [
+      {
+        "name": "corners:spectreded1",
+        "stream": false
+      },
+      {
+        "name": "corners:spectreded2",
+        "stream": false
+      }
+    ]
+  },
+  "specamb": {
+    "subtitle": "subtitles.specamb",
+    "sounds": [
+      {
+        "name": "corners:spectream1",
+        "stream": false
+      },
+      {
+        "name": "corners:spectream2",
+        "stream": false
+      },
+      {
+        "name": "corners:spectream3",
+        "stream": false
+      }
+    ]
+  },
+  "bomberhurts": {
+    "subtitle": "subtitles.bomberhurts",
+    "sounds": [
+      {
+        "name": "corners:bomberhurt",
+        "stream": false
+      },
+      {
+        "name": "corners:bomberhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:bomberhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "bomberambt": {
+    "subtitle": "subtitles.bomberambt",
+    "sounds": [
+      {
+        "name": "corners:bomberam2",
+        "stream": false
+      },
+      {
+        "name": "corners:bomberam3",
+        "stream": false
+      },
+      {
+        "name": "corners:boomeram1",
+        "stream": false
+      }
+    ]
+  },
+  "bomberded": {
+    "subtitle": "subtitles.bomberded",
+    "sounds": [
+      {
+        "name": "corners:bomberded",
+        "stream": false
+      },
+      {
+        "name": "corners:bomberded2",
+        "stream": false
+      }
+    ]
+  },
+  "spitteram": {
+    "subtitle": "subtitles.spitteram",
+    "sounds": [
+      {
+        "name": "corners:acidam1",
+        "stream": false
+      },
+      {
+        "name": "corners:acidam2",
+        "stream": false
+      },
+      {
+        "name": "corners:acidam3",
+        "stream": false
+      }
+    ]
+  },
+  "spitterhurt": {
+    "subtitle": "subtitles.spitterhurt",
+    "sounds": [
+      {
+        "name": "corners:acidhurt",
+        "stream": false
+      },
+      {
+        "name": "corners:acidhurt2",
+        "stream": false
+      }
+    ]
+  },
+  "acidded": {
+    "subtitle": "subtitles.acidded",
+    "sounds": [
+      {
+        "name": "corners:acidded",
+        "stream": false
+      },
+      {
+        "name": "corners:acidded2",
+        "stream": false
+      }
+    ]
+  },
+  "horrorshurt": {
+    "subtitle": "subtitles.horrorshurt",
+    "sounds": [
+      {
+        "name": "corners:horrorhurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:horrorhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:horrorhurt3",
+        "stream": false
+      },
+      {
+        "name": "corners:horrorhurtg",
+        "stream": false
+      }
+    ]
+  },
+  "horrorsambt": {
+    "subtitle": "subtitles.horrorsambt",
+    "sounds": [
+      {
+        "name": "corners:horrorambient1",
+        "stream": false
+      },
+      {
+        "name": "corners:horrorambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:horrorambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:horrorambt4",
+        "stream": false
+      }
+    ]
+  },
+  "horrorsded": {
+    "subtitle": "subtitles.horrorsded",
+    "sounds": [
+      {
+        "name": "corners:horrorded",
+        "stream": false
+      }
+    ]
+  },
+  "wheezerdead": {
+    "subtitle": "subtitles.wheezerdead",
+    "sounds": [
+      {
+        "name": "corners:wheezerdead1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:wheezerdead2_2",
+        "stream": false
+      }
+    ]
+  },
+  "wheezerambt": {
+    "subtitle": "subtitles.wheezerambt",
+    "sounds": [
+      {
+        "name": "corners:ambtwheeze3_2",
+        "stream": false
+      },
+      {
+        "name": "corners:wheezer_ambt1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:wheezerambt2_2",
+        "stream": false
+      }
+    ]
+  },
+  "wheezehurt": {
+    "subtitle": "subtitles.wheezehurt",
+    "sounds": [
+      {
+        "name": "corners:wheezerhurt1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:wheezerhurt2_2",
+        "stream": false
+      },
+      {
+        "name": "corners:wheezerhurt3_2",
+        "stream": false
+      }
+    ]
+  },
+  "wheebomb": {
+    "subtitle": "subtitles.wheebomb",
+    "sounds": [
+      {
+        "name": "corners:wheezer_wheezes_2",
+        "stream": false
+      }
+    ]
+  },
+  "moonstep": {
+    "subtitle": "subtitles.moonstep",
+    "sounds": [
+      {
+        "name": "corners:moonstep3",
+        "stream": false
+      },
+      {
+        "name": "corners:moonstep1",
+        "stream": false
+      },
+      {
+        "name": "corners:moonstep2",
+        "stream": false
+      },
+      {
+        "name": "corners:moonstep4",
+        "stream": false
+      },
+      {
+        "name": "corners:moonstep5",
+        "stream": false
+      },
+      {
+        "name": "corners:moonstep6",
+        "stream": false
+      },
+      {
+        "name": "corners:moonstep7",
+        "stream": false
+      }
+    ]
+  },
+  "suckambt": {
+    "subtitle": "subtitles.suckambt",
+    "sounds": [
+      {
+        "name": "corners:zombie-short-aggressive-attack-b5-www.fesliyanstudios.com",
+        "stream": false
+      }
+    ]
+  },
+  "suckerdies": {
+    "subtitle": "subtitles.suckerdies",
+    "sounds": [
+      {
+        "name": "corners:zombie-short-aggressive-attack-b7-www.fesliyanstudios.com",
+        "stream": false
+      }
+    ]
+  },
+  "suckerhurts": {
+    "subtitle": "subtitles.suckerhurts",
+    "sounds": [
+      {
+        "name": "corners:zombie-short-aggressive-attack-b2-www.fesliyanstudios.com",
+        "stream": false
+      }
+    ]
+  },
+  "spray": {
+    "subtitle": "subtitles.spray",
+    "sounds": [
+      {
+        "name": "corners:spray_black",
+        "stream": false
+      }
+    ]
+  },
+  "pop": {
+    "subtitle": "subtitles.pop",
+    "sounds": [
+      {
+        "name": "corners:popss_2",
+        "stream": false
+      }
+    ]
+  },
+  "hunterambt": {
+    "subtitle": "subtitles.hunterambt",
+    "sounds": [
+      {
+        "name": "corners:hunterambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:hunterambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:hunterzmbt2",
+        "stream": false
+      }
+    ]
+  },
+  "hunterhurts": {
+    "subtitle": "subtitles.hunterhurts",
+    "sounds": [
+      {
+        "name": "corners:hunterhurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:hunterhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:hunterhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "hunterfoots": {
+    "subtitle": "subtitles.hunterfoots",
+    "sounds": [
+      {
+        "name": "corners:hunterfoot1",
+        "stream": false
+      },
+      {
+        "name": "corners:hunterfoot2",
+        "stream": false
+      },
+      {
+        "name": "corners:hunterfoot3",
+        "stream": false
+      }
+    ]
+  },
+  "clank": {
+    "subtitle": "subtitles.clank",
+    "sounds": [
+      {
+        "name": "corners:mixkit-metallic-sword-strike-2160",
+        "stream": false
+      }
+    ]
+  },
+  "hunter_fly": {
+    "subtitle": "subtitles.hunter_fly",
+    "sounds": [
+      {
+        "name": "corners:wing-flap-1-6434",
+        "stream": false
+      }
+    ]
+  },
+  "wolforbruin_attack": {
+    "subtitle": "subtitles.wolforbruin_attack",
+    "sounds": [
+      {
+        "name": "corners:wolfandburinattack2",
+        "stream": false
+      },
+      {
+        "name": "corners:wolfattackrandom1",
+        "stream": false
+      }
+    ]
+  },
+  "wolfanrgy": {
+    "subtitle": "subtitles.wolfanrgy",
+    "sounds": [
+      {
+        "name": "corners:wolfnadbruinangry",
+        "stream": false
+      }
+    ]
+  },
+  "oduresking": {
+    "subtitle": "subtitles.oduresking",
+    "sounds": [
+      {
+        "name": "corners:ordure_shaking1",
+        "stream": false
+      },
+      {
+        "name": "corners:ordureshaking2",
+        "stream": false
+      },
+      {
+        "name": "corners:ordureshaking3",
+        "stream": false
+      }
+    ]
+  },
+  "swarmerabmt": {
+    "subtitle": "subtitles.swarmerabmt",
+    "sounds": [
+      {
+        "name": "corners:swarmerambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerambt3",
+        "stream": false
+      }
+    ]
+  },
+  "swarmerhurt": {
+    "subtitle": "subtitles.swarmerhurt",
+    "sounds": [
+      {
+        "name": "corners:swarmerhurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerhurt3",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerhurt4",
+        "stream": false
+      }
+    ]
+  },
+  "swarmerdies": {
+    "subtitle": "subtitles.swarmerdies",
+    "sounds": [
+      {
+        "name": "corners:swarmerdies",
+        "stream": false
+      }
+    ]
+  },
+  "swarmersteps": {
+    "subtitle": "subtitles.swarmersteps",
+    "sounds": [
+      {
+        "name": "corners:swarmerstep1",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerstep2",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerstep3",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerstep4",
+        "stream": false
+      },
+      {
+        "name": "corners:swarmerstep5",
+        "stream": false
+      }
+    ]
+  },
+  "bidy_ambt": {
+    "subtitle": "subtitles.bidy_ambt",
+    "sounds": [
+      {
+        "name": "corners:bidysound",
+        "stream": false
+      },
+      {
+        "name": "corners:bidysound2",
+        "stream": false
+      }
+    ]
+  },
+  "bidyboom": {
+    "subtitle": "subtitles.bidyboom",
+    "sounds": [
+      {
+        "name": "corners:bidy_explodes",
+        "stream": false
+      }
+    ]
+  },
+  "prenantpukes": {
+    "subtitle": "subtitles.prenantpukes",
+    "sounds": [
+      {
+        "name": "corners:pregnant_puke",
+        "stream": false
+      }
+    ]
+  },
+  "impact": {
+    "subtitle": "subtitles.impact",
+    "sounds": [
+      {
+        "name": "corners:stompid_1",
+        "stream": false
+      }
+    ]
+  },
+  "thepregnant_ambt": {
+    "subtitle": "subtitles.thepregnant_ambt",
+    "sounds": [
+      {
+        "name": "corners:bomber_bre_new",
+        "stream": false
+      },
+      {
+        "name": "corners:pregnant_ambit",
+        "stream": false
+      },
+      {
+        "name": "corners:pregnant_ambit2",
+        "stream": false
+      }
+    ]
+  },
+  "pregnanthurt": {
+    "subtitle": "subtitles.pregnanthurt",
+    "sounds": [
+      {
+        "name": "corners:pregnant_hurts",
+        "stream": false
+      }
+    ]
+  },
+  "pregnantdeath": {
+    "subtitle": "subtitles.pregnantdeath",
+    "sounds": [
+      {
+        "name": "corners:pregnant_ded",
+        "stream": false
+      },
+      {
+        "name": "corners:prenant_explodes",
+        "stream": false
+      }
+    ]
+  },
+  "windblast": {
+    "subtitle": "subtitles.windblast",
+    "sounds": [
+      {
+        "name": "corners:mixkit-cinematic-wind-swoosh-1471",
+        "stream": false
+      }
+    ]
+  },
+  "parry": {
+    "subtitle": "subtitles.parry",
+    "sounds": [
+      {
+        "name": "corners:ultrakill-parry-sound-effect",
+        "stream": false
+      }
+    ]
+  },
+  "therodcharg": {
+    "subtitle": "subtitles.therodcharg",
+    "sounds": [
+      {
+        "name": "corners:rodcharge2",
+        "stream": false
+      },
+      {
+        "name": "corners:therodcharg1",
+        "stream": false
+      }
+    ]
+  },
+  "rodstep": {
+    "subtitle": "subtitles.rodstep",
+    "sounds": [
+      {
+        "name": "corners:rodstep1",
+        "stream": false
+      },
+      {
+        "name": "corners:rodstep2",
+        "stream": false
+      },
+      {
+        "name": "corners:rodstep3",
+        "stream": false
+      },
+      {
+        "name": "corners:rodstep4",
+        "stream": false
+      },
+      {
+        "name": "corners:rodstep5",
+        "stream": false
+      },
+      {
+        "name": "corners:rodstep6",
+        "stream": false
+      }
+    ]
+  },
+  "therodhurts": {
+    "subtitle": "subtitles.therodhurts",
+    "sounds": [
+      {
+        "name": "corners:rodhurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:rodhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:rodhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "rodambience": {
+    "subtitle": "subtitles.rodambience",
+    "sounds": [
+      {
+        "name": "corners:rodambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:rodambt2",
+        "stream": false
+      }
+    ]
+  },
+  "roddies": {
+    "subtitle": "subtitles.roddies",
+    "sounds": [
+      {
+        "name": "corners:rodded1",
+        "stream": false
+      },
+      {
+        "name": "corners:rodded2",
+        "stream": false
+      },
+      {
+        "name": "corners:rodded3",
+        "stream": false
+      }
+    ]
+  },
+  "sugareww": {
+    "subtitle": "subtitles.sugareww",
+    "sounds": [
+      {
+        "name": "corners:im-not-gonna-sugarcoat-it",
+        "stream": false
+      }
+    ]
+  },
+  "royalhurts": {
+    "subtitle": "subtitles.royalhurts",
+    "sounds": [
+      {
+        "name": "corners:loyalhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:royalhurt",
+        "stream": false
+      },
+      {
+        "name": "corners:royalhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "royaldies": {
+    "subtitle": "subtitles.royaldies",
+    "sounds": [
+      {
+        "name": "corners:royaldies",
+        "stream": false
+      }
+    ]
+  },
+  "heavyambt": {
+    "subtitle": "subtitles.heavyambt",
+    "sounds": [
+      {
+        "name": "corners:heavyambient2_2",
+        "stream": false
+      },
+      {
+        "name": "corners:heavyambient1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:heavyambient3_2",
+        "stream": false
+      }
+    ]
+  },
+  "heavyattack": {
+    "subtitle": "subtitles.heavyattack",
+    "sounds": [
+      {
+        "name": "corners:heavyattack1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:heavyattack2_2",
+        "stream": false
+      }
+    ]
+  },
+  "heavyroar": {
+    "subtitle": "subtitles.heavyroar",
+    "sounds": [
+      {
+        "name": "corners:heavyroar_2",
+        "stream": false
+      }
+    ]
+  },
+  "heavydies": {
+    "subtitle": "subtitles.heavydies",
+    "sounds": [
+      {
+        "name": "corners:heavyded_2",
+        "stream": false
+      }
+    ]
+  },
+  "stonecrashes": {
+    "subtitle": "subtitles.stonecrashes",
+    "sounds": [
+      {
+        "name": "corners:stoneheavy_2",
+        "stream": false
+      }
+    ]
+  },
+  "heavyhurt": {
+    "subtitle": "subtitles.heavyhurt",
+    "sounds": [
+      {
+        "name": "corners:heavyhurt1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:heavyhurt2_2",
+        "stream": false
+      }
+    ]
+  },
+  "cloggerexplodes": {
+    "subtitle": "subtitles.cloggerexplodes",
+    "sounds": [
+      {
+        "name": "corners:cloggerboom",
+        "stream": false
+      }
+    ]
+  },
+  "cloggerexploding": {
+    "subtitle": "subtitles.cloggerexploding",
+    "sounds": [
+      {
+        "name": "corners:cloggerdeaddouble_2",
+        "stream": false
+      }
+    ]
+  },
+  "cloggerbleed": {
+    "subtitle": "subtitles.cloggerbleed",
+    "sounds": [
+      {
+        "name": "corners:cloggerhurt1_2",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerhurt2_2",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerhurt3_2",
+        "stream": false
+      }
+    ]
+  },
+  "hunterdying": {
+    "subtitle": "subtitles.hunterdying",
+    "sounds": [
+      {
+        "name": "corners:hunterdies",
+        "stream": false
+      }
+    ]
+  },
+  "cloogereatsu": {
+    "subtitle": "subtitles.cloogereatsu",
+    "sounds": [
+      {
+        "name": "corners:tcloggerbite_2",
+        "stream": false
+      }
+    ]
+  },
+  "skeeperambiance": {
+    "subtitle": "subtitles.skeeperambiance",
+    "sounds": [
+      {
+        "name": "corners:skeeperambient1",
+        "stream": false
+      },
+      {
+        "name": "corners:skeeperambient2",
+        "stream": false
+      },
+      {
+        "name": "corners:skeeperambient3",
+        "stream": false
+      }
+    ]
+  },
+  "snoring": {
+    "subtitle": "subtitles.snoring",
+    "sounds": [
+      {
+        "name": "corners:snore3",
+        "stream": false
+      },
+      {
+        "name": "corners:snore2",
+        "stream": false
+      },
+      {
+        "name": "corners:snore1",
+        "stream": false
+      }
+    ]
+  },
+  "somnolencedies": {
+    "subtitle": "subtitles.somnolencedies",
+    "sounds": [
+      {
+        "name": "corners:somcolencedies2",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolencedies1",
+        "stream": false
+      }
+    ]
+  },
+  "somnolenceambt": {
+    "subtitle": "subtitles.somnolenceambt",
+    "sounds": [
+      {
+        "name": "corners:somnolenceambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolenceambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolenceambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolenceambt4",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolenceambt5",
+        "stream": false
+      }
+    ]
+  },
+  "somnolencehurts": {
+    "subtitle": "subtitles.somnolencehurts",
+    "sounds": [
+      {
+        "name": "corners:somnolencehurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolencehurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:somnolencehurt3",
+        "stream": false
+      }
+    ]
+  },
+  "lurkerrunning": {
+    "subtitle": "subtitles.lurkerrunning",
+    "sounds": [
+      {
+        "name": "corners:lurkerstomping",
+        "stream": false
+      }
+    ]
+  },
+  "lurkeramb": {
+    "subtitle": "subtitles.lurkeramb",
+    "sounds": [
+      {
+        "name": "corners:lurkerabt4",
+        "stream": false
+      },
+      {
+        "name": "corners:lurkerambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:lurkerambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:lurkerambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:lurkerambt5",
+        "stream": false
+      }
+    ]
+  },
+  "lurkerdies": {
+    "subtitle": "subtitles.lurkerdies",
+    "sounds": [
+      {
+        "name": "corners:lurkerdies",
+        "stream": false
+      }
+    ]
+  },
+  "necrorinesambt": {
+    "subtitle": "subtitles.necrorinesambt",
+    "sounds": [
+      {
+        "name": "corners:deathsoundambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:deathsoundambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:deathsoundambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:deathsoundambt4",
+        "stream": false
+      },
+      {
+        "name": "corners:deathsoundambt5",
+        "stream": false
+      },
+      {
+        "name": "corners:deathsoundambt6",
+        "stream": false
+      }
+    ]
+  },
+  "detahcharge": {
+    "subtitle": "subtitles.detahcharge",
+    "sounds": [
+      {
+        "name": "corners:deathcharge",
+        "stream": false
+      }
+    ]
+  },
+  "deathdying": {
+    "subtitle": "subtitles.deathdying",
+    "sounds": [
+      {
+        "name": "corners:deathdying",
+        "stream": false
+      }
+    ]
+  },
+  "thedungeondies": {
+    "subtitle": "subtitles.thedungeondies",
+    "sounds": [
+      {
+        "name": "corners:dungeondies1",
+        "stream": false
+      },
+      {
+        "name": "corners:dungeondies2",
+        "stream": false
+      }
+    ]
+  },
+  "thedungeonambt": {
+    "subtitle": "subtitles.thedungeonambt",
+    "sounds": [
+      {
+        "name": "corners:thedungeonambt1",
+        "stream": false
+      },
+      {
+        "name": "corners:thedungeonambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:thedungeonambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:thedungeonambt4",
+        "stream": false
+      }
+    ]
+  },
+  "thedungeonhurt": {
+    "subtitle": "subtitles.thedungeonhurt",
+    "sounds": [
+      {
+        "name": "corners:dungeonhurt1",
+        "stream": false
+      },
+      {
+        "name": "corners:dungeonhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:thedungeonhurt3",
+        "stream": false
+      }
+    ]
+  },
+  "slam_coffin": {
+    "subtitle": "subtitles.slam_coffin",
+    "sounds": [
+      {
+        "name": "corners:coffinslam",
+        "stream": false
+      }
+    ]
+  },
+  "flap": {
+    "subtitle": "subtitles.flap",
+    "sounds": [
+      {
+        "name": "corners:fast-simple-chop-5-6270",
+        "stream": false
+      }
+    ]
+  },
+  "clogger_roaring": {
+    "subtitle": "subtitles.clogger_roaring",
+    "sounds": [
+      {
+        "name": "corners:clogroaring_1",
+        "stream": false
+      }
+    ]
+  },
+  "cloggerpain": {
+    "subtitle": "subtitles.cloggerpain",
+    "sounds": [
+      {
+        "name": "corners:cloggerpain3",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerpain2",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerpain1",
+        "stream": false
+      }
+    ]
+  },
+  "cloggerambt": {
+    "subtitle": "subtitles.cloggerambt",
+    "sounds": [
+      {
+        "name": "corners:cloggerambt5",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:cloggerambt1",
+        "stream": false
+      }
+    ]
+  },
+  "cloggerdeath": {
+    "subtitle": "subtitles.cloggerdeath",
+    "sounds": [
+      {
+        "name": "corners:cloggerdeath",
+        "stream": false
+      }
+    ]
+  },
+  "lecherycrawl": {
+    "subtitle": "subtitles.lecherycrawl",
+    "sounds": [
+      {
+        "name": "corners:lecherycrawl4",
+        "stream": false
+      },
+      {
+        "name": "corners:lecherycrawl3",
+        "stream": false
+      },
+      {
+        "name": "corners:lecherycrawl2",
+        "stream": false
+      },
+      {
+        "name": "corners:lecherycrawl1",
+        "stream": false
+      }
+    ]
+  },
+  "bonecrack": {
+    "subtitle": "subtitles.bonecrack",
+    "sounds": [
+      {
+        "name": "corners:ouchhhhhh",
+        "stream": false
+      }
+    ]
+  },
+  "lechery_ambt": {
+    "subtitle": "subtitles.lechery_ambt",
+    "sounds": [
+      {
+        "name": "corners:lecheryambt4",
+        "stream": false
+      },
+      {
+        "name": "corners:lecheryambt3",
+        "stream": false
+      },
+      {
+        "name": "corners:lecheryambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:lecheyambt1",
+        "stream": false
+      }
+    ]
+  },
+  "lecheryhurt": {
+    "subtitle": "subtitles.lecheryhurt",
+    "sounds": [
+      {
+        "name": "corners:lecheryhurt4",
+        "stream": false
+      },
+      {
+        "name": "corners:lecheryhurt3",
+        "stream": false
+      },
+      {
+        "name": "corners:lecheryhurt2",
+        "stream": false
+      },
+      {
+        "name": "corners:lecheryhurt1",
+        "stream": false
+      }
+    ]
+  },
+  "lecherydies": {
+    "subtitle": "subtitles.lecherydies",
+    "sounds": [
+      {
+        "name": "corners:lecherydies",
+        "stream": false
+      }
+    ]
+  },
+  "rabidus_ambt": {
+    "subtitle": "subtitles.rabidus_ambt",
+    "sounds": [
+      {
+        "name": "corners:rabidzmbt6",
+        "stream": false
+      },
+      {
+        "name": "corners:rabidambt4",
+        "stream": false
+      },
+      {
+        "name": "corners:rabidambt2",
+        "stream": false
+      },
+      {
+        "name": "corners:rabid_ambt1",
+        "stream": false
+      }
+    ]
+  },
+  "rabidus_hurt": {
+    "subtitle": "subtitles.rabidus_hurt",
+    "sounds": [
+      {
+        "name": "corners:rabiduspain3",
+        "stream": false
+      },
+      {
+        "name": "corners:rabidus_pain2",
+        "stream": false
+      },
+      {
+        "name": "corners:rabidus_pain",
+        "stream": false
+      }
+    ]
+  },
+  "rabidus_dies": {
+    "subtitle": "subtitles.rabidus_dies",
+    "sounds": [
+      {
+        "name": "corners:rabiddies",
+        "stream": false
+      }
+    ]
+  },
+  "cage_break": {
+    "subtitle": "subtitles.cage_break",
+    "sounds": [
+      {
+        "name": "corners:cage_break",
+        "stream": false
+      }
+    ]
+  },
+  "shutin": {
+    "subtitle": "subtitles.shutin",
+    "sounds": [
+      {
+        "name": "corners:possesive_shuit",
+        "stream": false
+      }
+    ]
+  },
+  "open_posses": {
+    "subtitle": "subtitles.open_posses",
+    "sounds": [
+      {
+        "name": "corners:posses_open",
+        "stream": false
+      }
+    ]
+  },
+  "moonflower_ambt": {
+    "subtitle": "subtitles.moonflower_ambt",
+    "sounds": [
+      {
+        "name": "corners:moonflowerb6",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerb5",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerb4",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerb3",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerb2",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerb1",
+        "stream": false
+      }
+    ]
+  },
+  "moonflowerliving": {
+    "subtitle": "subtitles.moonflowerliving",
+    "sounds": [
+      {
+        "name": "corners:moonflowerh5",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerh4",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerh3",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerh2",
+        "stream": false
+      },
+      {
+        "name": "corners:moonflowerh1",
+        "stream": false
+      }
+    ]
+  },
+  "moonflowersweep": {
+    "subtitle": "subtitles.moonflowersweep",
+    "sounds": [
+      {
+        "name": "corners:sweep_moonflower1",
+        "stream": false
+      },
+      {
+        "name": "corners:sweep_moonflower2",
+        "stream": false
+      },
+      {
+        "name": "corners:sweep_moonflower3",
+        "stream": false
+      },
+      {
+        "name": "corners:sweepmoonflower4",
+        "stream": false
+      }
+    ]
+  }
 }
